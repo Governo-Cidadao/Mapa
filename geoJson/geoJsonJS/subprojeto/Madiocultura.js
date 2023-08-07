@@ -1,0 +1,8 @@
+let Madiocultura = {
+"type": "FeatureCollection",
+"name": "Madiocultura",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id SMI da MI": 1054, "UES": "UES-SETHAS", "Município": "RIACHUELO", "Território": "Potengi", "Tipologia": "Subprojetos de Empreendimentos Econômicos e Solidários da Agricultura Familiar", "Subtipologia": "Empreendimento Coletivo", "Categoria": "Produção e/ou fabricação/beneficiamento de produtos alimentícios", "Subcategoria": "Beneficiamento de mandioca e derivados", "Nº do Processo do Convênio": "6311/2016-5", "Nº da MI": 296, "Nº do Edital": "2/2014", "Entidade Proponente": "ASSOCIACAO DE DESENVOLVIMENTO FAMILIAR DOS PRODUTORES RURAIS DO PROJETO DE ASSENTAMENTO PATATIVA DO ASSARÉ II(12.317.189/0001-20)", "Seleção": "Sim", "Cadeira Produtiva": "Madiocultura", "Atividade Produtiva": "Beneficiamento de mandioca e derivados", "Data de Início da vigência (data de incio de execuçao do subprojeto)": "03/01/2019", "Data de Fim da vigência (data de encerramento de execução do subprojeto)": "31/12/2020", "Ano inicial da operação do empreedimento": 2021, "Valor Total do Convênio": 337371.91, "Valor BIRD": 273838.58, "Valor da Contrapartida": 63533.33, "Total de Beneficiários Confirmados": 13, "Beneficiárias Mulheres Confirmadas": 8, "Beneficiários Jovens Confirmados": 0, "Entidade Presidida por Mulher": "Não", "Entidade Liderada por Mulher": "Sim", "Grupo Tradicional Comunidade": "Nenhuma" }, "geometry": { "type": "Point", "coordinates": [ -35.8558, -5.8112 ] } }
+]
+}
