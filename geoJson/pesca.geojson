@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "pesca",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::4674" } },
+"features": [
+{ "type": "Feature", "properties": { "Id SMI da MI": "1556", "UES": "UES-SAPE", "Município": "GOIANINHA", "Território": "Agreste Litoral Sul", "Tipologia": "Subprojetos de Iniciativas de Negócios Sustentáveis de Inclusão Produtiva", "Subtipologia": "Pesca", "Categoria": "Unidade de beneficiamento de pescado", "Subcategoria": "Ampliação e ou reforma de prédio, Equipamentos para Agroindústria", "norte": "-6.2703", "leste": "-35.2096" }, "geometry": { "type": "Point", "coordinates": [ -35.2096, -6.2703 ] } },
+{ "type": "Feature", "properties": { "Id SMI da MI": "1601", "UES": "UES-SAPE", "Município": "PUREZA", "Território": "Mato Grande", "Tipologia": "Subprojetos de Iniciativas de Negócios Sustentáveis de Inclusão Produtiva", "Subtipologia": "Pesca", "Categoria": "Unidade de beneficiamento de pescado", "Subcategoria": "Construção de Unidade de Beneficiamento, Veículos, Equipamentos para Agroindústria", "norte": "-5.3281", "leste": "-35.542" }, "geometry": { "type": "Point", "coordinates": [ -35.542, -5.3281 ] } },
+{ "type": "Feature", "properties": { "Id SMI da MI": "1640", "UES": "UES-SAPE", "Município": "CAMPO GRANDE", "Território": "Sertão do Apodi", "Tipologia": "Subprojetos de Iniciativas de Negócios Sustentáveis de Inclusão Produtiva", "Subtipologia": "Pesca", "Categoria": "Unidade de beneficiamento de pescado", "Subcategoria": "Ampliação e ou reforma de prédio, Equipamentos para Agroindústria", "norte": "-5.854", "leste": "-37.3109" }, "geometry": { "type": "Point", "coordinates": [ -37.3109, -5.854 ] } },
+{ "type": "Feature", "properties": { "Id SMI da MI": "1662", "UES": "UES-SAPE", "Município": "JUCURUTU", "Território": "Seridó", "Tipologia": "Subprojetos de Iniciativas de Negócios Sustentáveis de Inclusão Produtiva", "Subtipologia": "Pesca", "Categoria": "Unidade de beneficiamento de pescado", "Subcategoria": "Entreposto de Pescado", "norte": "-6.1302", "leste": "-37.043" }, "geometry": { "type": "Point", "coordinates": [ -37.043, -6.1302 ] } }
+]
+}
