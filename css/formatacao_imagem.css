@@ -1,0 +1,9 @@
+#img_pop_up
+{
+    width: 100px;
+    height: 100px;
+}
+.leaflet-popup-content
+{
+    width: 150px;
+}

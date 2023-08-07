@@ -1,0 +1,65 @@
+#margem-esquerda
+{
+    margin-left: 15px;
+}
+.btn_group {
+
+
+    /* padding: 12px 40px; */
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    cursor: pointer;
+    transition: 0.2s all;
+}
+/* Adding transformation when the button is active */
+
+.btn_group:active {
+    transform: scale(0.88);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+}
+
+header
+{
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#map
+{
+    z-index: 1;
+}
+#div_layer_controll
+{
+    margin-top: 55px;
+    /* border-radius:0; */
+    /* margin-right: 0; */
+
+}
+
+header img
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+select {
+    border:none;
+    padding:5px;
+  }
+
+#bt_ativar_desativar_mapa
+{
+  padding:3px;
+  border-radius:5px;
+  background:white;
+  margin-right:15px;
+}
