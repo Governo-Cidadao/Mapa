@@ -126,8 +126,8 @@
     <script >
 
         var map;
-        var initialCoordinates = [-5.79448, -35.211];
-        var initialZoomLevel = 8;
+        var initialCoordinates = [-5.844865661075205, -36.56710587301696]
+        var initialZoomLevel = 9.1;
 
         // create a map in the "map" div, set the view to a given place and zoom
         map = new L.map('map',{   center: new L.LatLng(-6, -37),
@@ -136,7 +136,7 @@
                                 zoomControl: false,
                                 minZoom: 0,
                                 maxZoom: 17,
-                                zoomSnap: 0.25,}).setView(initialCoordinates, initialZoomLevel);
+                                zoomSnap: 0.10,}).setView(initialCoordinates, initialZoomLevel);
 
         var baseMaps = {};
 
