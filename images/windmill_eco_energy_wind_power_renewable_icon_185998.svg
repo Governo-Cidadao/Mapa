@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="60px" viewBox="0 0 57 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Wind</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-315.000000, -122.000000)">
+            <g id="Wind" transform="translate(316.000000, 122.000000)">
+                <polygon id="Triangle" fill="#979797" points="32.9686059 36.0169851 36.0062532 60 29.0062532 60 32.049042 36.0169851"></polygon>
+                <polygon id="Triangle" fill="#595959" points="32.5062532 0 36.0062532 30 29.0062532 30"></polygon>
+                <polygon id="Triangle" fill="#595959" transform="translate(43.087729, 34.081475) scale(-1, -1) rotate(-60.000000) translate(-43.087729, -34.081475) " points="43.0877286 19.0814755 46.5877286 49.0814755 39.5877286 49.0814755"></polygon>
+                <polygon id="Triangle" fill="#595959" transform="translate(22.087729, 34.081475) scale(1, -1) rotate(-60.000000) translate(-22.087729, -34.081475) " points="22.0877286 19.0814755 25.5877286 49.0814755 18.5877286 49.0814755"></polygon>
+                <circle id="Oval-14" fill="#D8D8D8" cx="32.5062532" cy="28.5" r="2.5"></circle>
+                <path d="M6.00625316,15.9192423 L25.2964638,15.9192423 C26.6505688,15.9192423 27.7482879,14.827503 27.7482879,13.4596212 L27.7482879,13.4596212 C27.7482879,12.1012099 26.641938,11 25.2871342,11 L23.6198341,11" id="Path-10" stroke="#5EA7FF" stroke-width="2" stroke-linecap="round"></path>
+                <path d="M0.00625316407,25.9192423 L19.2964638,25.9192423 C20.6505688,25.9192423 21.7482879,24.827503 21.7482879,23.4596212 L21.7482879,23.4596212 C21.7482879,22.1012099 20.641938,21 19.2871342,21 L17.6198341,21" id="Path-10" stroke="#5EA7FF" stroke-width="2" stroke-linecap="round" transform="translate(10.877271, 23.459621) scale(1, -1) translate(-10.877271, -23.459621) "></path>
+                <path d="M6.00625316,53.9192423 L20.2959224,53.9192423 C21.6503265,53.9192423 22.7482879,52.827503 22.7482879,51.4596212 L22.7482879,51.4596212 C22.7482879,50.1012099 21.641938,49 20.2871342,49 L18.6198341,49" id="Path-10" stroke="#5EA7FF" stroke-width="2" stroke-linecap="round" transform="translate(14.377271, 51.459621) scale(1, -1) translate(-14.377271, -51.459621) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
