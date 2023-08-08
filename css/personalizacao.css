@@ -73,7 +73,7 @@ select {
     padding:5px;
   }
 
-#bt_ativar_desativar_mapa
+#bt_ativar_desativar_mapa, #bt_centralizar
 {
   padding: 8px 20px;
   border-radius:5px;
