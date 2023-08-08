@@ -104,11 +104,6 @@ function dados_semiarido (feature, layer)
 
 function mostrar_imagem (feature, layer)
 {
-    console.log('---------------- Layer --------------------------')
-    console.log(layer)
-    console.log('--------------- Feature -------------------------')
-    console.log(feature)
-    console.log('------------------------------------------')
     html = '<img src="teste.jpg" id="img_pop_up"/> <br/><a href="https://www.governocidadao.rn.gov.br/" target="_blank">Link externo</a>'
     html += '<p><strong> Atividade Produtiva: '+feature.properties['Atividade Produtiva']+'</strong></p>'
     layer.bindPopup(html);
