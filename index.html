@@ -35,63 +35,7 @@
     <!--  -->
     <!-- <script src="geoJson/geoJsonJS/subprojeto_atual/coordenadas_subprojeto.js"></script> -->
 
-    <!-- importação dos shapes -->
-    <script src="geoJson/geoJsonJS/dissolvido.js"></script>
-
-    <!-- estradas -->
-    <script src="geoJson/geoJsonJS/estradas/eixo_guanduba.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/eixo_producao.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_233.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_011.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_016.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_063.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_087.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_118.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_160.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/RN_307.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/rodovias_federais.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/rodovias_estaduais.js"></script>
-
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_II.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_III_A.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_III_B.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_I_A.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_I_B.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_V.js"></script>
-    <script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_VI.js"></script>
-
-    <!-- subprojetos -->
-    <script src="geoJson/geoJsonJS/subprojeto/Algasmarinhas.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Apicultura.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Artesanato.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Avicultura.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Beneficiamento_de_produtos_alimenticios.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Cajucultura.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Fruticultura.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Fruticultura_irrigada.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Leites_e_derivados.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Madiocultura.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Obras_hidroambienttais.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Pesca.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Reciclagem.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Recuperacao_areas_degradadas.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Sistemas_de_abastecimento_e_tratamento_de_agua.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Textil.js"></script>
-    <script src="geoJson/geoJsonJS/subprojeto/Unidade_de_comercializacao.js"></script>
-    <script src="geoJson/geoJsonJS/RN_Municipios_2021.js"></script>
-    <script src="geoJson/geoJsonJS/Territorios.js"></script>
-
-    <!-- semiarido -->
-    <script src="geoJson/geoJsonJS/semiarido/semiarido.js"></script>
-    <!-- <script src="geoJson/geoJsonJS/semiarido/semiarido_br_dissolvido.js"></script> -->
-    <script src="geoJson/geoJsonJS/semiarido/semiarido_RN_municipios.js"></script>
-    <script src="geoJson/geoJsonJS/semiarido/semiarido_territorio.js"></script>
-    <!-- <script src="geoJson/geoJsonJS/semiarido/semiarido_unidades_federativas.js"></script> -->
-    <!-- <script src="geoJson/geoJsonJS/subprojeto_atual/coordenadas_subprojeto.js"></script> -->
-
-    <!-- <script src="js/ocultandoSubgrupos.js"></script> -->
-    <script src="geoJson/geoJsonJS/Distrito_cor.js"></script>
-    <script src="geoJson/geoJsonJS/Distrito_limitacao.js"></script>
+    <script src="js/importacoesgeojson.js"></script>
 
   </head>
   <body>
@@ -410,7 +354,7 @@
           let texto_filtro = input.value.toLowerCase()
           subprojetoJson.forEach(function (layerGroup) {
             layerGroup.eachLayer(function(layer){
-            if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro)){
+            if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro) ){
                 layer.setOpacity(1);
             }else{
                 layer.setOpacity(0);
