@@ -92,8 +92,8 @@ function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim)
 function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim)
 {
 
-
-    let inputs = document.getElementsByTagName('input');
+    let div = document.querySelector('.leaflet-control-layers-overlays')
+    let inputs = div.querySelectorAll('input');
     let qtd_input = inputs.length;
     let status_subgrupo={};
     let texto_sem_espaco = nome.replace(" ","_")
