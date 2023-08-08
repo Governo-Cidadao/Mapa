@@ -12,30 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-  </head>
-  <body>
-
-    <header>
-      <img src="images/logo/logo_rn_sustentavel.png" >
-      <h1>PROJETO INTEGRADO DE DESENVOLVIMENTO SUSTENTÁVEL DO RIO GRANDE DO NORTE</h1>
-      <button id='bt_ativar_desativar_mapa' onclick="centralizarMapa()">CENTRALIZAR</button>
-      <div>
-        <select name="select" id ='select_map' onchange="mudar_mapa()">
-          <option value="google_maps" selected>Google Mapas Roadmap</option>
-          <option value="google_maps_hybrid">Google Maps Hybrid</option>
-          <option value="open_street_map" >Open Street Map</option>
-          <option value="ersi">ESRI Satélite</option>
-          <option value="cartocdn">CartocDB</option>
-          <option value="opentopomap">Open TopoMap</option>
-          <option value="earthdata">Noturno NASA</option>
-        </select>
-        <button id='bt_ativar_desativar_mapa' onclick="ativar_desativar_mapa()">REMOVER</button>
-      </div>
-    </header>
-
-    <div id="teste_mapa"></div>
-    <div id="map"></div>
-
 
     <!-- arquivo utilizados pela biblioteca -->
     <script src="js/Leaflet/qgis2web_expressions.js"></script>
@@ -117,6 +93,35 @@
     <script src="geoJson/geoJsonJS/Distrito_cor.js"></script>
     <script src="geoJson/geoJsonJS/Distrito_limitacao.js"></script>
 
+  </head>
+  <body>
+
+   <header>
+      <img src="images/logo/logo_rn_sustentavel.png" >
+      <h1>PROJETO INTEGRADO DE DESENVOLVIMENTO SUSTENTÁVEL DO RIO GRANDE DO NORTE</h1>
+      <button id='bt_ativar_desativar_mapa' onclick="centralizarMapa()">CENTRALIZAR</button>
+      <div>
+        <select name="select" id ='select_map' onchange="mudar_mapa()">
+          <option value="google_maps" selected>Google Mapas Roadmap</option>
+          <option value="google_maps_hybrid">Google Maps Hybrid</option>
+          <option value="open_street_map" >Open Street Map</option>
+          <option value="ersi">ESRI Satélite</option>
+          <option value="cartocdn">CartocDB</option>
+          <option value="opentopomap">Open TopoMap</option>
+          <option value="earthdata">Noturno NASA</option>
+        </select>
+        <button id='bt_ativar_desativar_mapa' onclick="ativar_desativar_mapa()">REMOVER</button>
+      </div>
+    </header>
+
+
+    <!-- <div id="teste_mapa"></div> -->
+    <div  class="containerFiltro">
+      <input type="text" placeholder="Digite o Município" class="filtro" onkeyup="filtrar(this)">
+
+     </div>
+
+     <div id="map"></div>
     <script >
 
         var map;
@@ -210,6 +215,26 @@
         var geoJsonUnidade_de_comercializacao = new L.geoJson(Unidade_de_comercializacao, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
         layerControl.addOverlay(geoJsonUnidade_de_comercializacao, 'Unidade_de_comercializacao');
 
+
+        var subprojetoJson = [
+                              geoJsonAlgasmarinhas,
+                              geoJsonApicultura,
+                              geoJsonArtesanato,
+                              geoJsonAvicultura,
+                              geoJsonBeneficiamento_de_produtos_alimenticios,
+                              geoJsonCajucultura,
+                              geoJsonFruticultura,
+                              geoJsonFruticultura_irrigada,
+                              geoJsonLeites_e_derivados,
+                              geoJsonMadiocultura,
+                              geoJsonObras_hidroambienttais,
+                              geoJsonPesca,
+                              geoJsonReciclagem,
+                              geoJsonRecuperacao_areas_degradadas,
+                              geoJsonSistemas_de_abastecimento_e_tratamento_de_agua,
+                              geoJsonTextil,
+                              geoJsonUnidade_de_comercializacao,
+                            ]
 
         var estrada_vermelha = {
             "color": "rgb( 244, 0, 0 )",
@@ -381,7 +406,21 @@
         let div_control = document.getElementsByClassName("leaflet-control-layers");
         div_control[0].setAttribute("id","div_layer_controll");
 
+        function filtrar(input){
+          let texto_filtro = input.value.toLowerCase()
+          subprojetoJson.forEach(function (layerGroup) {
+            layerGroup.eachLayer(function(layer){
+            if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro)){
+                layer.setOpacity(1);
+            }else{
+                layer.setOpacity(0);
+            }
 
+          })
+
+            }
+          )
+        }
     </script>
 
   </body>
