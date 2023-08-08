@@ -1,6 +1,6 @@
 function centralizarMapa()
 {
-    var initialCoordinates = [-5.79448, -35.211];
-    var initialZoomLevel = 8;
+    const initialCoordinates = [-5.844865661075205, -36.56710587301696]
+    const initialZoomLevel = 8.8;
     map.setView(initialCoordinates, initialZoomLevel);
 }

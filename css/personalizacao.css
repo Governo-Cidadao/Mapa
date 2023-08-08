@@ -1,3 +1,33 @@
+html, body, #map {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header
+{
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header h1
+{
+    font-size: 20px;
+}
+
 #margem-esquerda
 {
     margin-left: 15px;
@@ -19,23 +49,10 @@
     /* Lowering the shadow */
 }
 
-header
-{
-    height: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 1);
-    z-index: 2;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
 #map
 {
     z-index: 1;
+    top: 30px;
 }
 #div_layer_controll
 {
@@ -58,7 +75,7 @@ select {
 
 #bt_ativar_desativar_mapa
 {
-  padding:3px;
+  padding: 8px 20px;
   border-radius:5px;
   background:white;
   margin-right:15px;

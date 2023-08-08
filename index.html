@@ -9,21 +9,15 @@
     <link rel="stylesheet" href="js/minimap/Control.MiniMap.css">
     <link rel="stylesheet" href="js/opacity/L.Control.Opacity.css">
     <link rel="stylesheet" href="css/formatacao_imagem.css">
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-      }
-      html, body, #map {
-        height: 100%;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
 
     <header>
       <img src="images/logo/logo_rn_sustentavel.png" >
-      PROJETO INTEGRADO DE DESENVOLVIMENTO SUSTENTÁVEL DO RIO GRANDE DO NORTE
+      <h1>PROJETO INTEGRADO DE DESENVOLVIMENTO SUSTENTÁVEL DO RIO GRANDE DO NORTE</h1>
       <button id='bt_ativar_desativar_mapa' onclick="centralizarMapa()">CENTRALIZAR</button>
       <div>
         <select name="select" id ='select_map' onchange="mudar_mapa()">
@@ -126,8 +120,8 @@
     <script >
 
         var map;
-        var initialCoordinates = [-5.844865661075205, -36.56710587301696]
-        var initialZoomLevel = 9.1;
+        const initialCoordinates = [-5.844865661075205, -36.56710587301696]
+        const initialZoomLevel = 8.8;
 
         // create a map in the "map" div, set the view to a given place and zoom
         map = new L.map('map',{   center: new L.LatLng(-6, -37),
