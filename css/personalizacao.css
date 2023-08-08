@@ -25,7 +25,7 @@ header
 
 header h1
 {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 #margem-esquerda
@@ -75,7 +75,7 @@ select {
 
 #bt_ativar_desativar_mapa
 {
-  padding:3px;
+  padding: 8px 20px;
   border-radius:5px;
   background:white;
   margin-right:15px;
