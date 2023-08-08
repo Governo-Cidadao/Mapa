@@ -20,11 +20,12 @@ header
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
 }
 
 header h1
 {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 #margem-esquerda
@@ -51,6 +52,7 @@ header h1
 #map
 {
     z-index: 1;
+    top: 30px;
 }
 #div_layer_controll
 {
