@@ -11,6 +11,30 @@ map = new L.map('map',{   center: new L.LatLng(-6, -37),
 
 var baseMaps = {};
 
+var borda_branca = {
+
+    "opacity": 1,
+    "color": 'rgba(250,250,250,1.0)',
+    "dashArray": '',
+    "lineCap": 'square',
+    "lineJoin": 'bevel',
+    "weight": 4.0,
+    "fillOpacity": 0,
+    "interactive": true,
+};
+
+var borda_fundo_branco = {
+
+    "opacity": 1,
+    "color": 'rgba(250,250,250,1.0)',
+    "dashArray": '',
+    "lineCap": 'square',
+    "lineJoin": 'bevel',
+    "weight": 4.0,
+    "fillColor": 'rgb(193,193,193)',
+    "fillOpacity": 0.4,
+    "interactive": true,
+};
 
 var mapa_fundo = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
     maxZoom: 20,
@@ -28,7 +52,7 @@ var minimap = new L.Control.MiniMap(base_minimap, {
 minimap.addTo(map);
 var layerControl = new L.control.layers(baseMaps).addTo(map);
 
-var geoJsonTerritorios = new L.geoJson(Territorios).addTo(map);
+var geoJsonTerritorios = new L.geoJson(Territorios, {style: borda_fundo_branco}).addTo(map);
 layerControl.addOverlay(geoJsonTerritorios, 'Territórios');
 
 // subprojetos
@@ -176,19 +200,6 @@ layerControl.addOverlay(geoJsonprojetos_DER_V, 'projetos_DER_V');
 
 var geoJsonprojetos_DER_VI = new L.geoJson(projetos_DER_VI, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_VI, 'projetos_DER_VI');
-
-
-var borda_branca = {
-
-        "opacity": 1,
-        "color": 'rgba(250,250,250,1.0)',
-        "dashArray": '',
-        "lineCap": 'square',
-        "lineJoin": 'bevel',
-        "weight": 4.0,
-        "fillOpacity": 0,
-        "interactive": true,
-};
 
 var fundo_azul = {
         "color": 'rgba(35,35,35,1.0)',
