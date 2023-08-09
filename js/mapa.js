@@ -132,49 +132,49 @@ layerControl.addOverlay(geoJsonrodovias_estaduais, 'rodovias_estaduais');
 
 map.createPane('estradas')
 
-var geoJsonRN_011 = new L.geoJson(RN_011, {pane:'estradas', style:estrada_azul, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_011 = new L.geoJson(RN_011, {pane:'estradas', style:estrada_azul, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_011, 'RN_011');
 
-var geoJsonRN_016 = new L.geoJson(RN_016, {pane:'estradas',style:estrada_azul, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_016 = new L.geoJson(RN_016, {pane:'estradas',style:estrada_azul, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_016, 'RN_016');
 
-var geoJsonRN_063 = new L.geoJson(RN_063, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_063 = new L.geoJson(RN_063, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_063, 'RN_063');
 
-var geoJsonRN_087 = new L.geoJson(RN_087, {pane:'estradas',style:estrada_azul, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_087 = new L.geoJson(RN_087, {pane:'estradas',style:estrada_azul, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_087, 'RN_087');
 
-var geoJsonRN_118 = new L.geoJson(RN_118, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_118 = new L.geoJson(RN_118, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_118, 'RN_118');
 
-var geoJsonRN233 = new L.geoJson(rn_233, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN233 = new L.geoJson(rn_233, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN233 , "RN_233");
 
-var geoJsonRN_160 = new L.geoJson(RN_160, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_160 = new L.geoJson(RN_160, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_160, 'RN_160');
 
-var geoJsonRN_307 = new L.geoJson(RN_307, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2}).addTo(map);
+var geoJsonRN_307 = new L.geoJson(RN_307, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
 layerControl.addOverlay(geoJsonRN_307, 'RN_307');
 
-var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_II, 'projetos_DER_II');
 
-var geoJsonprojetos_DER_III_A = new L.geoJson(projetos_DER_III_A, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_III_A = new L.geoJson(projetos_DER_III_A, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_III_A, 'projetos_DER_III_A');
 
-var geoJsonprojetos_DER_III_B = new L.geoJson(projetos_DER_III_B, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_III_B = new L.geoJson(projetos_DER_III_B, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_III_B, 'projetos_DER_III_B');
 
-var geoJsonprojetos_DER_I_A = new L.geoJson(projetos_DER_I_A, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_I_A = new L.geoJson(projetos_DER_I_A, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_I_A, 'projetos_DER_I_A');
 
-var geoJsonprojetos_DER_I_B = new L.geoJson(projetos_DER_I_B, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_I_B = new L.geoJson(projetos_DER_I_B, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_I_B, 'projetos_DER_I_B');
 
-var geoJsonprojetos_DER_V = new L.geoJson(projetos_DER_V, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_V = new L.geoJson(projetos_DER_V, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_V, 'projetos_DER_V');
 
-var geoJsonprojetos_DER_VI = new L.geoJson(projetos_DER_VI, {onEachFeature: dadosEstrada}).addTo(map);
+var geoJsonprojetos_DER_VI = new L.geoJson(projetos_DER_VI, {onEachFeature: dadosEstrada});
 layerControl.addOverlay(geoJsonprojetos_DER_VI, 'projetos_DER_VI');
 
 
@@ -225,13 +225,13 @@ map.createPane('pane_semiarido');
 map.createPane('pane_Territrios');
 
 
-var geoJsonsemiarido_territorio = new L.geoJson(semiarido_territorio, {pane:'pane_Territrios', style: borda_branca, onEachFeature:dados_semiarido}).addTo(map);
+var geoJsonsemiarido_territorio = new L.geoJson(semiarido_territorio, {pane:'pane_Territrios', style: borda_branca, onEachFeature:dados_semiarido});
 layerControl.addOverlay(geoJsonsemiarido_territorio, 'semiarido_territorio');
 
-var geoJsonsemiarido = new L.geoJson(semiarido,  {pane:"pane_semiarido", style: fundo_azul}).addTo(map);
+var geoJsonsemiarido = new L.geoJson(semiarido,  {pane:"pane_semiarido", style: fundo_azul});
 layerControl.addOverlay(geoJsonsemiarido, 'semiarido');
 
-var geoJsonsemiarido_RN_municipios = new L.geoJson(semiarido_RN_municipios, {pane:'pane_semiarido_RN_municipios',style:fundo_cinza}).addTo(map);
+var geoJsonsemiarido_RN_municipios = new L.geoJson(semiarido_RN_municipios, {pane:'pane_semiarido_RN_municipios',style:fundo_cinza});
 layerControl.addOverlay(geoJsonsemiarido_RN_municipios, 'semiarido_RN_municipios');
 
 var fundo_verde_distritos =
@@ -248,13 +248,13 @@ var fundo_verde_distritos =
         'interactive': true,
 }
 
-var geoJsonDistrito_cor = new L.geoJson(Distrito_cor, {style:fundo_verde_distritos}).addTo(map);
+var geoJsonDistrito_cor = new L.geoJson(Distrito_cor, {style:fundo_verde_distritos});
 layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito_cor');
 
-var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, {style:{'fillOpacity': 0, color:'white'}}).addTo(map);
+var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, {style:{'fillOpacity': 0, color:'white'}});
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito_limitacao');
 
-adicionarGrupo("Subprojeto",1);
+adicionarGrupo("Subprojeto", 1, true);
 relacionarSubGrupo('Subprojeto', 1, 2, 19);
 
 adicionarGrupo("Estradas", 19);
