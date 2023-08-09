@@ -2,7 +2,6 @@ function createCustomIcon(feature, latlng) {
   var nameIcon;
   var iconimage = false;
   var aviso = String(feature.properties['Cadeira Produtiva']);
-  // let base_caminho_imagem = '../../'
   const base_caminho_imagem = 'images/icones_novos'
   switch (String(feature.properties['Cadeira Produtiva'])) {
     case 'Algas marinhas':

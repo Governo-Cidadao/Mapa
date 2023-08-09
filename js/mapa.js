@@ -130,9 +130,6 @@ layerControl.addOverlay(geoJsonrodovias_federais, 'Rodovias Federais');
 var geoJsonrodovias_estaduais = new L.geoJson(rodovias_estaduais);
 layerControl.addOverlay(geoJsonrodovias_estaduais, 'rodovias_estaduais');
 
-
-// var geoJsonRN233 = new L.geoJson(rn_233);
-// layerControl.addOverlay(geoJsonRN233 , "RN_233");
 map.createPane('estradas')
 
 var geoJsonRN_011 = new L.geoJson(RN_011, {pane:'estradas', style:estrada_azul, onEachFeature: dadosEstrada2}).addTo(map);
@@ -158,9 +155,6 @@ layerControl.addOverlay(geoJsonRN_160, 'RN_160');
 
 var geoJsonRN_307 = new L.geoJson(RN_307, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2}).addTo(map);
 layerControl.addOverlay(geoJsonRN_307, 'RN_307');
-
-
-
 
 var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, {onEachFeature: dadosEstrada}).addTo(map);
 layerControl.addOverlay(geoJsonprojetos_DER_II, 'projetos_DER_II');
