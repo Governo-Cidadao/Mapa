@@ -108,3 +108,21 @@ function mostrar_imagem(feature, layer) {
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
   layer.bindPopup(html);
 }
+
+function mostrar_imagem2(feature, layer, nome, qtd_fotos){
+  let id_smi = feature.properties['Id SMI da MI']
+  let path = `images/${nome}/${id_smi}`
+  let imgs = ''
+  for (var i=1;i<=qtd_fotos ;i++ ){
+    if (i==1){
+      imgs+=`<img class="img-carousel" src="${path}/foto${i}.jpg"/>`
+    }else{
+
+      imgs+=`<img class="img-carousel" src="${path}/foto${i}.jpg" style="display:none"/>`
+    }
+
+  }
+  let html = `<div class="carousel-container" id='${nome}_${id_smi}'>`
+  html +=  `<button id="prevBtn" onclick="voltar('${nome}_${id_smi}')"><i class="fa-solid fa-chevron-left"></i></button>` + imgs +`<button id="nextBtn" onclick="avancar('${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button></div>`
+  layer.bindPopup(html);
+}

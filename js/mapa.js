@@ -72,7 +72,8 @@ layerControl.addOverlay(geoJsonAvicultura, 'Avicultura');
 var geoJsonBeneficiamento_de_produtos_alimenticios = new L.geoJson(Beneficiamento_de_produtos_alimenticios, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
 layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento_de_produtos_alimenticios');
 
-var geoJsonCajucultura = new L.geoJson(Cajucultura, {pointToLayer: createCustomIcon}).addTo(map);
+var geoJsonCajucultura = new L.geoJson(Cajucultura, {pointToLayer: createCustomIcon,
+                                        onEachFeature:function(feature, layer){mostrar_imagem2(feature, layer, 'Cajucultura', 3)}}).addTo(map);
 layerControl.addOverlay(geoJsonCajucultura, 'Cajucultura');
 
 var geoJsonFruticultura = new L.geoJson(Fruticultura, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
