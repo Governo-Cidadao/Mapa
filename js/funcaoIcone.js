@@ -22,16 +22,19 @@ function createCustomIcon(feature, latlng) {
       nameIcon = base_caminho_imagem + '/avicultura 1.svg';
       break;
     case 'Beneficiamento de produtos alimentícios':
-      nameIcon = base_caminho_imagem + '/Produtos Alimentícios.svg';
+      // icone antigo
+      nameIcon = 'images/imagens_svg/Produtos Alimentícios.svg';
       break;
     case 'Cajucultura':
-      nameIcon = base_caminho_imagem + '/Cajucultura.svg';
+      // icone antigo
+      nameIcon = 'images/imagens_svg/Cajucultura.svg';
       break;
     case 'Fruticultura':
       nameIcon = base_caminho_imagem + '/FRUTICULTURA.svg';
       break;
     case 'Fruticultura Irrigada':
-      nameIcon = base_caminho_imagem + '/kisspng-plant-watering-cans-marketing-customer-relationshi-aquatic-plants-5ac1d9b6305297.svg';
+      // icone antigo
+      nameIcon = 'images/imagens_svg/kisspng-plant-watering-cans-marketing-customer-relationshi-aquatic-plants-5ac1d9b6305297.svg';
       break;
     case 'Leite e derivados':
       nameIcon = base_caminho_imagem + '/Leite e derivados.svg';
