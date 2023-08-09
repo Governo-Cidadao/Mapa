@@ -1,15 +1,15 @@
 function ativar_desativar_mapa()
 {
     let botao = document.getElementById('bt_ativar_desativar_mapa')
-    if(botao.textContent =='REMOVER')
+    if(botao.textContent =='Remover')
     {
         map.removeLayer(mapa_fundo);
-        botao.textContent ='ADICIONAR';
+        botao.textContent ='Adicionar';
         minimap.remove();
     }else
     {
         mapa_fundo.addTo(map);
-        botao.textContent ='REMOVER';
+        botao.textContent ='Remover';
         minimap.addTo(map);
     }
     // alert(botao.value)
@@ -26,7 +26,7 @@ function mudar_mapa()
 {
   let mapa_escolhido = document.getElementById('select_map').value;
   let botao = document.getElementById('bt_ativar_desativar_mapa')
-  botao.textContent ='REMOVER';
+  botao.textContent ='Remover';
   if (mapa_escolhido == 'google_maps')
   {
         map.removeLayer(mapa_fundo);
