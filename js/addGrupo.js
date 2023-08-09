@@ -1,4 +1,4 @@
-function adicionarGrupo(texto, pos)
+function adicionarGrupo(texto, pos, checked=false)
 {
 
     let menu_suspenso = document.getElementsByClassName("leaflet-control-layers-overlays");
@@ -12,12 +12,9 @@ function adicionarGrupo(texto, pos)
     span.textContent = texto;
     let texto_sem_espaco = texto.replace(" ","_")
     inp.type = 'checkbox';
-    inp.checked = true;
+    inp.checked = checked;
 
     button.textContent = "+";
-    //button.style.position="absolute";
-    //button.style.right="10px";
-    // button.style.marginLeft = "calc( 100% - 130px )"
     button.style.float="right";
     button.style.width="25px";
     button.style.height="20px"
@@ -53,13 +50,7 @@ function adicionarGrupo(texto, pos)
     div.appendChild(button);
     label.appendChild(div);
 
-    // label.appendChild(div);
-    // teste[0].appendChild(label);
-
-
-
     menu_suspenso[0].insertBefore(label,menu_suspenso[0].children[pos])
-
 
 }
 function teste_lista()
