@@ -14,18 +14,36 @@ function mudar_imagem(id){
 
 }
 
-function voltar(id){
+function voltar(botao_voltar, id){
+    let botao_avancar = document.getElementById(`botao_avancar_${id}`)
     if(index>0){
         index-=1;
+        mudar_imagem(id);
+        if(botao_avancar.style.visibility == 'hidden'){
+            botao_avancar.style.visibility = 'visible'
+        }
+        if (index==0){
+            botao_voltar.style.visibility = 'hidden'
+        }
     }
-    mudar_imagem(id)
+
+
 }
 
-function avancar(id, max){
+function avancar(botao_avancar, id, max){
+
+    let botao_voltar = document.getElementById(`botao_voltar_${id}`)
     if(index < max-1){
         index+=1;
+        if(botao_voltar.style.visibility == 'hidden'){
+            botao_voltar.style.visibility = 'visible'
+        }
+        mudar_imagem(id)
+        if (index == max-1){
+            botao_avancar.style.visibility = 'hidden'
+        }
     }
-    mudar_imagem(id)
+
 }
 
 function exibir_carousel(id){
