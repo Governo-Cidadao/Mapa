@@ -122,8 +122,11 @@ function html_carousel(nome, qtd_fotos, id_smi){
     }
 
   }
-  let html = `<div class="carousel-container" id='${nome}_${id_smi}' style='display:none'>`
-  html +=  `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>` + imgs +`<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button></div>`
+  let html = `<div class="carousel-container" id='${nome}_${id_smi}_fotos' style='display:none'>`
+  html +=  `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
+  html += imgs
+  html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
+  html += `</div>`
   return html
 }
 
@@ -138,14 +141,24 @@ function dado_html_subprojeto(feature)
 
   return html
 }
+function mais_informacoes(nome, id_smi){
+  let html = `<div class="carousel-container" id='${nome}_${id_smi}_informacao' style='display:none'>`
+  html += '<p><strong> Informações adicionais </strong></p> </div>'
+
+  return html
+
+}
+
 function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_subprojeto(feature)
-  html += `<div> <button  onclick="show_modal('${nome}_${id_smi}')">ver fotos </button></div>`
+  html += `<div> <button  onclick="show_modal('${nome}_${id_smi}_fotos')">ver fotos </button>`
+  html += `<button onclick="show_modal('${nome}_${id_smi}_informacao')">Mais informações </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
   html += html_fotos
   let modal = document.querySelector(".container-modal")
   modal.innerHTML += html_fotos
+  modal.innerHTML += mais_informacoes(nome, id_smi)
   layer.bindPopup(html);
 
 }
