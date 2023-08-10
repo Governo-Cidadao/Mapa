@@ -133,17 +133,20 @@ function html_carousel(nome, qtd_fotos, id_smi){
 function dado_html_subprojeto(feature)
 {
   let html = ''
+  html += '<img src="images/Cajucultura/1400/foto1.jpg" class="img-popup">'
+  html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
+  html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
+
+  return html
+}
+function mais_informacoes(feature, nome, id_smi){
+  let html = `<div class="carousel-container" id='${nome}_${id_smi}_informacao' style='display:none'>`
   html += '<p><strong> Id SMI da MI: ' + feature.properties['Id SMI da MI'] + '</strong></p>'
   html += '<p><strong> UES: ' + feature.properties['UES'] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
   html += '<p><strong> Território: ' + feature.properties['Território'] + '</strong></p>'
   html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
-
-  return html
-}
-function mais_informacoes(nome, id_smi){
-  let html = `<div class="carousel-container" id='${nome}_${id_smi}_informacao' style='display:none'>`
-  html += '<p><strong> Informações adicionais </strong></p> </div>'
+  html += '</div>'
 
   return html
 
@@ -155,10 +158,10 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   html += `<div> <button  onclick="show_modal('${nome}_${id_smi}_fotos')">ver fotos </button>`
   html += `<button onclick="show_modal('${nome}_${id_smi}_informacao')">Mais informações </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
-  html += html_fotos
+  // html += html_fotos
   let modal = document.querySelector(".container-modal")
   modal.innerHTML += html_fotos
-  modal.innerHTML += mais_informacoes(nome, id_smi)
+  modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
 
 }
