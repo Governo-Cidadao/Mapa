@@ -6,6 +6,7 @@
 .carousel-container button{
     border: none;
     background: none;
+    cursor: pointer;
 }
 
 .carousel-container{

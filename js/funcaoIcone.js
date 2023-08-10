@@ -123,7 +123,7 @@ function html_carousel(nome, qtd_fotos, id_smi){
 
   }
   let html = `<div class="carousel-container" id='${nome}_${id_smi}' style='display:none'>`
-  html +=  `<button id="prevBtn" onclick="voltar('${nome}_${id_smi}')"><i class="fa-solid fa-chevron-left"></i></button>` + imgs +`<button id="nextBtn" onclick="avancar('${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button></div>`
+  html +=  `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>` + imgs +`<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button></div>`
   return html
 }
 
