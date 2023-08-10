@@ -127,9 +127,21 @@ function html_carousel(nome, qtd_fotos, id_smi){
   return html
 }
 
+function dado_html_subprojeto(feature)
+{
+  let html = ''
+  html += '<p><strong> Id SMI da MI: ' + feature.properties['Id SMI da MI'] + '</strong></p>'
+  html += '<p><strong> UES: ' + feature.properties['UES'] + '</strong></p>'
+  html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
+  html += '<p><strong> Território: ' + feature.properties['Território'] + '</strong></p>'
+  html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
+
+  return html
+}
 function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   let id_smi = feature.properties['Id SMI da MI']
-  html = `<div> <button  onclick="show_modal('${nome}_${id_smi}')">ver fotos </button></div>`
+  let html = dado_html_subprojeto(feature)
+  html += `<div> <button  onclick="show_modal('${nome}_${id_smi}')">ver fotos </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
   html += html_fotos
   let modal = document.querySelector(".container-modal")
