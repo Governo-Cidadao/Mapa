@@ -27,3 +27,13 @@ function avancar(id, max){
     }
     mudar_imagem(id)
 }
+
+function exibir_carousel(id){
+    const carousel = document.getElementById(id);
+    carousel.style.display='flex';
+}
+
+function ocultar_carousel(id){
+    const carousel = document.getElementById(id);
+    carousel.style.display='none';
+}

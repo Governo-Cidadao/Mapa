@@ -109,8 +109,8 @@ function mostrar_imagem(feature, layer) {
   layer.bindPopup(html);
 }
 
-function mostrar_imagem2(feature, layer, nome, qtd_fotos){
-  let id_smi = feature.properties['Id SMI da MI']
+function html_carousel(nome, qtd_fotos, id_smi){
+
   let path = `images/${nome}/${id_smi}`
   let imgs = ''
   for (var i=1;i<=qtd_fotos ;i++ ){
@@ -122,7 +122,18 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos){
     }
 
   }
-  let html = `<div class="carousel-container" id='${nome}_${id_smi}'>`
+  let html = `<div class="carousel-container" id='${nome}_${id_smi}' style='display:none'>`
   html +=  `<button id="prevBtn" onclick="voltar('${nome}_${id_smi}')"><i class="fa-solid fa-chevron-left"></i></button>` + imgs +`<button id="nextBtn" onclick="avancar('${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button></div>`
+  return html
+}
+
+function mostrar_imagem2(feature, layer, nome, qtd_fotos){
+  let id_smi = feature.properties['Id SMI da MI']
+  html = `<div> <button  onclick="show_modal('${nome}_${id_smi}')">ver fotos </button></div>`
+  let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
+  html += html_fotos
+  let modal = document.querySelector(".container-modal")
+  modal.innerHTML += html_fotos
   layer.bindPopup(html);
+
 }
