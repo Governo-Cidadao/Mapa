@@ -1,7 +1,7 @@
 let index = 0;
 
 function mudar_imagem(id){
-    let container = document.getElementById(id);
+    let container = document.getElementById(id+"_fotos");
     let imgs = container.querySelectorAll("img")
 
     for(let i=0; i<imgs.length; i++){

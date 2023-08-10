@@ -101,3 +101,8 @@ select {
     font-size: 14px;
     outline: none;
   }
+
+.img-popup{
+    width: 150px;
+    height: 150px;
+}
