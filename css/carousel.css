@@ -18,6 +18,8 @@
     flex-direction: column;
     justify-content: center;
     padding: 5px;
+    width: 350px;
+    font-size: 15px;
 }
 
 .informacao p{
