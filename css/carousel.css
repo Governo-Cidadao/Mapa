@@ -9,8 +9,18 @@
     cursor: pointer;
 }
 
-.carousel-container{
+.fotos{
+    padding: 25px 5px;
+}
+
+.informacao {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    padding: 5px;
+}
+
+.informacao p{
+    margin: 0 0 0 15px;
+
 }

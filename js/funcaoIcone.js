@@ -122,7 +122,7 @@ function html_carousel(nome, qtd_fotos, id_smi){
     }
 
   }
-  let html = `<div class="carousel-container" id='${nome}_${id_smi}_fotos' style='display:none'>`
+  let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none'>`
   html +=  `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
   html += imgs
   html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
@@ -140,7 +140,7 @@ function dado_html_subprojeto(feature)
   return html
 }
 function mais_informacoes(feature, nome, id_smi){
-  let html = `<div class="carousel-container" id='${nome}_${id_smi}_informacao' style='display:none'>`
+  let html = `<div class="informacao" id='${nome}_${id_smi}_informacao' style='display:none'>`
   html += '<p><strong> Id SMI da MI: ' + feature.properties['Id SMI da MI'] + '</strong></p>'
   html += '<p><strong> UES: ' + feature.properties['UES'] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
