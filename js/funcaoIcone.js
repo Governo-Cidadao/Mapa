@@ -155,8 +155,8 @@ function mais_informacoes(feature, nome, id_smi){
 function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_subprojeto(feature)
-  html += `<div> <button  onclick="show_modal('${nome}_${id_smi}_fotos')">ver fotos </button>`
-  html += `<button onclick="show_modal('${nome}_${id_smi}_informacao')">Mais informações </button></div>`
+  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>ver fotos</a> </button>`
+  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
   // html += html_fotos
   let modal = document.querySelector(".container-modal")
