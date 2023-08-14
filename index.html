@@ -37,6 +37,10 @@
       <img src="images/logo/logo_rn_sustentavel.png" >
       <h1>Projeto Integrado de Desenvolvimento Sustentável do Rio Grande do Norte</h1>
       <button id='bt_centralizar' onclick="centralizarMapa()">Centralizar</button>
+      <div class="container_zoom">
+        <button onclick="map.zoomIn(0.5)" id='zoomIn' class='style_button'>+</button>
+        <button onclick="map.zoomOut(0.5)" id='zoomOut' class='style_button'>-</button>
+      </div>
       <div>
         <select name="select" id ='select_map' onchange="mudar_mapa()">
           <option value="google_maps" selected>Google Mapas Roadmap</option>
