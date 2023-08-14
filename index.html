@@ -61,8 +61,10 @@
         <i onclick="close_modal()" class="fa-solid fa-x"></i>
       </div>
     </div>
-    <div class="containerFiltro">
-      <input type="text" placeholder="Digite o Município" class="filtro use-keyboard-input" id='filtro_municipio' onkeyup="filtrar()">
+    <div class="container_filtro_keyboard">
+      <div class="containerFiltro">
+        <input type="text" placeholder="Digite o Município" class="filtro use-keyboard-input" id='filtro_municipio' onkeyup="filtrar()">
+      </div>
     </div>
 
     <div id="map"></div>
@@ -85,6 +87,20 @@
             }
           }
         });
+
+        window.onload = function() {
+          var teclado_virtual = document.querySelector(".keyboard");
+          var input_filtro = document.getElementById('filtro_municipio')
+          document.addEventListener("click", function(event) {
+            if (!teclado_virtual.contains(event.target)  && event.target != input_filtro) {
+              if(!teclado_virtual.classList.value.includes('keyboard--hidden')){
+                teclado_virtual.classList.add("keyboard--hidden");
+              }
+
+            }
+          })
+        }
+
     </script>
   </body>
 </html>
