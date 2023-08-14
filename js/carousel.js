@@ -12,7 +12,6 @@ function mudar_imagem(id){
             imgs[i].style.display = "none";
         }
     }
-
 }
 
 function voltar(botao_voltar, id){
@@ -30,8 +29,6 @@ function voltar(botao_voltar, id){
             botao_voltar.style.visibility = 'hidden'
         }
     }
-
-
 }
 
 function avancar(botao_avancar, id, max){
@@ -49,8 +46,6 @@ function avancar(botao_avancar, id, max){
             botao_avancar.style.visibility = 'hidden'
         }
     }
-
-
 }
 
 function exibir_carousel(id){
