@@ -1,6 +1,7 @@
-let index = 0;
 
 function mudar_imagem(id){
+    let carousel =  document.getElementById(id+'_fotos')
+    let index = parseInt(carousel.getAttribute('index'))
     let container = document.getElementById(id+"_fotos");
     let imgs = container.querySelectorAll("img")
 
@@ -15,9 +16,12 @@ function mudar_imagem(id){
 }
 
 function voltar(botao_voltar, id){
+    let carousel =  document.getElementById(id+'_fotos')
+    let index = parseInt(carousel.getAttribute('index'))
     let botao_avancar = document.getElementById(`botao_avancar_${id}`)
     if(index>0){
         index-=1;
+        carousel.setAttribute('index', index)
         mudar_imagem(id);
         if(botao_avancar.style.visibility == 'hidden'){
             botao_avancar.style.visibility = 'visible'
@@ -31,10 +35,12 @@ function voltar(botao_voltar, id){
 }
 
 function avancar(botao_avancar, id, max){
-
+    let carousel =  document.getElementById(id+'_fotos')
+    let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
     if(index < max-1){
         index+=1;
+        carousel.setAttribute('index', index)
         if(botao_voltar.style.visibility == 'hidden'){
             botao_voltar.style.visibility = 'visible'
         }
@@ -43,6 +49,7 @@ function avancar(botao_avancar, id, max){
             botao_avancar.style.visibility = 'hidden'
         }
     }
+
 
 }
 
