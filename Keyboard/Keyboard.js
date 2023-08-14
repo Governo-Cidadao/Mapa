@@ -33,6 +33,8 @@ const Keyboard = {
         this.elements.main.appendChild(this.elements.keysContainer);
         containerFiltro.appendChild(this.elements.main);
 
+
+        this.elements.main.addEventListener('click', filtrar)
         // Automatically use keyboard for elements
         document.querySelectorAll(".use-keyboard-input").forEach(element => {
             element.addEventListener("focus", () => {

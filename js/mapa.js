@@ -281,7 +281,9 @@ relacionarSubGrupo('Semiárido', 40, 41, 44);
 let div_control = document.getElementsByClassName("leaflet-control-layers");
 div_control[0].setAttribute("id","div_layer_controll");
 
-function filtrar(input){
+function filtrar(){
+
+    let input = document.getElementById("filtro_municipio")
     let texto_filtro = input.value.toLowerCase()
     subprojetoJson.forEach(function (layerGroup) {
     layerGroup.eachLayer(function(layer){
