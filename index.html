@@ -67,6 +67,24 @@
 
     <div id="map"></div>
     <script src="js/mapa.js"></script>
+    <script>
 
+      window.addEventListener('resize', function() {
+        // Código para executar quando ocorrer um redimensionamento da janela (que pode indicar um zoom)
+        console.log('Zoom ou redimensionamento detectado.');
+      });
+
+      document.addEventListener("keydown", function(event) {
+          if (event.ctrlKey && (event.key == "+" || event.key == "-")) {
+            event.preventDefault(); // Impedir o comportamento padrão de zoom no navegador
+
+            if (event.key == "+") {
+              map.zoomIn(0.5)
+            } else if (event.key == "-") {
+              map.zoomOut(0.5)
+            }
+          }
+        });
+    </script>
   </body>
 </html>
