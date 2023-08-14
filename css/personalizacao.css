@@ -72,7 +72,7 @@ select {
     padding:5px;
   }
 
-#bt_ativar_desativar_mapa, #bt_centralizar
+#bt_ativar_desativar_mapa
 {
   padding: 8px 12px;
   border-radius:5px;
@@ -112,4 +112,20 @@ select {
     border: none;
     cursor: pointer;
 
+}
+.style_button{
+    border-radius:5px;
+    background:white;
+    margin-right:5px;
+    border: 1px solid #333;
+    margin-bottom: 2px;
+}
+
+.container_cent_zoom{
+    display: flex;
+}
+
+.container_zoom {
+    display: flex;
+    flex-direction: column;
 }
