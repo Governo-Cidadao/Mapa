@@ -73,7 +73,8 @@
 
       window.addEventListener('resize', function() {
         // Código para executar quando ocorrer um redimensionamento da janela (que pode indicar um zoom)
-        console.log('Zoom ou redimensionamento detectado.');
+        console.log('innerHeight', window.innerHeight)
+        console.log('innerWidth', window.innerWidth)
       });
 
       document.addEventListener("keydown", function(event) {
