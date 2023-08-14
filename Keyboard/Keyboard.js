@@ -27,7 +27,7 @@ const Keyboard = {
 
         this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
 
-        var containerFiltro = document.querySelector(".containerFiltro")
+        var containerFiltro = document.querySelector(".container_filtro_keyboard")
 
         // Add to DOM
         this.elements.main.appendChild(this.elements.keysContainer);
