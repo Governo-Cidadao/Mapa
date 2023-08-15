@@ -33,41 +33,41 @@
   </head>
   <body>
 
-   <header>
-      <img src="images/logo/logo_rn_sustentavel.png" >
-      <h1>Projeto Integrado de Desenvolvimento Sustentável do Rio Grande do Norte</h1>
-      <div class="container_cent_zoom">
-        <button id='bt_centralizar' onclick="centralizarMapa()"  class='style_button'>Centralizar</button>
-        <div class="container_zoom">
-          <button onclick="map.zoomIn(0.5)" id='zoomIn' class='style_button'>+</button>
-          <button onclick="map.zoomOut(0.5)" id='zoomOut' class='style_button'>-</button>
+    <div id="map">
+      <header>
+        <img src="images/logo/logo_rn_sustentavel.png" >
+        <h1>Projeto Integrado de Desenvolvimento Sustentável do Rio Grande do Norte</h1>
+        <div class="container_cent_zoom">
+          <button id='bt_centralizar' onclick="centralizarMapa()"  class='style_button'>Centralizar</button>
+          <div class="container_zoom">
+            <button onclick="map.zoomIn(0.5)" id='zoomIn' class='style_button'>+</button>
+            <button onclick="map.zoomOut(0.5)" id='zoomOut' class='style_button'>-</button>
+          </div>
+        </div>
+        <div>
+          <select name="select" id ='select_map' onchange="mudar_mapa()">
+            <option value="google_maps" selected>Google Mapas Roadmap</option>
+            <option value="google_maps_hybrid">Google Maps Hybrid</option>
+            <option value="open_street_map" >Open Street Map</option>
+            <option value="ersi">ESRI Satélite</option>
+            <option value="cartocdn">CartocDB</option>
+            <option value="opentopomap">Open TopoMap</option>
+            <option value="earthdata">Noturno NASA</option>
+          </select>
+          <button id='bt_ativar_desativar_mapa' onclick="ativar_desativar_mapa()">Remover</button>
+        </div>
+      </header>
+      <div class="container-modal">
+        <div class="close-icon">
+          <i onclick="close_modal()" class="fa-solid fa-x"></i>
         </div>
       </div>
-      <div>
-        <select name="select" id ='select_map' onchange="mudar_mapa()">
-          <option value="google_maps" selected>Google Mapas Roadmap</option>
-          <option value="google_maps_hybrid">Google Maps Hybrid</option>
-          <option value="open_street_map" >Open Street Map</option>
-          <option value="ersi">ESRI Satélite</option>
-          <option value="cartocdn">CartocDB</option>
-          <option value="opentopomap">Open TopoMap</option>
-          <option value="earthdata">Noturno NASA</option>
-        </select>
-        <button id='bt_ativar_desativar_mapa' onclick="ativar_desativar_mapa()">Remover</button>
-      </div>
-    </header>
-    <div class="container-modal">
-      <div class="close-icon">
-        <i onclick="close_modal()" class="fa-solid fa-x"></i>
+      <div class="container_filtro_keyboard">
+        <div class="containerFiltro">
+          <input type="text" placeholder="Digite o Município" class="filtro use-keyboard-input" id='filtro_municipio' onkeyup="filtrar()">
+        </div>
       </div>
     </div>
-    <div class="container_filtro_keyboard">
-      <div class="containerFiltro">
-        <input type="text" placeholder="Digite o Município" class="filtro use-keyboard-input" id='filtro_municipio' onkeyup="filtrar()">
-      </div>
-    </div>
-
-    <div id="map"></div>
     <script src="js/mapa.js"></script>
     <script>
 
