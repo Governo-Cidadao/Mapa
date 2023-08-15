@@ -266,8 +266,8 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito_cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, {style:{'fillOpacity': 0, color:'white'}});
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito_limitacao');
 
-adicionarGrupo("Subprojeto", 1, true);
-relacionarSubGrupo('Subprojeto', 1, 2, 19);
+adicionarGrupo("Atividades Produtivas", 1, true);
+relacionarSubGrupo('Atividades Produtivas', 1, 2, 19);
 
 adicionarGrupo("Estradas", 19);
 relacionarSubGrupo('Estradas', 19, 20, 32);
