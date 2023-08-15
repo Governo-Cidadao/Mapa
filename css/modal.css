@@ -1,6 +1,6 @@
 .container-modal{
     background-color: white;
-    z-index: 3;
+    z-index: 500;
     /* height: 480px;
     width: 640px; */
     height: auto;

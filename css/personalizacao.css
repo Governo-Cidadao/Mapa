@@ -15,7 +15,7 @@ header
     top: 0;
     left: 0;
     background-color: rgba(255, 255, 255, 1);
-    z-index: 2;
+    z-index: 500;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -56,7 +56,7 @@ header h1
 }
 #div_layer_controll
 {
-    margin-top: 250px;
+    margin-top: 155px;
     /* border-radius:0; */
     /* margin-right: 0; */
 
@@ -84,7 +84,7 @@ select {
 .container_filtro_keyboard {
     position: absolute;
     top: 100px;
-    z-index: 2;
+    z-index: 500;
     width: 100%;
     top: 150px;
     display: flex;
