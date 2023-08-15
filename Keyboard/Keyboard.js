@@ -106,6 +106,7 @@ const Keyboard = {
 
                 case "space":
                     keyELement.classList.add("keyboard__key--extra--wide");
+                    keyELement.classList.add("keyboard__key--large_with");
                     keyELement.innerHTML = createIconHTML("space_bar");
 
                     keyELement.addEventListener("click", () => {
