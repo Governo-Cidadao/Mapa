@@ -73,3 +73,7 @@
 .keyboard__key--dark {
   background: rgba(0, 0, 0, 0.25);
 }
+
+.keyboard__key--large_with {
+  width: 90px;
+}
