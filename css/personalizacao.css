@@ -34,20 +34,15 @@ header h1
     margin-left: 15px;
 }
 .btn_group {
-
-
-    /* padding: 12px 40px; */
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
     cursor: pointer;
     transition: 0.2s all;
 }
-/* Adding transformation when the button is active */
+
 
 .btn_group:active {
     transform: scale(0.88);
-    /* Scaling button to 0.98 to its original size */
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
 }
 
 #map
@@ -57,9 +52,6 @@ header h1
 #div_layer_controll
 {
     margin-top: 155px;
-    /* border-radius:0; */
-    /* margin-right: 0; */
-
 }
 
 header img
