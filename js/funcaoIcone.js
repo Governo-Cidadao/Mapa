@@ -106,6 +106,7 @@ function mostrar_imagem(feature, layer) {
   html = '<img src="teste.jpg" id="img_pop_up"/> <br/><a href="https://www.governocidadao.rn.gov.br/" target="_blank">Link externo</a>'
   html += '<p><strong> Atividade Produtiva: ' + feature.properties['Atividade Produtiva'] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
+  layer.bindPopup(html);
   layer.on('click', function(point){map.setView([point.latlng.lat + 0.6, point.latlng.lng])})
 
 }
