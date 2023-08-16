@@ -106,8 +106,8 @@ function mostrar_imagem(feature, layer) {
   html = '<img src="teste.jpg" id="img_pop_up"/> <br/><a href="https://www.governocidadao.rn.gov.br/" target="_blank">Link externo</a>'
   html += '<p><strong> Atividade Produtiva: ' + feature.properties['Atividade Produtiva'] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
-  layer.bindPopup(html);
-  layer.on('click', function(point){map.setView(point.latlng)})
+  layer.on('click', function(point){map.setView([point.latlng.lat + 0.6, point.latlng.lng])})
+
 }
 
 function html_carousel(nome, qtd_fotos, id_smi){
@@ -164,6 +164,10 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   modal.innerHTML += html_fotos
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
-  layer.on('click', function(point){map.setView(point.latlng)})
+  // layer.on('click', function(point){map.setView(point.latlng)})
+
+  layer.on('click', function(point){map.setView([point.latlng.lat + 0.6, point.latlng.lng])})
+
+  
 
 }
