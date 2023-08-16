@@ -107,6 +107,7 @@ function mostrar_imagem(feature, layer) {
   html += '<p><strong> Atividade Produtiva: ' + feature.properties['Atividade Produtiva'] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
   layer.bindPopup(html);
+  layer.on('click', function(point){map.setView(point.latlng)})
 }
 
 function html_carousel(nome, qtd_fotos, id_smi){
@@ -163,5 +164,6 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   modal.innerHTML += html_fotos
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
+  layer.on('click', function(point){map.setView(point.latlng)})
 
 }
