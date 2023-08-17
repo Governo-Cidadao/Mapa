@@ -1,104 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link rel="stylesheet" href="css/controller.css">
-    <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/carousel.css">
-    <link rel="stylesheet" href="css/Leaflet/leaflet.css">
-    <link rel="stylesheet" href="css/personalizacao.css">
-    <link rel="stylesheet" href="js/minimap/Control.MiniMap.css">
-    <link rel="stylesheet" href="js/opacity/L.Control.Opacity.css">
-    <link rel="stylesheet" href="css/formatacao_imagem.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="Keyboard/Keyboard.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- funções usadas -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <script src="js/controller.js"></script>
-    <script src="js/funcaoIcone.js"></script>
-    <script src="js/trocar_mapa.js"></script>
-    <script src="js/addGrupo.js"></script>
-    <script src="js/centralizarMapa.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/modal.js"></script>
+  <link rel="stylesheet" href="css/controller.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/carousel.css">
+  <link rel="stylesheet" href="css/Leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/personalizacao.css">
+  <link rel="stylesheet" href="js/minimap/Control.MiniMap.css">
+  <link rel="stylesheet" href="js/opacity/L.Control.Opacity.css">
+  <link rel="stylesheet" href="css/formatacao_imagem.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="Keyboard/Keyboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- funções usadas -->
 
-    <script src="js/importacoesleaflet.js"></script>
-    <script src="js/importacoesgeojson.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/funcaoIcone.js"></script>
+  <script src="js/trocar_mapa.js"></script>
+  <script src="js/addGrupo.js"></script>
+  <script src="js/centralizarMapa.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/modal.js"></script>
 
-    <script src="Keyboard/Keyboard.js"></script>
-  </head>
-  <body>
+  <script src="js/importacoesleaflet.js"></script>
+  <script src="js/importacoesgeojson.js"></script>
 
-    <div id="map">
-      <header>
-        <img src="images/header/Barra Mapa Investimentos.jpg" >
-      </header>
-      <div class="container-modal">
-        <div class="close-icon">
-          <i onclick="close_modal()" class="fa-solid fa-x"></i>
-        </div>
-      </div>
-      <div class="container_filtro_keyboard">
-        <div class="containerFiltro">
-          <input type="text" placeholder="Digite o Município" class="filtro use-keyboard-input" id='filtro_municipio' onkeyup="filtrar()">
-        </div>
+  <script src="Keyboard/Keyboard.js"></script>
+</head>
+
+<body>
+
+  <div id="map">
+    <header>
+      <img src="images/header/Barra Mapa Investimentos.jpg">
+    </header>
+    <div class="container-modal">
+      <div class="close-icon">
+        <i onclick="close_modal()" class="fa-solid fa-x"></i>
       </div>
     </div>
-
-    <div class="container-controller">
-      <div class="nav-controller">
-        <div class="button top bkg-btn" onclick="mover(0, 0.04)"></div>
-        <div class="button right bkg-btn" onclick="mover(0.14, 0)"></div>
-        <div class="button left bkg-btn" onclick="mover(-0.14, 0)"></div>
-        <div class="button bottom bkg-btn" onclick="mover(0, -0.04)"></div>
-        <div class="center-button" onclick="centralizarMapa()"></div>
-      </div>
-      <div class="btn-zoom">
-        <div class="zoom-in" onclick="map.zoomIn(0.5)"></div>
-        <div class="search"></div>
-        <div class="zoom-out" onclick="map.zoomOut(0.5)"></div>
+    <div class="container_filtro_keyboard">
+      <div class="containerFiltro">
+        <input type="text" placeholder="Digite o Município" class="filtro use-keyboard-input" id='filtro_municipio'
+          onkeyup="filtrar()">
       </div>
     </div>
+  </div>
 
-    <script src="js/mapa.js"></script>
-    <script>
+  <div class="container-controller">
+    <div class="nav-controller">
+      <div class="button top bkg-btn" onclick="mover(0, 0.14)" onmousedown="iniciar_movimentacao(0, 0.14)"
+        onmouseup="finalizar_movimentacao()"></div>
+      <div class="button right bkg-btn" onclick="mover(0.14, 0)" onmousedown="iniciar_movimentacao(0.14, 0)"
+        onmouseup="finalizar_movimentacao()"></div>
+      <div class="button left bkg-btn" onclick="mover(-0.14, 0)" onmousedown="iniciar_movimentacao(-0.14, 0)"
+        onmouseup="finalizar_movimentacao()"></div>
+      <div class="button bottom bkg-btn" onclick="mover(0, -0.14)" onmousedown="iniciar_movimentacao(0, -0.14)"
+        onmouseup="finalizar_movimentacao()"></div>
+      <div class="center-button" onclick="centralizarMapa()"></div>
+    </div>
+    <div class="btn-zoom">
+      <div class="zoom-in" onclick="map.zoomIn(0.5)"></div>
+      <div class="search"></div>
+      <div class="zoom-out" onclick="map.zoomOut(0.5)"></div>
+    </div>
+  </div>
 
-      window.addEventListener('resize', function() {
-        console.log('innerHeight', window.innerHeight)
-        console.log('innerWidth', window.innerWidth)
-      });
+  <script src="js/mapa.js"></script>
+  <script>
 
-      document.addEventListener("keydown", function(event) {
-          if (event.ctrlKey && (event.key == "+" || event.key == "-")) {
-            event.preventDefault(); // Impedir o comportamento padrão de zoom no navegador
+    window.addEventListener('resize', function () {
+      console.log('innerHeight', window.innerHeight)
+      console.log('innerWidth', window.innerWidth)
+    });
 
-            if (event.key == "+") {
-              map.zoomIn(0.5)
-            } else if (event.key == "-") {
-              map.zoomOut(0.5)
-            }
-          }
-        });
+    document.addEventListener("keydown", function (event) {
+      if (event.ctrlKey && (event.key == "+" || event.key == "-")) {
+        event.preventDefault(); // Impedir o comportamento padrão de zoom no navegador
 
-        window.onload = function() {
-          var teclado_virtual = document.querySelector(".keyboard");
-          var input_filtro = document.getElementById('filtro_municipio')
-          document.addEventListener("click", function(event) {
-            if (!teclado_virtual.contains(event.target)  && event.target != input_filtro) {
-              if(!teclado_virtual.classList.value.includes('keyboard--hidden')){
-                teclado_virtual.classList.add("keyboard--hidden");
-              }
-
-            }
-          })
+        if (event.key == "+") {
+          map.zoomIn(0.5)
+        } else if (event.key == "-") {
+          map.zoomOut(0.5)
         }
+      }
+    });
 
-    </script>
-  </body>
+    window.onload = function () {
+      var teclado_virtual = document.querySelector(".keyboard");
+      var input_filtro = document.getElementById('filtro_municipio')
+      document.addEventListener("click", function (event) {
+        if (!teclado_virtual.contains(event.target) && event.target != input_filtro) {
+          if (!teclado_virtual.classList.value.includes('keyboard--hidden')) {
+            teclado_virtual.classList.add("keyboard--hidden");
+          }
+
+        }
+      })
+    }
+
+  </script>
+</body>
+
 </html>
