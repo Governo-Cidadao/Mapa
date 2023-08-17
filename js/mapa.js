@@ -281,8 +281,14 @@ relacionarSubGrupo('Estradas DER', 32, 33, 40);
 adicionarGrupo("Semiárido", 40);
 relacionarSubGrupo('Semiárido', 40, 41, 44);
 
-let div_control = document.getElementsByClassName("leaflet-control-layers");
-div_control[0].setAttribute("id","div_layer_controll");
+let div_control = document.querySelector(".leaflet-control-layers");
+div_control.setAttribute("id","div_layer_controll");
+
+
+let div_layer_control = document.getElementById("div_layer_controll");
+let containerFiltro = document.querySelector('.containerFiltro')
+containerFiltro.appendChild(div_layer_control)
+
 
 function filtrar(){
 
