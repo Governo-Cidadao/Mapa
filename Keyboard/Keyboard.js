@@ -55,7 +55,7 @@ const Keyboard = {
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
             "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
-            "done", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
+            "limpar", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
             "space"
         ];
 
@@ -108,6 +108,7 @@ const Keyboard = {
 
                 case "space":
                     keyELement.classList.add("keyboard__key--extra--wide");
+                    keyELement.classList.add("keyboard__key--large_with");
                     keyELement.innerHTML = createIconHTML("space_bar");
 
                     keyELement.addEventListener("click", () => {
@@ -117,14 +118,16 @@ const Keyboard = {
 
                     break;
 
-                case "done":
-                    keyELement.classList.add("keyboard__key--wide", "keyboard__key--dark");
-                    keyELement.innerHTML = createIconHTML("check_circle");
+                case "limpar":
+                    keyELement.classList.add("keyboard__key--wide");
+
+                    keyELement.innerHTML = "limpar";
 
                     keyELement.addEventListener("click", () => {
-                        this.close();
-                        this._triggerEvent("onclose");
+                        this.properties.value = "";
+                        this._triggerEvent("oninput");
                     });
+
 
                     break;
 

@@ -11,6 +11,9 @@ map = new L.map('map',{   center: new L.LatLng(-6, -37),
 
 var baseMaps = {};
 
+// Desabilitando Zoom do mapa ao dar duplo click
+map.doubleClickZoom.disable();
+
 var borda_branca = {
 
     "opacity": 1,
@@ -266,8 +269,8 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito_cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, {style:{'fillOpacity': 0, color:'white'}});
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito_limitacao');
 
-adicionarGrupo("Subprojeto", 1, true);
-relacionarSubGrupo('Subprojeto', 1, 2, 19);
+adicionarGrupo("Atividades Produtivas", 1, true);
+relacionarSubGrupo('Atividades Produtivas', 1, 2, 19);
 
 adicionarGrupo("Estradas", 19);
 relacionarSubGrupo('Estradas', 19, 20, 32);
@@ -278,8 +281,14 @@ relacionarSubGrupo('Estradas DER', 32, 33, 40);
 adicionarGrupo("Semiárido", 40);
 relacionarSubGrupo('Semiárido', 40, 41, 44);
 
-let div_control = document.getElementsByClassName("leaflet-control-layers");
-div_control[0].setAttribute("id","div_layer_controll");
+let div_control = document.querySelector(".leaflet-control-layers");
+div_control.setAttribute("id","div_layer_controll");
+
+
+let div_layer_control = document.getElementById("div_layer_controll");
+let containerFiltro = document.querySelector('.containerFiltro')
+containerFiltro.appendChild(div_layer_control)
+
 
 function filtrar(){
 
@@ -298,3 +307,7 @@ function filtrar(){
     }
     )
 }
+
+
+
+
