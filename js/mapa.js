@@ -11,6 +11,9 @@ map = new L.map('map',{   center: new L.LatLng(-6, -37),
 
 var baseMaps = {};
 
+// Desabilitando Zoom do mapa ao dar duplo click
+map.doubleClickZoom.disable();
+
 var borda_branca = {
 
     "opacity": 1,
@@ -298,3 +301,7 @@ function filtrar(){
     }
     )
 }
+
+
+
+
