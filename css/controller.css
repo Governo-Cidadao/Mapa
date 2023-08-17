@@ -52,12 +52,14 @@
 }
 
 .button {
-    display: block;
+    display: flex;
     width: 46%;
     height: 46%;
     margin: 1px;
     position: relative;
     float: left;
+    justify-content: center;
+    align-items: center;
 }
 
 .button.top {
@@ -106,6 +108,12 @@
     -webkit-transform: skew(-3deg, -3deg) scale(0.96);
     -moz-transform: skew(-3deg, -3deg) scale(0.96);
     transform: skew(-3deg, -3deg) scale(0.96);
+}
+
+.button img {
+    height: 14px;
+    width: 10px;
+    transform: rotate(315deg);
 }
 
 /* Buttons zooms section */
