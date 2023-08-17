@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+    <link rel="stylesheet" href="css/controller.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/Leaflet/leaflet.css">
@@ -19,6 +20,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- funções usadas -->
 
+    <script src="js/controller.js"></script>
     <script src="js/funcaoIcone.js"></script>
     <script src="js/trocar_mapa.js"></script>
     <script src="js/addGrupo.js"></script>
@@ -36,26 +38,6 @@
     <div id="map">
       <header>
         <img src="images/header/Barra Mapa Investimentos.jpg" >
-        <!-- <h1>Projeto Integrado de Desenvolvimento Sustentável do Rio Grande do Norte</h1>
-        <div class="container_cent_zoom">
-          <button id='bt_centralizar' onclick="centralizarMapa()"  class='style_button'>Centralizar</button>
-          <div class="container_zoom">
-            <button onclick="map.zoomIn(0.5)" id='zoomIn' class='style_button'>+</button>
-            <button onclick="map.zoomOut(0.5)" id='zoomOut' class='style_button'>-</button>
-          </div>
-        </div>
-        <div>
-          <select name="select" id ='select_map' onchange="mudar_mapa()">
-            <option value="google_maps" selected>Google Mapas Roadmap</option>
-            <option value="google_maps_hybrid">Google Maps Hybrid</option>
-            <option value="open_street_map" >Open Street Map</option>
-            <option value="ersi">ESRI Satélite</option>
-            <option value="cartocdn">CartocDB</option>
-            <option value="opentopomap">Open TopoMap</option>
-            <option value="earthdata">Noturno NASA</option>
-          </select>
-          <button id='bt_ativar_desativar_mapa' onclick="ativar_desativar_mapa()">Remover</button>
-        </div> -->
       </header>
       <div class="container-modal">
         <div class="close-icon">
@@ -68,6 +50,22 @@
         </div>
       </div>
     </div>
+
+    <div class="container-controller">
+      <div class="nav-controller">
+        <div class="button top bkg-btn" onclick="mover(0, 0.04)"></div>
+        <div class="button right bkg-btn" onclick="mover(0.14, 0)"></div>
+        <div class="button left bkg-btn" onclick="mover(-0.14, 0)"></div>
+        <div class="button bottom bkg-btn" onclick="mover(0, -0.04)"></div>
+        <div class="center-button" onclick="centralizarMapa()"></div>
+      </div>
+      <div class="btn-zoom">
+        <div class="zoom-in" onclick="map.zoomIn(0.5)"></div>
+        <div class="search"></div>
+        <div class="zoom-out" onclick="map.zoomOut(0.5)"></div>
+      </div>
+    </div>
+
     <script src="js/mapa.js"></script>
     <script>
 

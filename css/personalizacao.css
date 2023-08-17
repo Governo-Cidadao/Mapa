@@ -67,7 +67,6 @@ select {
 }
 .container_filtro_keyboard {
     position: absolute;
-    top: 100px;
     z-index: 500;
     width: 100%;
     top: 150px;
