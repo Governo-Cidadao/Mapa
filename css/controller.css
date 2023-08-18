@@ -3,9 +3,13 @@
     background: #CCC;
 }
 
+.bkg-btn:hover {
+    background: #999;
+    transition: ease-in-out 0.15s;
+}
+
 /* Container section */
 .container-controller {
-
     height: 125px;
     width: 200px;
     display: flex;
@@ -33,22 +37,22 @@
 }
 
 .center-button {
-    display: block;
+    display: flex;
     height: 38%;
     width: 38%;
     position: absolute;
     top: 28%;
     left: 28%;
     border-radius: 50%;
-    background-color: #CCC;
     border: 1px solid white;
-    background-image: url('../images/controller/home.svg');
-    background-size: 55%;
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+    justify-content: center;
+    align-items: center;
+}
+
+.center-button img {
+    height: 35px;
+    width: 25px;
+    transform: rotate(315deg);
 }
 
 .button {
@@ -130,7 +134,6 @@
     align-items: center;
     height: 30px;
     width: 25px;
-    background-color: #CCC;
     border-top-left-radius: 25%;
     border-top-right-radius: 25%;
 }
@@ -141,7 +144,6 @@
     align-items: center;
     height: 35px;
     width: 25px;
-    background-color: #CCC;
 }
 
 .zoom-out {
@@ -150,7 +152,6 @@
     align-items: center;
     height: 30px;
     width: 25px;
-    background-color: #CCC;
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
 }
