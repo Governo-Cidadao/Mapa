@@ -24,13 +24,11 @@
 .nav-controller {
     width: 100px;
     height: 100px;
-    /* background: #60B8CE; */
     border-radius: 50%;
     padding: 10px;
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     transform: rotate(45deg);
-    /* box-sizing: border-box; */
     position: relative;
 }
 
@@ -45,7 +43,7 @@
     background-color: #CCC;
     border: 1px solid white;
     background-image: url('../images/controller/home.svg');
-    background-size: 80%;
+    background-size: 55%;
     background-repeat: no-repeat;
     background-position: center;
     -webkit-transform: rotate(-45deg);
@@ -54,24 +52,15 @@
 }
 
 .button {
-    display: block;
+    display: flex;
     width: 46%;
     height: 46%;
     margin: 1px;
     position: relative;
     float: left;
-    /* box-shadow: 1px 0px 3px 1px rgba(0, 0, 0, 0.4), inset 0 0 0 1px #FFF; */
+    justify-content: center;
+    align-items: center;
 }
-
-/* .button::after {
-    content: "";
-    display: block;
-    width: 50%;
-    height: 50%;
-    background: #DDD;
-    position: absolute;
-    border-radius: inherit;
-} */
 
 .button.top {
     border-radius: 100% 0 0 0;
@@ -80,7 +69,6 @@
 .button.top::after {
     bottom: 0;
     right: 0;
-    /* box-shadow: inset 2px 1px 2px 0 rgba(0,0,0,0.4), 10px 10px 0 10px #60B8CE; */
     -webkit-transform: skew(-3deg, -3deg) scale(0.96);
     -moz-transform: skew(-3deg, -3deg) scale(0.96);
     transform: skew(-3deg, -3deg) scale(0.96);
@@ -93,7 +81,6 @@
 .button.right::after {
     bottom: 0;
     left: 0;
-    /* box-shadow: inset -2px 3px 2px -2px rgba(0,0,0,0.4), -10px 10px 0 10px #60B8CE; */
     -webkit-transform: skew(3deg, 3deg) scale(0.96);
     -moz-transform: skew(3deg, 3deg) scale(0.96);
     transform: skew(3deg, 3deg) scale(0.96);
@@ -106,7 +93,6 @@
 .button.left::after {
     top: 0;
     right: 0;
-    /* box-shadow: inset 2px -1px 2px 0 rgba(0,0,0,0.4), 10px -10px 0 10px #60B8CE; */
     -webkit-transform: skew(3deg, 3deg) scale(0.96);
     -moz-transform: skew(3deg, 3deg) scale(0.96);
     transform: skew(3deg, 3deg) scale(0.96);
@@ -119,10 +105,15 @@
 .button.bottom::after {
     top: 0;
     left: 0;
-    /* box-shadow: inset -2px -3px 2px -2px rgba(0,0,0,0.4), -10px -10px 0 10px #60B8CE; */
     -webkit-transform: skew(-3deg, -3deg) scale(0.96);
     -moz-transform: skew(-3deg, -3deg) scale(0.96);
     transform: skew(-3deg, -3deg) scale(0.96);
+}
+
+.button img {
+    height: 14px;
+    width: 10px;
+    transform: rotate(315deg);
 }
 
 /* Buttons zooms section */
@@ -134,6 +125,9 @@
 }
 
 .zoom-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30px;
     width: 25px;
     background-color: #CCC;
@@ -142,15 +136,30 @@
 }
 
 .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 35px;
     width: 25px;
     background-color: #CCC;
 }
 
 .zoom-out {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 30px;
     width: 25px;
     background-color: #CCC;
     border-bottom-left-radius: 25%;
     border-bottom-right-radius: 25%;
+}
+
+.btn-zoom img {
+    height: 10px;
+    width: 10px;
+}
+
+.search img {
+    height: 30px;
 }

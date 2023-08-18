@@ -43,8 +43,6 @@ const Keyboard = {
                 });
             });
         });
-
-
     },
 
     _createKeys() {
