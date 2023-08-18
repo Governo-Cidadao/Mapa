@@ -42,11 +42,7 @@ const Keyboard = {
                     element.value = currentValue;
                 });
             });
-
-            element.addEventListener("focusout", () => this.close());
         });
-
-
     },
 
     _createKeys() {
