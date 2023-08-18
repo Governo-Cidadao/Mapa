@@ -98,8 +98,8 @@
 				this._mainMap.on('moveend', this._onMainMapMoved, this);
 				this._mainMap.on('move', this._onMainMapMoving, this);
 				this._miniMap.on('movestart', this._onMiniMapMoveStarted, this);
-				this._miniMap.on('move', this._onMiniMapMoving, this);
-				this._miniMap.on('moveend', this._onMiniMapMoved, this);
+				// this._miniMap.on('move', this._onMiniMapMoving, this);
+				// this._miniMap.on('moveend', this._onMiniMapMoved, this);
 			}, this));
 
 			return this._container;
