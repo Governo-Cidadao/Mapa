@@ -5,12 +5,15 @@ function mover(long, lat) {
 }
 
 let movimentacao
+let emMovimentacao = false
 function iniciar_movimentacao(long, lat) {
+    emMovimentacao = true
     movimentacao = setInterval(function () {
         mover(long, lat);
     }, 100);
 }
 
-function finalizar_movimentacao(long, lat) {
+function finalizar_movimentacao() {
     clearInterval(movimentacao)
+    emMovimentacao = false
 }
