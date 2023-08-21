@@ -6,7 +6,7 @@ map = new L.map('map',{   center: new L.LatLng(-6, -37),
                         attributionControl: true,
                         zoomControl: false,
                         minZoom: 7,
-                        maxZoom: 12,
+                        maxZoom: 10,
                         zoomSnap: 0.10,}).setView(initialCoordinates, initialZoomLevel);
 
 var baseMaps = {};
