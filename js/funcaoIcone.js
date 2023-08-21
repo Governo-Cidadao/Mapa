@@ -107,33 +107,30 @@ function mostrar_imagem(feature, layer) {
   html += '<p><strong> Atividade Produtiva: ' + feature.properties['Atividade Produtiva'] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
   layer.bindPopup(html);
-  layer.on('click', function(point){map.setView([point.latlng.lat + 0.6, point.latlng.lng])})
-
+  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
 }
 
-function html_carousel(nome, qtd_fotos, id_smi){
+function html_carousel(nome, qtd_fotos, id_smi) {
 
   let path = `images/${nome}/${id_smi}`
   let imgs = ''
-  for (var i=1;i<=qtd_fotos ;i++ ){
-    if (i==1){
-      imgs+=`<img class="img-carousel" src="${path}/foto${i}.jpg"/>`
-    }else{
-
-      imgs+=`<img class="img-carousel" src="${path}/foto${i}.jpg" style="display:none"/>`
+  for (var i = 1; i <= qtd_fotos; i++) {
+    if (i == 1) {
+      imgs += `<img class="img-carousel" src="${path}/foto${i}.jpg"/>`
+    } else {
+      imgs += `<img class="img-carousel" src="${path}/foto${i}.jpg" style="display:none"/>`
     }
-
   }
+
   let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
-  html +=  `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
+  html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
   html += imgs
   html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
   html += `</div>`
   return html
 }
 
-function dado_html_subprojeto(feature)
-{
+function dado_html_subprojeto(feature) {
   let html = ''
   html += '<img src="images/Cajucultura/1400/foto1.jpg" class="img-popup">'
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
@@ -141,7 +138,8 @@ function dado_html_subprojeto(feature)
 
   return html
 }
-function mais_informacoes(feature, nome, id_smi){
+
+function mais_informacoes(feature, nome, id_smi) {
   let html = `<div class="informacao" id='${nome}_${id_smi}_informacao' style='display:none'>`
   html += '<p><strong> Id SMI da MI: ' + feature.properties['Id SMI da MI'] + '</strong></p>'
   html += '<p><strong> UES: ' + feature.properties['UES'] + '</strong></p>'
@@ -151,13 +149,12 @@ function mais_informacoes(feature, nome, id_smi){
   html += '</div>'
 
   return html
-
 }
 
-function mostrar_imagem2(feature, layer, nome, qtd_fotos){
+function mostrar_imagem2(feature, layer, nome, qtd_fotos) {
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_subprojeto(feature)
-  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>ver fotos</a> </button>`
+  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
   html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
   // html += html_fotos
@@ -167,8 +164,5 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos){
   layer.bindPopup(html);
   // layer.on('click', function(point){map.setView(point.latlng)})
 
-  layer.on('click', function(point){map.setView([point.latlng.lat + 0.6, point.latlng.lng])})
-
-  
-
+  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
 }
