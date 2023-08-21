@@ -1,6 +1,7 @@
 /* Utils */
 .bkg-btn {
     background: #CCC;
+    cursor: pointer;
 }
 
 .bkg-btn:hover {
@@ -145,6 +146,7 @@
     align-items: center;
     height: 35px;
     width: 25px;
+    background: #CCC;
 }
 
 .zoom-out {
