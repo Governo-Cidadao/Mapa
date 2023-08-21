@@ -31,9 +31,13 @@ header h1
     margin-left: 15px;
 }
 .btn_group {
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    /* box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); */
+    border: none;
+    background: none;
+    background-color: none;
     cursor: pointer;
     transition: 0.2s all;
+    margin-left: 5px;
 }
 
 

@@ -14,7 +14,7 @@ function adicionarGrupo(texto, pos, checked=false)
     inp.type = 'checkbox';
     inp.checked = checked;
 
-    button.textContent = "+";
+    button.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
     button.style.float="right";
     button.style.width="25px";
     button.style.height="20px"
@@ -24,13 +24,13 @@ function adicionarGrupo(texto, pos, checked=false)
 
     button.onclick = function()
     {
-        if (button.textContent=='-')
+        if (button.innerHTML=='<i class="fa-solid fa-chevron-up"></i>')
         {
 
-            button.textContent='+'
+            button.innerHTML='<i class="fa-solid fa-chevron-down"></i>'
         }else
         {
-            button.textContent='-'
+            button.innerHTML='<i class="fa-solid fa-chevron-up"></i>'
         }
         let conteudo_grupo = document.getElementsByClassName(texto_sem_espaco);
         let display='none';
