@@ -26,7 +26,7 @@ map = new L.map('map',{   center: new L.LatLng(-6, -37),
                         zoom: 8,
                         attributionControl: true,
                         zoomControl: false,
-                        minZoom: 7,
+                        minZoom: 8,
                         maxZoom: 10,
                         zoomSnap: 0.10,}).setView(initialCoordinates, initialZoomLevel);
 
