@@ -311,9 +311,9 @@ div_control.setAttribute("id","div_layer_controll");
 let div_layer_control = document.getElementById("div_layer_controll");
 let containerFiltro = document.querySelector('.containerFiltro')
 containerFiltro.appendChild(div_layer_control)
-    
+
 //     div_layer_control.classList.remove('leaflet-control-layers-expanded');
-    
+
 // });
 // div_layer_control.addEventListener('click', function() {
 //     div_layer_control.classList.add('leaflet-control-layers-expanded');
