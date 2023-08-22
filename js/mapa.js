@@ -303,7 +303,9 @@ for(let i=0; i<grupos.length; i++){
     let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
     for (let j in itens){
         let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_nome] == itens[j])
-        var geoJsonAux = new L.geoJson(jsonItem).addTo(map);
+        var geoJsonAux = new L.geoJson(jsonItem, {pointToLayer: icone_investimentos,
+                                                  onEachFeature:function(feature, layer){
+                                                                    popup_investimentos(feature, layer)}}).addTo(map);
         layerControl.addOverlay(geoJsonAux, itens[j]);
 
     }
