@@ -45,3 +45,5 @@ document.write('<script src="geoJson/geoJsonJS/semiarido/semiarido_RN_municipios
 document.write('<script src="geoJson/geoJsonJS/semiarido/semiarido_territorio.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/Distrito_cor.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/Distrito_limitacao.js"></script>')
+
+document.write('<script src="geoJson/geoJsonJS/base_investimentos.js"></script>')
