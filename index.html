@@ -97,11 +97,6 @@
   <script src="js/mapa.js"></script>
   <script>
 
-    window.addEventListener('resize', function () {
-      console.log('innerHeight', window.innerHeight)
-      console.log('innerWidth', window.innerWidth)
-    });
-
     document.addEventListener("keydown", function (event) {
       if (event.ctrlKey && (event.key == "+" || event.key == "-")) {
         event.preventDefault(); // Impedir o comportamento padrão de zoom no navegador
