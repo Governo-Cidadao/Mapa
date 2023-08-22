@@ -1,3 +1,36 @@
+function icone_investimentos(feature, latlng) {
+  var nameIcon;
+  var iconimage = false;
+  const base_caminho_imagem = 'images/icones_novos'
+  switch (String(feature.properties[coluna_nome])) {
+    case 'pesca':
+      nameIcon = base_caminho_imagem + '/Algas.svg';
+      break;
+    case 'escola':
+      nameIcon = base_caminho_imagem + '/Apicultura (1).svg';
+      break;
+    case 'arte':
+      nameIcon = base_caminho_imagem + '/Artesanato (1).svg';
+      break;
+    default:
+      nameIcon = base_caminho_imagem + '/Irrigacao.svg';
+      break;
+
+  }
+  let myIcon = L.icon({
+    iconUrl: nameIcon,
+    iconSize: [35, 35],
+    shadowSize: [35, 20],
+    iconAnchor: [12, 12],
+    shadowAnchor: [12, 6],
+    popupAnchor: [0, 0]
+  })
+  if (iconimage) {
+    return L.marker(latlng)
+  }
+  return L.marker(latlng, { icon: myIcon });
+}
+
 function createCustomIcon(feature, latlng) {
   var nameIcon;
   var iconimage = false;
@@ -165,4 +198,59 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos) {
   // layer.on('click', function(point){map.setView(point.latlng)})
 
   layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
+}
+
+
+function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
+
+  let path = caminho
+  let imgs = ''
+  for (var i = 1; i <= qtd_fotos; i++) {
+    if (i == 1) {
+      imgs += `<img class="img-carousel" src="${path}/foto${i}.jpg"/>`
+    } else {
+      imgs += `<img class="img-carousel" src="${path}/foto${i}.jpg" style="display:none"/>`
+    }
+  }
+
+  let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
+  if(qtd_fotos<2){
+    html += imgs
+  }else{
+    html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
+    html += imgs
+    html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
+  }
+  html += `</div>`
+  return html
+}
+
+
+function dado_html_investimentos(feature) {
+  let html = ''
+  let path = feature.properties['CAMINHO FOTO']
+  html += `<img src="images/${path}/foto1.jpg" class="img-popup">`
+  html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
+  html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
+
+  return html
+}
+
+
+function popup_investimentos(feature, layer){
+  let id_smi = feature.properties['Id SMI da MI']
+  let html = dado_html_investimentos(feature)
+  let nome = feature.properties[coluna_nome]
+  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
+  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
+  let caminho = `images/${feature.properties['CAMINHO FOTO']}`
+  let qtd_fotos = feature.properties['QUANTIDADE FOTO']
+  let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi)
+  let modal = document.querySelector(".container-modal")
+  modal.innerHTML += html_fotos
+  modal.innerHTML += mais_informacoes(feature, nome, id_smi)
+  layer.bindPopup(html);
+
+  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
+
 }
