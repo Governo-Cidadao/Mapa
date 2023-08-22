@@ -11,6 +11,9 @@ const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
 const ZOOM_LEVEL_DEFAULT = 8.8;
 
+const coluna_nome = 'Nome Item';
+const coluna_grupo = 'Grupo';
+
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
 } else if (width > LARGE_SCREEN_WIDTH) {
@@ -292,6 +295,23 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito_cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, {style:{'fillOpacity': 0, color:'white'}});
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito_limitacao');
 
+let grupos = get_valores_unicos(investimentos, coluna_grupo, 'json')
+
+
+for(let i=0; i<grupos.length; i++){
+    let jsonGrupo = investimentos.features.filter( dados => dados.properties[coluna_grupo] == grupos[i] )
+    let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
+    for (let j in itens){
+        let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_nome] == itens[j])
+        var geoJsonAux = new L.geoJson(jsonItem).addTo(map);
+        layerControl.addOverlay(geoJsonAux, itens[j]);
+
+    }
+}
+
+
+
+
 adicionarGrupo("Atividades Produtivas", 1, true);
 relacionarSubGrupo('Atividades Produtivas', 1, 2, 19);
 
@@ -303,6 +323,17 @@ relacionarSubGrupo('Estradas DER', 32, 33, 40);
 
 adicionarGrupo("Semiárido", 40);
 relacionarSubGrupo('Semiárido', 40, 41, 44);
+
+
+let index_inicial = 46
+for(let i=0; i<grupos.length; i++){
+    let jsonGrupo = investimentos.features.filter( dados => dados.properties[coluna_grupo] == grupos[i] )
+    let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
+    let index_final = index_inicial + itens.length + 1
+    adicionarGrupo(grupos[i], index_inicial, true);
+    relacionarSubGrupo(grupos[i], index_inicial, index_inicial + 1, index_final);
+    index_inicial = index_final
+}
 
 let div_control = document.querySelector(".leaflet-control-layers");
 div_control.setAttribute("id","div_layer_controll");
@@ -345,3 +376,28 @@ function filtrar(){
 
 
 
+function get_valores_unicos(objeto, coluna, tipo){
+    let qtd_elementos;
+    if(tipo=='json'){
+        qtd_elementos = objeto.features.length
+    }else{
+        qtd_elementos = objeto.length
+    }
+    let lista_valores = []
+    for( let i=0; i<qtd_elementos; i++){
+        let valor;
+        if(tipo=='json'){
+            valor = objeto.features[i].properties[coluna]
+        }else{
+            valor = objeto[i].properties[coluna]
+        }
+        if(!lista_valores.includes(valor) && valor !=null){
+
+            lista_valores.push(valor)
+        }
+
+    }
+
+    return lista_valores
+
+}
