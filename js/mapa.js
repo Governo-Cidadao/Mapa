@@ -36,9 +36,9 @@ var baseMaps = {};
 map.doubleClickZoom.disable();
 
 // Desabilitando menu de contexto para toda a pagina
-// document.addEventListener("contextmenu", function(e){
-//     e.preventDefault();
-// });
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+});
 
 var borda_branca = {
 
@@ -345,13 +345,7 @@ let div_layer_control = document.getElementById("div_layer_controll");
 let containerFiltro = document.querySelector('.containerFiltro')
 containerFiltro.appendChild(div_layer_control)
 
-//     div_layer_control.classList.remove('leaflet-control-layers-expanded');
-
-// });
-// div_layer_control.addEventListener('click', function() {
-//     div_layer_control.classList.add('leaflet-control-layers-expanded');
-
-// });
+  
 
 
 

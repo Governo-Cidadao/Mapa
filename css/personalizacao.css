@@ -52,8 +52,8 @@ header h1
 }
 #div_layer_controll
 {
-    position: static;
-    margin-left: 2px;
+    position: absolute;
+    margin-left: 470px;
 }
 
 
@@ -127,4 +127,15 @@ select {
 .container_zoom {
     display: flex;
     flex-direction: column;
+}
+
+.control-layers_personalizado {
+    position: absolute;
+    display: none;
+    margin-left: 600px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    background: #fff;
+    border-radius: 5px;
+    padding: 3px;
+    z-index: 800;
 }
