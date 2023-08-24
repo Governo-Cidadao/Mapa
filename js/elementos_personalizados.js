@@ -1,31 +1,44 @@
+// botão layer personalizado
+const div_control = document.createElement('div');
+const a_image_button = document.createElement('a');
+const containerFiltro = document.querySelector('.containerFiltro')
+const layer_padrao = document.querySelector('.leaflet-control-layers')
+
+//  adicionando classes
+containerFiltro.appendChild(div_control)
+div_control.appendChild(a_image_button)
+div_control.classList.add('container_buton_personalizado')
+a_image_button.classList.add('image_buton_personalizado')
+layer_padrao.style.display= 'None';
+
+
 // Pesonalizando seção do controll layer 
-const myButton = document.querySelector(".leaflet-control-layers-list");
-const teste = document.querySelector(".containerFiltro");
-teste.appendChild(myButton)
+const section_layer = document.querySelector(".leaflet-control-layers-list");
+const controle_personalizado = document.createElement('div');
 
-var novoElemento = document.createElement('div');
-myButton.parentNode.insertBefore(novoElemento, myButton);
-novoElemento.appendChild(myButton)
-novoElemento.classList.add('control-layers_personalizado')
-containerFiltro.appendChild(novoElemento)
 
-div_layer_control.addEventListener('click', function() {
-div_layer_control.classList.remove('leaflet-control-layers-expanded');
-if (novoElemento.style.display === 'none') {
-      novoElemento.style.display = 'block';
+containerFiltro.appendChild(section_layer)
+section_layer.parentNode.insertBefore(controle_personalizado, section_layer);
+controle_personalizado.appendChild(section_layer)
+controle_personalizado.classList.add('control-layers_personalizado')
+containerFiltro.appendChild(controle_personalizado)
+
+
+
+// eventos ao clicar no novo layer controll
+div_control.addEventListener('click', function() {
+div_control.classList.remove('leaflet-control-layers-expanded');
+if (controle_personalizado.style.display === 'none') {
+      controle_personalizado.style.display = 'block';
 } 
 else {
-    novoElemento.style.display = 'none';
+    controle_personalizado.style.display = 'none';
 }
 });
 document.addEventListener("mouseup", function(event) {
-  if (!novoElemento.contains(event.target)) {
-    novoElemento.style.display = "None"
+  if (!controle_personalizado.contains(event.target)) {
+    controle_personalizado.style.display = "None"
   }
-});
-
-div_layer_control.addEventListener('mouseover',  function() {
-div_layer_control.classList.remove('leaflet-control-layers-expanded');
 });
 
 

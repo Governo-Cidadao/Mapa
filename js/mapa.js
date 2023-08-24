@@ -36,9 +36,9 @@ var baseMaps = {};
 map.doubleClickZoom.disable();
 
 // Desabilitando menu de contexto para toda a pagina
-document.addEventListener("contextmenu", function(e){
-    e.preventDefault();
-});
+// document.addEventListener("contextmenu", function(e){
+//     e.preventDefault();
+// });
 
 var borda_branca = {
 
@@ -337,18 +337,9 @@ for(let i=0; i<grupos.length; i++){
     index_inicial = index_final
 }
 
-let div_control = document.querySelector(".leaflet-control-layers");
-div_control.setAttribute("id","div_layer_controll");
 
-
-let div_layer_control = document.getElementById("div_layer_controll");
-let containerFiltro = document.querySelector('.containerFiltro')
-containerFiltro.appendChild(div_layer_control)
 
   
-
-
-
 
 
 function filtrar(){
