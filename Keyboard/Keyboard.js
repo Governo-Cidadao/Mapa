@@ -37,7 +37,7 @@ const Keyboard = {
         this.elements.main.addEventListener('click', filtrar)
         // Automatically use keyboard for elements
         document.querySelectorAll(".use-keyboard-input").forEach(element => {
-            element.addEventListener("focus", () => {
+            element.addEventListener("click", () => {
                 this.open(element.value, currentValue => {
                     element.value = currentValue;
                 });
