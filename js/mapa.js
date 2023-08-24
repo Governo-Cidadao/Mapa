@@ -36,9 +36,9 @@ var baseMaps = {};
 map.doubleClickZoom.disable();
 
 // Desabilitando menu de contexto para toda a pagina
-// document.addEventListener("contextmenu", function(e){
-//     e.preventDefault();
-// });
+document.addEventListener("contextmenu", function(e){
+e.preventDefault();
+});
 
 var borda_branca = {
 
