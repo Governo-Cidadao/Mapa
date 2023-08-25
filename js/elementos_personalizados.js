@@ -12,7 +12,7 @@ a_image_button.classList.add('image_buton_personalizado')
 layer_padrao.style.display= 'None';
 
 
-// Pesonalizando seção do controll layer 
+// Pesonalizando seção do controll layer
 const section_layer = document.querySelector(".leaflet-control-layers-list");
 const controle_personalizado = document.createElement('div');
 
@@ -30,7 +30,7 @@ div_control.addEventListener('click', function() {
 div_control.classList.remove('leaflet-control-layers-expanded');
 if (controle_personalizado.style.display === 'none') {
       controle_personalizado.style.display = 'block';
-} 
+}
 else {
     controle_personalizado.style.display = 'none';
 }
