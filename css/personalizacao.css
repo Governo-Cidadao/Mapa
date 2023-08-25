@@ -132,11 +132,11 @@ select {
 .control-layers_personalizado {
     position: absolute;
     display: none;
-    margin-left: 560px;
+    margin-left: 590px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.4);
     background: #fff;
     border-radius: 5px;
-    padding: 7px 7px 7px 7px;
+    padding: 7px;
     z-index: 800;
 }
 
@@ -152,7 +152,6 @@ select {
     border-radius: 5px;
     z-index: 800;
     cursor: pointer;
-    
 }
 
 .image_buton_personalizado {
@@ -165,5 +164,16 @@ select {
     display: block;
     position: relative;
     background-repeat: no-repeat;
-    
+
+}
+
+.container-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.container-input-span {
+    align-items: center;
 }

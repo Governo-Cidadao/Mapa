@@ -9,6 +9,8 @@ function adicionarGrupo(texto, pos, checked=false)
     let span= document.createElement('span');
     let inp = document.createElement('input');
 
+    div.classList.add("container-list")
+
     span.textContent = texto;
     let texto_sem_espaco = texto.replace(" ","_")
     inp.type = 'checkbox';
@@ -19,7 +21,8 @@ function adicionarGrupo(texto, pos, checked=false)
     button.style.width="25px";
     button.style.height="20px"
 
-
+    let inner_div = document.createElement('div');
+    inner_div.classList.add("container-input-span")
 
     button.onclick = function()
     {
@@ -45,8 +48,10 @@ function adicionarGrupo(texto, pos, checked=false)
     };
 
 
-    div.appendChild(inp);
-    div.appendChild(span);
+    inner_div.appendChild(inp);
+    inner_div.appendChild(span);
+
+    div.appendChild(inner_div);
     div.appendChild(button);
     label.appendChild(div);
 
