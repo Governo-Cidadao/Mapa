@@ -168,3 +168,13 @@
 .search img {
     height: 30px;
 }
+
+.arrastavel{
+    background-color: none;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: grab;
+}

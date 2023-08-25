@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- funções usadas -->
 
-  <script src="js/controller.js"></script>
+
   <script src="js/funcaoIcone.js"></script>
   <script src="js/trocar_mapa.js"></script>
   <script src="js/addGrupo.js"></script>
@@ -55,6 +55,7 @@
   </div>
 
   <div class="container-controller">
+    <button class="arrastavel"><i class="fa-solid fa-arrows-up-down-left-right"></i></button>
     <div class="nav-controller">
       <div class="button top bkg-btn" onclick="mover(0, 0.14)" onmousedown="iniciar_movimentacao(0, 0.14)"
         onmouseup="finalizar_movimentacao()" onmouseout="finalizar_movimentacao()"
@@ -124,6 +125,7 @@
     }
 
   </script>
+  <script src="js/controller.js"></script>
 </body>
 
 </html>
