@@ -99,7 +99,7 @@ var geoJsonAvicultura = new L.geoJson(Avicultura, {pointToLayer: createCustomIco
 layerControl.addOverlay(geoJsonAvicultura, 'Avicultura');
 
 var geoJsonBeneficiamento_de_produtos_alimenticios = new L.geoJson(Beneficiamento_de_produtos_alimenticios, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento_de_produtos_alimenticios');
+layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento de produtos alimenticios');
 
 var geoJsonCajucultura = new L.geoJson(Cajucultura, {pointToLayer: createCustomIcon,
                                         onEachFeature:function(feature, layer){mostrar_imagem2(feature, layer, 'Cajucultura', 3)}}).addTo(map);
@@ -109,16 +109,16 @@ var geoJsonFruticultura = new L.geoJson(Fruticultura, {pointToLayer: createCusto
 layerControl.addOverlay(geoJsonFruticultura, 'Fruticultura');
 
 var geoJsonFruticultura_irrigada = new L.geoJson(Fruticultura_irrigada, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonFruticultura_irrigada, 'Fruticultura_irrigada');
+layerControl.addOverlay(geoJsonFruticultura_irrigada, 'Fruticultura irrigada');
 
 var geoJsonLeites_e_derivados = new L.geoJson(Leites_e_derivados, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonLeites_e_derivados, 'Leites_e_derivados');
+layerControl.addOverlay(geoJsonLeites_e_derivados, 'Leites e derivados');
 
 var geoJsonMadiocultura = new L.geoJson(Madiocultura, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
 layerControl.addOverlay(geoJsonMadiocultura, 'Madiocultura');
 
 var geoJsonObras_hidroambienttais = new L.geoJson(Obras_hidroambienttais, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonObras_hidroambienttais, 'Obras_hidroambienttais');
+layerControl.addOverlay(geoJsonObras_hidroambienttais, 'Obras hidroambienttais');
 
 var geoJsonPesca = new L.geoJson(Pesca, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
 layerControl.addOverlay(geoJsonPesca, 'Pesca');
@@ -127,16 +127,16 @@ var geoJsonReciclagem = new L.geoJson(Reciclagem, {pointToLayer: createCustomIco
 layerControl.addOverlay(geoJsonReciclagem, 'Reciclagem');
 
 var geoJsonRecuperacao_areas_degradadas = new L.geoJson(Recuperacao_areas_degradadas, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonRecuperacao_areas_degradadas, 'Recuperacao_areas_degradadas');
+layerControl.addOverlay(geoJsonRecuperacao_areas_degradadas, 'Recuperacao areas degradadas');
 
 var geoJsonSistemas_de_abastecimento_e_tratamento_de_agua = new L.geoJson(Sistemas_de_abastecimento_e_tratamento_de_agua, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonSistemas_de_abastecimento_e_tratamento_de_agua, 'Sistemas_de_abastecimento_e_tratamento_de_agua');
+layerControl.addOverlay(geoJsonSistemas_de_abastecimento_e_tratamento_de_agua, 'Sistemas de abastecimento e tratamento de agua');
 
 var geoJsonTextil = new L.geoJson(Textil, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
 layerControl.addOverlay(geoJsonTextil, 'Textil');
 
 var geoJsonUnidade_de_comercializacao = new L.geoJson(Unidade_de_comercializacao, {pointToLayer: createCustomIcon, onEachFeature:mostrar_imagem}).addTo(map);
-layerControl.addOverlay(geoJsonUnidade_de_comercializacao, 'Unidade_de_comercializacao');
+layerControl.addOverlay(geoJsonUnidade_de_comercializacao, 'Unidade de comercializacao');
 
 
 var subprojetoJson = [
@@ -182,54 +182,54 @@ var geoJsonrodovias_federais = new L.geoJson(rodovias_federais);
 layerControl.addOverlay(geoJsonrodovias_federais, 'Rodovias Federais');
 
 var geoJsonrodovias_estaduais = new L.geoJson(rodovias_estaduais);
-layerControl.addOverlay(geoJsonrodovias_estaduais, 'rodovias_estaduais');
+layerControl.addOverlay(geoJsonrodovias_estaduais, 'Rodovias Estaduais');
 
 map.createPane('estradas')
 
 var geoJsonRN_011 = new L.geoJson(RN_011, {pane:'estradas', style:estrada_azul, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_011, 'RN_011');
+layerControl.addOverlay(geoJsonRN_011, 'RN 011');
 
 var geoJsonRN_016 = new L.geoJson(RN_016, {pane:'estradas',style:estrada_azul, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_016, 'RN_016');
+layerControl.addOverlay(geoJsonRN_016, 'RN 016');
 
 var geoJsonRN_063 = new L.geoJson(RN_063, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_063, 'RN_063');
+layerControl.addOverlay(geoJsonRN_063, 'RN 063');
 
 var geoJsonRN_087 = new L.geoJson(RN_087, {pane:'estradas',style:estrada_azul, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_087, 'RN_087');
+layerControl.addOverlay(geoJsonRN_087, 'RN 087');
 
 var geoJsonRN_118 = new L.geoJson(RN_118, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_118, 'RN_118');
+layerControl.addOverlay(geoJsonRN_118, 'RN 118');
 
 var geoJsonRN233 = new L.geoJson(rn_233, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN233 , "RN_233");
+layerControl.addOverlay(geoJsonRN233 , "RN 233");
 
 var geoJsonRN_160 = new L.geoJson(RN_160, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_160, 'RN_160');
+layerControl.addOverlay(geoJsonRN_160, 'RN 160');
 
 var geoJsonRN_307 = new L.geoJson(RN_307, {pane:'estradas',style:estrada_vermelha, onEachFeature: dadosEstrada2});
-layerControl.addOverlay(geoJsonRN_307, 'RN_307');
+layerControl.addOverlay(geoJsonRN_307, 'RN 307');
 
 var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_II, 'projetos_DER_II');
+layerControl.addOverlay(geoJsonprojetos_DER_II, 'Projetos DER II');
 
 var geoJsonprojetos_DER_III_A = new L.geoJson(projetos_DER_III_A, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_III_A, 'projetos_DER_III_A');
+layerControl.addOverlay(geoJsonprojetos_DER_III_A, 'Projetos DER III A');
 
 var geoJsonprojetos_DER_III_B = new L.geoJson(projetos_DER_III_B, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_III_B, 'projetos_DER_III_B');
+layerControl.addOverlay(geoJsonprojetos_DER_III_B, 'Projetos DER III B');
 
 var geoJsonprojetos_DER_I_A = new L.geoJson(projetos_DER_I_A, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_I_A, 'projetos_DER_I_A');
+layerControl.addOverlay(geoJsonprojetos_DER_I_A, 'Projetos DER I A');
 
 var geoJsonprojetos_DER_I_B = new L.geoJson(projetos_DER_I_B, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_I_B, 'projetos_DER_I_B');
+layerControl.addOverlay(geoJsonprojetos_DER_I_B, 'Projetos DER I B');
 
 var geoJsonprojetos_DER_V = new L.geoJson(projetos_DER_V, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_V, 'projetos_DER_V');
+layerControl.addOverlay(geoJsonprojetos_DER_V, 'Projetos DER V');
 
 var geoJsonprojetos_DER_VI = new L.geoJson(projetos_DER_VI, {onEachFeature: dadosEstrada});
-layerControl.addOverlay(geoJsonprojetos_DER_VI, 'projetos_DER_VI');
+layerControl.addOverlay(geoJsonprojetos_DER_VI, 'Projetos DER VI');
 
 var fundo_azul = {
         "color": 'rgba(35,35,35,1.0)',
@@ -267,13 +267,13 @@ map.createPane('pane_Territrios');
 
 
 var geoJsonsemiarido_territorio = new L.geoJson(semiarido_territorio, {pane:'pane_Territrios', style: borda_branca, onEachFeature:dados_semiarido});
-layerControl.addOverlay(geoJsonsemiarido_territorio, 'semiarido_territorio');
+layerControl.addOverlay(geoJsonsemiarido_territorio, 'Semiarido territorio');
 
 var geoJsonsemiarido = new L.geoJson(semiarido,  {pane:"pane_semiarido", style: fundo_azul});
-layerControl.addOverlay(geoJsonsemiarido, 'semiarido');
+layerControl.addOverlay(geoJsonsemiarido, 'Semiarido');
 
 var geoJsonsemiarido_RN_municipios = new L.geoJson(semiarido_RN_municipios, {pane:'pane_semiarido_RN_municipios',style:fundo_cinza});
-layerControl.addOverlay(geoJsonsemiarido_RN_municipios, 'semiarido_RN_municipios');
+layerControl.addOverlay(geoJsonsemiarido_RN_municipios, 'Semiarido RN municipios');
 
 var fundo_verde_distritos =
 {
@@ -290,10 +290,10 @@ var fundo_verde_distritos =
 }
 
 var geoJsonDistrito_cor = new L.geoJson(Distrito_cor, {style:fundo_verde_distritos});
-layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito_cor');
+layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, {style:{'fillOpacity': 0, color:'white'}});
-layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito_limitacao');
+layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitacao');
 
 let grupos = get_valores_unicos(investimentos, coluna_grupo, 'json')
 
@@ -325,6 +325,7 @@ relacionarSubGrupo('Estradas DER', 32, 33, 40);
 
 adicionarGrupo("Semiárido", 40);
 relacionarSubGrupo('Semiárido', 40, 41, 44);
+
 
 
 let index_inicial = 46
