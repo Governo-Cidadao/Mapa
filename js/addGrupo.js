@@ -17,9 +17,6 @@ function adicionarGrupo(texto, pos, checked=false)
     inp.checked = checked;
 
     button.textContent='+';
-    button.style.float="right";
-    button.style.width="25px";
-    button.style.height="20px"
 
     let inner_div = document.createElement('div');
     inner_div.classList.add("container-input-span")
