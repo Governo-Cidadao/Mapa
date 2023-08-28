@@ -82,7 +82,7 @@ select {
 
 .containerFiltro {
     display: flex;
-        flex-direction: row;
+    flex-direction: row;
     justify-content: center;
     z-index: 5;
     width: 100%;
@@ -99,6 +99,7 @@ select {
     font-size: 14px;
     outline: none;
     flex-grow: initial;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
   }
 
 .img-popup{

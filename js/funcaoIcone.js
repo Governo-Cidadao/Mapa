@@ -1,19 +1,19 @@
 function icone_investimentos(feature, latlng) {
   var nameIcon;
   var iconimage = false;
-  const base_caminho_imagem = 'images/icones_novos'
+  const BASE_CAMINHO_IMAGEM = 'images/icones_novos'
   switch (String(feature.properties[coluna_nome])) {
     case 'pesca':
-      nameIcon = base_caminho_imagem + '/Algas.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Algas.svg';
       break;
     case 'escola':
-      nameIcon = base_caminho_imagem + '/Apicultura (1).svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Apicultura (1).svg';
       break;
     case 'arte':
-      nameIcon = base_caminho_imagem + '/Artesanato (1).svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Artesanato (1).svg';
       break;
     default:
-      nameIcon = base_caminho_imagem + '/Irrigacao.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Irrigacao.svg';
       break;
 
   }
@@ -35,23 +35,23 @@ function createCustomIcon(feature, latlng) {
   var nameIcon;
   var iconimage = false;
   var aviso = String(feature.properties['Cadeira Produtiva']);
-  const base_caminho_imagem = 'images/icones_novos'
+  const BASE_CAMINHO_IMAGEM = 'images/icones_novos'
   switch (String(feature.properties['Cadeira Produtiva'])) {
     case 'Algas marinhas':
       // aviso = 'apicultura'
-      nameIcon = base_caminho_imagem + '/Algas.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Algas.svg';
       // nameIcon = 'alga_gota.svg';
       break;
     case 'Apicultura':
       aviso = 'apicultura'
       // nameIcon = 'images/22307honeybee_98803.svg';
-      nameIcon = base_caminho_imagem + '/Apicultura (1).svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Apicultura (1).svg';
       break;
     case 'Artesanato':
-      nameIcon = base_caminho_imagem + '/Artesanato (1).svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Artesanato (1).svg';
       break;
     case 'Avicultura':
-      nameIcon = base_caminho_imagem + '/avicultura 1.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/avicultura 1.svg';
       break;
     case 'Beneficiamento de produtos alimentícios':
       // icone antigo
@@ -62,42 +62,42 @@ function createCustomIcon(feature, latlng) {
       nameIcon = 'images/imagens_svg/Cajucultura.svg';
       break;
     case 'Fruticultura':
-      nameIcon = base_caminho_imagem + '/FRUTICULTURA.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/FRUTICULTURA.svg';
       break;
     case 'Fruticultura Irrigada':
       // icone antigo
       nameIcon = 'images/imagens_svg/kisspng-plant-watering-cans-marketing-customer-relationshi-aquatic-plants-5ac1d9b6305297.svg';
       break;
     case 'Leite e derivados':
-      nameIcon = base_caminho_imagem + '/Leite e derivados.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Leite e derivados.svg';
       break;
     case 'Madiocultura':
-      nameIcon = base_caminho_imagem + '/mandioca 1.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/mandioca 1.svg';
       break;
     case 'Obras Hidroambientais':
-      nameIcon = base_caminho_imagem + '/Obras hidroambientais.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Obras hidroambientais.svg';
       break;
     case 'Pesca':
-      nameIcon = base_caminho_imagem + '/AQUICULTURA E PESCA.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/AQUICULTURA E PESCA.svg';
       break;
     case 'Reciclagem':
-      nameIcon = base_caminho_imagem + '/reciclagem 1.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/reciclagem 1.svg';
       break;
     case 'Recuperação de Áreas Degradadas':
-      nameIcon = base_caminho_imagem + '/Combate a desertificação.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Combate a desertificação.svg';
       break;
     case 'Sistemas de Abastecimento e Tratamento de Água':
-      nameIcon = base_caminho_imagem + '/Sistema de abastecimento de água.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Sistema de abastecimento de água.svg';
       break;
     case 'Têxtil/confecções':
-      nameIcon = base_caminho_imagem + '/ARTESANATO.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/ARTESANATO.svg';
       break;
     case 'UNIDADE DE COMERCIALIZAÇÃO':
-      nameIcon = base_caminho_imagem + '/Unidade de comercializacao.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Unidade de comercializacao.svg';
       break;
     default:
       iconimage = true;
-      nameIcon = base_caminho_imagem + '/Irrigacao.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Irrigacao.svg';
       break;
 
   }
@@ -214,9 +214,9 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
   }
 
   let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
-  if(qtd_fotos<2){
+  if (qtd_fotos < 2) {
     html += imgs
-  }else{
+  } else {
     html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
     html += imgs
     html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
@@ -237,7 +237,7 @@ function dado_html_investimentos(feature) {
 }
 
 
-function popup_investimentos(feature, layer){
+function popup_investimentos(feature, layer) {
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_investimentos(feature)
   let nome = feature.properties[coluna_nome]
