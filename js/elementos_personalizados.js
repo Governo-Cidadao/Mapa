@@ -42,3 +42,15 @@ document.addEventListener("mouseup", function(event) {
 });
 
 
+// Fechando modal de carrossel ao clicar fora do elmento
+document.addEventListener('mouseup', function(e) {
+  container_modal = document.querySelector('.container-modal')
+  container_popup = document.querySelector('.leaflet-popup-content-wrapper')
+  if (!container_modal.contains(e.target)) {
+      container_modal.style.display = 'none';
+      container_popup
+  }
+  else{
+    container_modal.style.display = 'flex';
+  }
+});
