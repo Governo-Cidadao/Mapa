@@ -46,7 +46,8 @@ document.addEventListener("mouseup", function(event) {
 document.addEventListener('mouseup', function(e) {
   container_modal = document.querySelector('.container-modal')
   if (!container_modal.contains(e.target)) {
-      container_modal.style.display = 'none';
+      // container_modal.style.display = 'none';
+      close_modal();
   }
   else{
     container_modal.style.display = 'flex';
