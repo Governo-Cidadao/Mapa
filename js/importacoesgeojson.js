@@ -47,3 +47,4 @@ document.write('<script src="geoJson/geoJsonJS/Distrito_cor.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/Distrito_limitacao.js"></script>')
 
 document.write('<script src="geoJson/geoJsonJS/base_investimentos.js"></script>')
+document.write('<script src="geoJson/geoJsonJS/brasil/brasil.js"></script>')
