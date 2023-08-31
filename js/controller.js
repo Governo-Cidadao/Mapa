@@ -22,38 +22,35 @@ function finalizar_movimentacao() {
 function arrastar_controller(){
     const itemArrastavel = document.querySelector(".arrastavel");
     let div_arrastavel = null;
-    let x_inicial = 0;
-    let y_inicial = 0;
+    let dif_X = 0;
+    let dif_y = 0;
     itemArrastavel.addEventListener("mousedown", (e) => {
         itemArrastavel.style.cursor = "grabbing";
         div_arrastavel = document.querySelector('.container-controller')
-        x_inicial = e.clientX
-        y_inicial = e.clientY
+        const rect = div_arrastavel.getBoundingClientRect();
+        dif_X = e.clientX - rect.left;
+        dif_y = e.clientY - rect.top;
     });
 
     itemArrastavel.addEventListener("touchstart", (e) => {
         itemArrastavel.style.cursor = "grabbing";
         div_arrastavel = document.querySelector('.container-controller')
-        x_inicial = e.touches[0].clientX
-        y_inicial = e.touches[0].clientY
+        dif_X = e.touches[0].clientX - rect.left;
+        dif_y = e.touches[0].clientY - rect.top;
     });
 
 
     document.addEventListener("mousemove", (e) => {
         if (div_arrastavel) {
-            div_arrastavel.style.left = x_inicial + (e.clientX - x_inicial)  + "px";
-            div_arrastavel.style.top =  y_inicial + (e.clientY - y_inicial)  + "px";
-            x_inicial = e.clientX
-            y_inicial = e.clientY
+            div_arrastavel.style.left = (e.clientX - dif_X)  + "px";
+            div_arrastavel.style.top = (e.clientY - dif_y)  + "px";
         }
     });
 
     document.addEventListener("touchmove", (e) => {
         if (div_arrastavel) {
-            div_arrastavel.style.left = x_inicial + (e.touches[0].clientX - x_inicial)  + "px";
-            div_arrastavel.style.top =  y_inicial + (e.touches[0].clientY - y_inicial)  + "px";
-            x_inicial = e.touches[0].clientX
-            y_inicial = e.touches[0].clientY
+            div_arrastavel.style.left = (e.touches[0].clientX - dif_X)  + "px";
+            div_arrastavel.style.top = (e.touches[0].clientY - dif_y)  + "px";
         }
     });
 
