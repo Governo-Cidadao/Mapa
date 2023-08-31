@@ -73,6 +73,16 @@ var mapa_fundo = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}'
 });
 mapa_fundo.addTo(map);
 
+var brazilStyle = {
+    "color": "#111",
+    "weight": 0,
+    "opacity": 1
+};
+
+var base_brasil = L.geoJSON(brazil, {
+    style: brazilStyle
+}).addTo(map);
+
 var base_minimap = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
     maxZoom: 20,
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
