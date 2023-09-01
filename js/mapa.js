@@ -186,6 +186,44 @@ var estrada_azul = {
 };
 
 
+var geoJson_eixo_guanduba = new L.geoJson(eixo_guanduba, { style: estrada_azul, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJson_eixo_guanduba, "Eixo Guanduba");
+
+var geoJson_eixo_producao = new L.geoJson(eixo_producao, { style: estrada_azul, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJson_eixo_producao, "Eixo Produção");
+
+// var geoJsonrodovias_federais = new L.geoJson(rodovias_federais);
+// layerControl.addOverlay(geoJsonrodovias_federais, 'Rodovias Federais');
+
+// var geoJsonrodovias_estaduais = new L.geoJson(rodovias_estaduais);
+// layerControl.addOverlay(geoJsonrodovias_estaduais, 'Rodovias Estaduais');
+
+map.createPane('estradas')
+
+var geoJsonRN_011 = new L.geoJson(RN_011, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_011, 'RN 011');
+
+var geoJsonRN_016 = new L.geoJson(RN_016, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_016, 'RN 016');
+
+var geoJsonRN_063 = new L.geoJson(RN_063, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_063, 'RN 063');
+
+var geoJsonRN_087 = new L.geoJson(RN_087, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_087, 'RN 087');
+
+var geoJsonRN_118 = new L.geoJson(RN_118, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_118, 'RN 118');
+
+var geoJsonRN233 = new L.geoJson(rn_233, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN233, "RN 233");
+
+var geoJsonRN_160 = new L.geoJson(RN_160, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_160, 'RN 160');
+
+var geoJsonRN_307 = new L.geoJson(RN_307, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
+layerControl.addOverlay(geoJsonRN_307, 'RN 307');
+
 var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, { onEachFeature: dadosEstrada });
 layerControl.addOverlay(geoJsonprojetos_DER_II, 'Projetos DER II');
 
@@ -290,11 +328,15 @@ for (let i = 0; i < grupos.length; i++) {
 adicionarGrupo("Atividades Produtivas", 1, true);
 relacionarSubGrupo('Atividades Produtivas', 1, 2, 19);
 
-adicionarGrupo("Estradas DER", 19);
-relacionarSubGrupo('Estradas DER', 19, 20, 27);
+adicionarGrupo("Estradas", 19);
+relacionarSubGrupo('Estradas', 19, 20, 30);
 
-adicionarGrupo("Semiárido", 27);
-relacionarSubGrupo('Semiárido', 27, 28, 31);
+adicionarGrupo("Estradas DER", 30);
+relacionarSubGrupo('Estradas DER', 30, 31, 38);
+
+adicionarGrupo("Semiárido", 38);
+relacionarSubGrupo('Semiárido', 38, 39, 42);
+
 
 let index_inicial = 46
 for (let i = 0; i < grupos.length; i++) {
