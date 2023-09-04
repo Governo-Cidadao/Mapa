@@ -355,10 +355,12 @@ function filtrar() {
     subprojetoJson.forEach(function (layerGroup) {
         layerGroup.eachLayer(function (layer) {
             if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro)) {
-                layer.setOpacity(1);
+                layer._icon.style.display = 'block';
             } else {
-                layer.setOpacity(0);
+                layer._icon.style.display = 'None';
+                
             }
+           
         })
     })
 }
