@@ -38,13 +38,10 @@ function createCustomIcon(feature, latlng) {
   const BASE_CAMINHO_IMAGEM = 'images/icones_novos'
   switch (String(feature.properties['Cadeira Produtiva'])) {
     case 'Algas marinhas':
-      // aviso = 'apicultura'
       nameIcon = BASE_CAMINHO_IMAGEM + '/Algas.svg';
-      // nameIcon = 'alga_gota.svg';
       break;
     case 'Apicultura':
       aviso = 'apicultura'
-      // nameIcon = 'images/22307honeybee_98803.svg';
       nameIcon = BASE_CAMINHO_IMAGEM + '/Apicultura (1).svg';
       break;
     case 'Artesanato':
