@@ -22,30 +22,18 @@ Siga as etapas abaixo para executar o projeto em sua máquina local:
 
 Execute os seguintes comandos a partir da pasta raiz do projeto:
 
-<!-- Aqui é tudo exemplo, só trocar -->
-
 ### Clone este repositório
 
 ```bash
-git clone <link-do-repositorio>
+git clone https://github.com/Governo-Cidadao/Mapa
 ```
 
 Este link pode ser encontrado no botão verde acima `Code`.
 
-### Instale as dependências
-
-```bash
-npm install
-```
-
-### Defina as variáveis de ambiente
-
-Descrição de como definir as variáveis de ambiente
-
 ### Execute o Projeto
 
 ```bash
-npm run dev
+.\index.html
 ```
 
 ## Estrutura de Pastas
@@ -70,12 +58,8 @@ A estrutura de pastas do projeto é organizada da seguinte maneira:
 * `pasta1`: Dados estruturados para serem reusados de maneira X. Por exemplo Y
 
 * `pasta2`: Componentes que podem ser reusados entre as páginas. Por exemplo Z
-  
+
 * `...`: Outras informações
-
-### Configurações e CI/CD
-
-* `pasta3/arquivo`: Configurações técnicas do projeto.
 
 ## Como contribuir
 
@@ -89,7 +73,7 @@ Se você deseja contribuir para este projeto, siga as etapas abaixo:
 
 Como alternativa, consulte a documentação do GitHub sobre [como criar uma solicitação de pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
 
-## Membros do Projeto (Opcional)
+## Membros do Projeto
 
 <table>
   <tr>
