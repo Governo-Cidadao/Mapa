@@ -111,7 +111,7 @@ var geoJsonAvicultura = new L.geoJson(Avicultura, { pointToLayer: createCustomIc
 layerControl.addOverlay(geoJsonAvicultura, 'Avicultura');
 
 var geoJsonBeneficiamento_de_produtos_alimenticios = new L.geoJson(Beneficiamento_de_produtos_alimenticios, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento de produtos alimenticios');
+layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento de produtos alimentícios');
 
 var geoJsonCajucultura = new L.geoJson(Cajucultura, {
     pointToLayer: createCustomIcon,
@@ -132,7 +132,7 @@ var geoJsonMadiocultura = new L.geoJson(Madiocultura, { pointToLayer: createCust
 layerControl.addOverlay(geoJsonMadiocultura, 'Madiocultura');
 
 var geoJsonObras_hidroambienttais = new L.geoJson(Obras_hidroambienttais, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonObras_hidroambienttais, 'Obras hidroambienttais');
+layerControl.addOverlay(geoJsonObras_hidroambienttais, 'Obras hidroambientais');
 
 var geoJsonPesca = new L.geoJson(Pesca, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
 layerControl.addOverlay(geoJsonPesca, 'Pesca');
@@ -141,16 +141,16 @@ var geoJsonReciclagem = new L.geoJson(Reciclagem, { pointToLayer: createCustomIc
 layerControl.addOverlay(geoJsonReciclagem, 'Reciclagem');
 
 var geoJsonRecuperacao_areas_degradadas = new L.geoJson(Recuperacao_areas_degradadas, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonRecuperacao_areas_degradadas, 'Recuperacao areas degradadas');
+layerControl.addOverlay(geoJsonRecuperacao_areas_degradadas, 'Recuperação áreas degradadas');
 
 var geoJsonSistemas_de_abastecimento_e_tratamento_de_agua = new L.geoJson(Sistemas_de_abastecimento_e_tratamento_de_agua, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonSistemas_de_abastecimento_e_tratamento_de_agua, 'Sistemas de abastecimento e tratamento de agua');
+layerControl.addOverlay(geoJsonSistemas_de_abastecimento_e_tratamento_de_agua, 'Sistemas de abastecimento e tratamento de água');
 
 var geoJsonTextil = new L.geoJson(Textil, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonTextil, 'Textil');
+layerControl.addOverlay(geoJsonTextil, 'Têxtil');
 
 var geoJsonUnidade_de_comercializacao = new L.geoJson(Unidade_de_comercializacao, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonUnidade_de_comercializacao, 'Unidade de comercializacao');
+layerControl.addOverlay(geoJsonUnidade_de_comercializacao, 'Unidade de comercialização');
 
 
 var subprojetoJson = [
@@ -280,13 +280,13 @@ map.createPane('pane_Territrios');
 
 
 var geoJsonsemiarido_territorio = new L.geoJson(semiarido_territorio, { pane: 'pane_Territrios', style: borda_branca, onEachFeature: dados_semiarido });
-layerControl.addOverlay(geoJsonsemiarido_territorio, 'Semiarido territorio');
+layerControl.addOverlay(geoJsonsemiarido_territorio, 'Semiárido território');
 
 var geoJsonsemiarido = new L.geoJson(semiarido, { pane: "pane_semiarido", style: fundo_azul });
-layerControl.addOverlay(geoJsonsemiarido, 'Semiarido');
+layerControl.addOverlay(geoJsonsemiarido, 'Semiárido');
 
 var geoJsonsemiarido_RN_municipios = new L.geoJson(semiarido_RN_municipios, { pane: 'pane_semiarido_RN_municipios', style: fundo_cinza });
-layerControl.addOverlay(geoJsonsemiarido_RN_municipios, 'Semiarido RN municipios');
+layerControl.addOverlay(geoJsonsemiarido_RN_municipios, 'Semiárido RN municípios');
 
 var fundo_verde_distritos =
 {
@@ -358,9 +358,9 @@ function filtrar() {
                 layer._icon.style.display = 'block';
             } else {
                 layer._icon.style.display = 'None';
-                
+
             }
-           
+
         })
     })
 }
