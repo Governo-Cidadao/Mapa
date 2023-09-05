@@ -227,5 +227,14 @@ select {
         max-height: 70%; 
       
     }
+    .container-modal{
+        width: 90%;
+    }
+    .carousel-container{
+        width: 100%;
+    }
+    .img-carousel {
+        width: 87%;
+    }
 
   }
