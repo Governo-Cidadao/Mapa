@@ -73,11 +73,11 @@ select {
 .container_filtro_keyboard {
     position: relative;
     z-index: 500;
-    width: 100%;
     top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 8px 12px;
 }
 
 .containerFiltro {
