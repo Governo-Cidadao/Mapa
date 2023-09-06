@@ -98,6 +98,10 @@ const Keyboard = {
                     keyELement.addEventListener("click", () => {
                         this.properties.value += "\n";
                         this._triggerEvent("oninput");
+                    
+                        var teclado_virtual = document.querySelector(".keyboard")
+                        teclado_virtual.classList.add("keyboard--hidden")    
+
                     });
 
                     break;
