@@ -72,3 +72,9 @@
 .keyboard__key--large_with {
   width: 90px;
 }
+
+@media only screen and (max-width: 480px) {
+  .keyboard{
+    width: 110%;
+  }
+}

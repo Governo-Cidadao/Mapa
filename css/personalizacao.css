@@ -180,3 +180,19 @@ select {
     align-items: center;
 }
 
+
+@media only screen and (max-width: 480px) {
+    .leaflet-control-minimap {
+      display: none;
+    }
+    .container_buton_personalizado{
+        display: none;
+    }
+    .containerFiltro{
+        width: 90%;
+    }
+    .containerFiltro input{
+        height: 30px;
+    }
+
+  }
