@@ -188,44 +188,11 @@ select {
     .container_buton_personalizado{
         display: none;
     }
-    .container-controller{
-        display: none;
-    }
     .containerFiltro{
         width: 90%;
     }
     .containerFiltro input{
         height: 30px;
     }
-    .container-controller-mobile{
-        display: flex;;
-        width: 100%;
-        height: 100px;
-        position: absolute;
-        bottom: 15px;
-        z-index: 1000;        
-        justify-content: space-around;
-        align-items: center;
-        /* gap: 25px; */
-    }
-    .button_controller-mobile{
-        width: 60px;
-        height: 60px;
-        background-color: #fff;
-        border-radius: 50%;
-        box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4);
-        text-align: center;
-        border: none;
-        line-height: 75px; 
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        border: 1px solid #ccc; 
-    }
-    .button_controller-mobile img{
-        max-width: 70%; 
-        max-height: 70%; 
-      
-    }
- 
+
   }
