@@ -183,7 +183,7 @@
     display: none;
 }
 
-@media only screen and (max-width: 480px) {   
+@media only screen and (max-width: 480px) {
     .container-controller{
         display: none;
     }
@@ -193,7 +193,7 @@
         height: 100px;
         position: absolute;
         bottom: 15px;
-        z-index: 1000;        
+        z-index: 1000;
         justify-content: space-around;
         align-items: center;
     }
@@ -205,15 +205,14 @@
         box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.4);
         text-align: center;
         border: none;
-        line-height: 75px; 
+        line-height: 75px;
         display: flex;
-        justify-content: center; 
-        align-items: center; 
-        border: 1px solid #ccc; 
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;
     }
     .button_controller-mobile img{
-        max-width: 70%; 
-        max-height: 70%; 
-      
+        width: 30px;
+        height: 30px;
     }
   }
