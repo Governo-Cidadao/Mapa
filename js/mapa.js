@@ -306,7 +306,7 @@ var geoJsonDistrito_cor = new L.geoJson(Distrito_cor, { style: fundo_verde_distr
 layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
-layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitacao');
+layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
 
 let grupos = get_valores_unicos(investimentos, coluna_grupo, 'json')
 
@@ -337,6 +337,8 @@ relacionarSubGrupo('Estradas DER', 30, 31, 38);
 adicionarGrupo("Semiárido", 38);
 relacionarSubGrupo('Semiárido', 38, 39, 42);
 
+adicionarGrupo("Distritos", 42);
+relacionarSubGrupo('Distritos', 42, 43, 45);
 
 let index_inicial = 46
 for (let i = 0; i < grupos.length; i++) {
