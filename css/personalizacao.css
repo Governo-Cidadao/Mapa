@@ -111,7 +111,7 @@ select {
     background: none;
     border: none;
     cursor: pointer;
-
+    padding: 0;
 }
 .style_button{
     border-radius:5px;
