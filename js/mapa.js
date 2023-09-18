@@ -361,7 +361,8 @@ function filtrar() {
     let texto_filtro = input.value.toLowerCase()
     subprojetoJson.forEach(function (layerGroup) {
         layerGroup.eachLayer(function (layer) {
-            if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro)) {
+            if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro)
+            || layer.feature.properties['Território'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Categoria'].toLowerCase().includes(texto_filtro))  {
                 layer._icon.style.display = 'block';
             } else {
                 layer._icon.style.display = 'None';
