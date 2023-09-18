@@ -184,17 +184,25 @@ function mais_informacoes(feature, nome, id_smi) {
 function mostrar_imagem2(feature, layer, nome, qtd_fotos) {
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_subprojeto(feature)
-  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
-  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
-  let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
-  // html += html_fotos
-  let modal = document.querySelector(".container-modal")
-  modal.innerHTML += html_fotos
-  modal.innerHTML += mais_informacoes(feature, nome, id_smi)
-  layer.bindPopup(html);
-  // layer.on('click', function(point){map.setView(point.latlng)})
+  let path = `images/${nome}/${id_smi}`
 
-  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
+  fetch(path).then(response => {
+    if (response.status === 200) {
+      html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
+    } 
+
+    html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
+    let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
+    // html += html_fotos
+    let modal = document.querySelector(".container-modal")
+    modal.innerHTML += html_fotos
+    modal.innerHTML += mais_informacoes(feature, nome, id_smi)
+    layer.bindPopup(html);
+    // layer.on('click', function(point){map.setView(point.latlng)})
+    layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
+
+  })
+
 }
 
 
