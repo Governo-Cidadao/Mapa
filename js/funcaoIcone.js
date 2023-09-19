@@ -12,11 +12,20 @@ function icone_investimentos(feature, latlng) {
     case 'arte':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Artesanato (1).svg';
       break;
+    case 'RECUPERAÇÃO DE ÁREAS DEGRADADAS':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Combate a desertificação.svg';
+      break;
+    case 'SISTEMAS DE ABASTECIMENTO E TRATAMENTO DE ÁGUA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Sistema de abastecimento de água.svg';
+      break;
+    case 'ACESSO À ÁGUA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Abastecimento de água.svg';
+      break;
     default:
       nameIcon = BASE_CAMINHO_IMAGEM + '/Irrigacao.svg';
       break;
-
   }
+
   let myIcon = L.icon({
     iconUrl: nameIcon,
     iconSize: [35, 35],
@@ -157,6 +166,7 @@ function html_carousel(nome, qtd_fotos, id_smi) {
   html += imgs
   html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
   html += `</div>`
+
   return html
 }
 
@@ -202,11 +212,11 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
 
   let path = caminho
   let imgs = ''
-  for (var i = 1; i <= qtd_fotos; i++) {
-    if (i == 1) {
-      imgs += `<img class="img-carousel" src="${path}/foto${i}.jpg"/>`
+  for (var i = 0; i <= qtd_fotos; i++) {
+    if (i == 0) {
+      imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg"/>`
     } else {
-      imgs += `<img class="img-carousel" src="${path}/foto${i}.jpg" style="display:none"/>`
+      imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg" style="display:none"/>`
     }
   }
 
@@ -226,9 +236,9 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
 function dado_html_investimentos(feature) {
   let html = ''
   let path = feature.properties['CAMINHO FOTO']
-  html += `<img src="images/${path}/foto1.jpg" class="img-popup">`
-  html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
-  html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
+  html += `<img src="${path}/foto_0.jpg" class="img-popup">`
+  html += '<p><strong> Município: ' + feature.properties['MUNICÍPIO'] + '</strong></p>'
+  html += '<p><strong> Tipologia: ' + feature.properties['TIPOLOGIA'] + '</strong></p>'
 
   return html
 }
@@ -240,7 +250,7 @@ function popup_investimentos(feature, layer) {
   let nome = feature.properties[coluna_nome]
   html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
   html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
-  let caminho = `images/${feature.properties['CAMINHO FOTO']}`
+  let caminho = `${feature.properties['CAMINHO FOTO']}`
   let qtd_fotos = feature.properties['QUANTIDADE FOTO']
   let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi)
   let modal = document.querySelector(".container-modal")

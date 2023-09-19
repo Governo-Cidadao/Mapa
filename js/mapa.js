@@ -11,8 +11,8 @@ const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
 const ZOOM_LEVEL_DEFAULT = 8.8;
 
-const coluna_nome = 'Nome Item';
-const coluna_grupo = 'Grupo';
+const coluna_nome = 'TIPOLOGIA';
+const coluna_grupo = 'CATEGORIA';
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
@@ -197,12 +197,6 @@ layerControl.addOverlay(geoJson_eixo_guanduba, "Eixo Guanduba");
 var geoJson_eixo_producao = new L.geoJson(eixo_producao, { style: estrada_azul, onEachFeature: dadosEstrada2 });
 layerControl.addOverlay(geoJson_eixo_producao, "Eixo Produção");
 
-// var geoJsonrodovias_federais = new L.geoJson(rodovias_federais);
-// layerControl.addOverlay(geoJsonrodovias_federais, 'Rodovias Federais');
-
-// var geoJsonrodovias_estaduais = new L.geoJson(rodovias_estaduais);
-// layerControl.addOverlay(geoJsonrodovias_estaduais, 'Rodovias Estaduais');
-
 map.createPane('estradas')
 
 var geoJsonRN_011 = new L.geoJson(RN_011, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
@@ -313,10 +307,10 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
 
-let grupos = get_valores_unicos(investimentos, coluna_grupo, 'json')
+let grupos = get_valores_unicos(investimentos_teste, coluna_grupo, 'json')
 
 for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
+    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
     let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
     for (let j in itens) {
         let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_nome] == itens[j])
@@ -345,9 +339,9 @@ relacionarSubGrupo('Semiárido', 38, 39, 42);
 adicionarGrupo("Distritos", 42);
 relacionarSubGrupo('Distritos', 42, 43, 45);
 
-let index_inicial = 46
+let index_inicial = 45
 for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
+    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
     let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
     let index_final = index_inicial + itens.length + 1
     adicionarGrupo(grupos[i], index_inicial, true);
@@ -356,12 +350,12 @@ for (let i = 0; i < grupos.length; i++) {
 }
 
 function filtrar() {
-
     let input = document.getElementById("filtro_municipio")
     let texto_filtro = input.value.toLowerCase()
+
     subprojetoJson.forEach(function (layerGroup) {
         layerGroup.eachLayer(function (layer) {
-            if (contem_municipio_tipologia_territorio_categoria(layer, texto_filtro))  {
+            if (layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro)) {
                 layer._icon.style.display = 'block';
             } else {
                 layer._icon.style.display = 'None';
@@ -370,10 +364,6 @@ function filtrar() {
     })
 }
 
-function contem_municipio_tipologia_territorio_categoria(layer, texto_filtro){
-    return layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro)
-    || layer.feature.properties['Território'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Categoria'].toLowerCase().includes(texto_filtro);
-}
 
 function get_valores_unicos(objeto, coluna, tipo) {
     let qtd_elementos;
