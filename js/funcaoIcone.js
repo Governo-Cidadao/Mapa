@@ -170,9 +170,11 @@ function html_carousel(nome, qtd_fotos, id_smi) {
   return html
 }
 
-function dado_html_subprojeto(feature) {
+function dado_html_subprojeto(feature,quantidade_fotos) {
   let html = ''
-  html += '<img src="images/Cajucultura/1400/foto1.jpg" class="img-popup">'
+  if (quantidade_fotos != 0){
+    html += '<img src="images/Cajucultura/1400/foto1.jpg" class="img-popup">'
+  }
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
   html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
 
@@ -193,8 +195,11 @@ function mais_informacoes(feature, nome, id_smi) {
 
 function mostrar_imagem2(feature, layer, nome, qtd_fotos) {
   let id_smi = feature.properties['Id SMI da MI']
-  let html = dado_html_subprojeto(feature)
-  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
+  let quantidade_fotos = feature.properties['QUANTIDADE_FOTOS']
+  let html = dado_html_subprojeto(feature, quantidade_fotos)
+  if (quantidade_fotos != 0){
+    html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
+  }
   html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
   // html += html_fotos
