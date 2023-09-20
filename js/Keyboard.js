@@ -50,7 +50,7 @@ const Keyboard = {
         const keyLayout = [
             "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "backspace",
             "q", "w", "e", "r", "t", "y", "u", "i", "o", "p",
-            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "enter",
+            "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", "ç", "enter",
             "limpar", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
             "space"
         ];
@@ -98,9 +98,9 @@ const Keyboard = {
                     keyELement.addEventListener("click", () => {
                         this.properties.value += "\n";
                         this._triggerEvent("oninput");
-                    
+
                         var teclado_virtual = document.querySelector(".keyboard")
-                        teclado_virtual.classList.add("keyboard--hidden")    
+                        teclado_virtual.classList.add("keyboard--hidden")
 
                     });
 
