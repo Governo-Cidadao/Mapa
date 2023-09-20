@@ -11,8 +11,8 @@ const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
 const ZOOM_LEVEL_DEFAULT = 8.8;
 
-const coluna_nome = 'TIPOLOGIA';
-const coluna_grupo = 'CATEGORIA';
+const coluna_nome = 'Tipologia';
+const coluna_grupo = 'Categoria';
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
@@ -321,6 +321,7 @@ for (let i = 0; i < grupos.length; i++) {
             }
         }).addTo(map);
         layerControl.addOverlay(geoJsonAux, itens[j]);
+        subprojetoJson.push(geoJsonAux);
     }
 }
 
