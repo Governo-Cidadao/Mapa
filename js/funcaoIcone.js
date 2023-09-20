@@ -237,8 +237,8 @@ function dado_html_investimentos(feature) {
   let html = ''
   let path = feature.properties['CAMINHO FOTO']
   html += `<img src="${path}/foto_0.jpg" class="img-popup">`
-  html += '<p><strong> Município: ' + feature.properties['MUNICÍPIO'] + '</strong></p>'
-  html += '<p><strong> Tipologia: ' + feature.properties['TIPOLOGIA'] + '</strong></p>'
+  html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
+  html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
 
   return html
 }
