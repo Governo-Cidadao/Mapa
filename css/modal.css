@@ -1,5 +1,6 @@
 .container-modal{
-    background-color: white;
+    /* background-color: white; */
+    
     z-index: 500;
     height: auto;
     width: auto;
@@ -11,7 +12,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);  */
     animation: fadeInOut 0.7s ease-in-out; 
 }
 

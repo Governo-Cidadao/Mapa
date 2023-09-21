@@ -62,3 +62,17 @@ function ocultar_carousel(id){
     const carousel = document.getElementById(id);
     carousel.style.display='none';
 }
+
+// Fechando modal de carrossel ao clicar fora do elmento
+document.addEventListener('mouseup', function(e) {
+    // container_modal = document.querySelector('.container-modal')
+    container_modal = document.querySelector('.fotos')
+    if (!container_modal.contains(e.target)) {
+        // container_modal.style.display = 'none';
+        // close_modal();
+    }
+    else{
+      container_modal.style.display = 'flex';
+    }
+  });
+  
