@@ -65,11 +65,11 @@ function ocultar_carousel(id){
 
 // Fechando modal de carrossel ao clicar fora do elmento
 document.addEventListener('mouseup', function(e) {
-    // container_modal = document.querySelector('.container-modal')
-    container_modal = document.querySelector('.fotos')
+    container_modal = document.querySelector('.container-modal')
     if (!container_modal.contains(e.target)) {
+        alert('fora')
         // container_modal.style.display = 'none';
-        // close_modal();
+        close_modal();
     }
     else{
       container_modal.style.display = 'flex';
