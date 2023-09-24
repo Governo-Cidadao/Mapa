@@ -67,7 +67,7 @@ function ocultar_carousel(id){
 document.addEventListener('mouseup', function(e) {
     container_modal = document.querySelector('.container-modal')
     if (!container_modal.contains(e.target)) {
-        alert('fora')
+        // alert('fora')
         // container_modal.style.display = 'none';
         close_modal();
     }
