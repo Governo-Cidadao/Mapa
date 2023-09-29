@@ -38,7 +38,7 @@ function avancar(botao_avancar, id, max){
     let carousel =  document.getElementById(id+'_fotos')
     let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
-    if(index < max-1){
+        if(index < max-1){
         index+=1;
         carousel.setAttribute('index', index)
         if(botao_voltar.style.visibility == 'hidden'){
@@ -48,7 +48,7 @@ function avancar(botao_avancar, id, max){
         if (index == max-1){
             botao_avancar.style.visibility = 'hidden'
         }
-    }
+            }
 
 
 }
