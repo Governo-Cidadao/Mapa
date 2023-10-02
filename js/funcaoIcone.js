@@ -217,23 +217,34 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
 
   let path = caminho
   let imgs = ''
+  let pontinhos_slider = ''
   for (var i = 0; i <= qtd_fotos; i++) {
-    if (i == 0) {
+    if (i === 0) {
+      pontinhos_slider+=`<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
+
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg"/>`
     } else {
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg" style="display:none"/>`
+      if (i+1 <= qtd_fotos){
+        pontinhos_slider+=`<div class="ponto" id="${nome}_${id_smi}_ponto"></div>`
+      }
+
     }
   }
 
   let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
+
   if (qtd_fotos < 2) {
     html += imgs
+    html += pontinhos_slider
   } else {
     html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
     html += imgs
     html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
+    html += `<div class="container-index-img">${pontinhos_slider}</div>`
   }
   html += `</div>`
+
   return html
 }
 

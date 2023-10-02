@@ -1,19 +1,23 @@
 
-function mudar_imagem(id){
-    let carousel =  document.getElementById(id+'_fotos')
-    let index = parseInt(carousel.getAttribute('index'))
-    let container = document.getElementById(id+"_fotos");
-    let imgs = container.querySelectorAll("img")
+function mudar_imagem(id) {
+    let carousel = document.getElementById(id + '_fotos');
+    let index = parseInt(carousel.getAttribute('index'));
+    let container = document.getElementById(id + '_fotos');
+    let pontos_navegacao = document.querySelectorAll('[id="' + id + '_ponto"]');
+    let imgs = container.querySelectorAll('.img-carousel');
 
-    for(let i=0; i<imgs.length; i++){
-        if (i == index){
-            imgs[index].style.display ="block";
-        }else{
-            imgs[i].style.display = "none";
-        }
+    for (let i = 0; i < imgs.length; i++) {
+        if (i === index) {
+            imgs[i].style.display = "block";
+            pontos_navegacao[i].classList.add('ativo'); 
+        } 
+        else {
+        imgs[i].style.display = "none";
+        pontos_navegacao[i].classList.remove('ativo'); 
+      }
     }
-
-}
+  }
+  
 
 function voltar(botao_voltar, id){
     let carousel =  document.getElementById(id+'_fotos')
@@ -38,7 +42,7 @@ function avancar(botao_avancar, id, max){
     let carousel =  document.getElementById(id+'_fotos')
     let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
-    if(index < max-1){
+        if(index < max-1){
         index+=1;
         carousel.setAttribute('index', index)
         if(botao_voltar.style.visibility == 'hidden'){
@@ -48,7 +52,7 @@ function avancar(botao_avancar, id, max){
         if (index == max-1){
             botao_avancar.style.visibility = 'hidden'
         }
-    }
+            }
 
 
 }

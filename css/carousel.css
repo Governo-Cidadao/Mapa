@@ -27,17 +27,43 @@
     
 }
 .informacao {
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 5px;
     width: 350px;
     font-size: 15px;
+    border-radius: 10px;
+
 }
 
 .informacao p{
     margin: 0 0 0 15px;
 
+}
+.container-index-img{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
+   top: 595px;
+   position: absolute;
+}
+
+.ponto{
+    background-color: gray;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 10000;
+    /* border: solid black 1px; */
+}
+
+.ativo{
+    background-color: white;
 }
 
 @media only screen and (max-width: 480px) {
