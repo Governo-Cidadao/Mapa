@@ -220,12 +220,14 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
   let pontinhos_slider = ''
   for (var i = 0; i <= qtd_fotos; i++) {
     if (i === 0) {
-      pontinhos_slider+=`<div class="ponto ativo"></div>`
+      pontinhos_slider+=`<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
 
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg"/>`
     } else {
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg" style="display:none"/>`
-      pontinhos_slider+=`<div class="ponto"></div>`
+      if (i+1 <= qtd_fotos){
+        pontinhos_slider+=`<div class="ponto" id="${nome}_${id_smi}_ponto"></div>`
+      }
 
     }
   }
