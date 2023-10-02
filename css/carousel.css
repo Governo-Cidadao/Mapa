@@ -27,12 +27,17 @@
     
 }
 .informacao {
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 5px;
     width: 350px;
     font-size: 15px;
+    border-radius: 10px;
+
 }
 
 .informacao p{
