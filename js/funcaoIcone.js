@@ -170,9 +170,9 @@ function html_carousel(nome, qtd_fotos, id_smi) {
   return html
 }
 
-function dado_html_subprojeto(feature,quantidade_fotos) {
+function dado_html_subprojeto(feature, quantidade_fotos) {
   let html = ''
-  if (quantidade_fotos != 0){
+  if (quantidade_fotos != 0) {
     html += '<img src="images/Cajucultura/1400/foto1.jpg" class="img-popup">'
   }
   html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
@@ -197,17 +197,15 @@ function mostrar_imagem2(feature, layer, nome, qtd_fotos) {
   let id_smi = feature.properties['Id SMI da MI']
   let quantidade_fotos = feature.properties['QUANTIDADE_FOTOS']
   let html = dado_html_subprojeto(feature, quantidade_fotos)
-  if (quantidade_fotos != 0){
+  if (quantidade_fotos != 0) {
     html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
   }
   html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
   let html_fotos = html_carousel(nome, qtd_fotos, id_smi)
-  // html += html_fotos
   let modal = document.querySelector(".container-modal")
   modal.innerHTML += html_fotos
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
-  // layer.on('click', function(point){map.setView(point.latlng)})
 
   layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
 }
@@ -218,17 +216,13 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
   let path = caminho
   let imgs = ''
   let pontinhos_slider = ''
-  for (var i = 0; i <= qtd_fotos; i++) {
+  for (var i = 0; i < qtd_fotos; i++) {
     if (i === 0) {
-      pontinhos_slider+=`<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
-
+      pontinhos_slider += `<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg"/>`
     } else {
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg" style="display:none"/>`
-      if (i+1 <= qtd_fotos){
-        pontinhos_slider+=`<div class="ponto" id="${nome}_${id_smi}_ponto"></div>`
-      }
-
+      pontinhos_slider += `<div class="ponto" id="${nome}_${id_smi}_ponto"></div>`
     }
   }
 

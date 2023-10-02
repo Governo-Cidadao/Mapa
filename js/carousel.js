@@ -9,15 +9,15 @@ function mudar_imagem(id) {
     for (let i = 0; i < imgs.length; i++) {
         if (i === index) {
             imgs[i].style.display = "block";
-            pontos_navegacao[i].classList.add('ativo'); 
-        } 
+            pontos_navegacao[i].classList.add('ativo');
+        }
         else {
         imgs[i].style.display = "none";
-        pontos_navegacao[i].classList.remove('ativo'); 
+        pontos_navegacao[i].classList.remove('ativo');
       }
     }
   }
-  
+
 
 function voltar(botao_voltar, id){
     let carousel =  document.getElementById(id+'_fotos')
@@ -34,8 +34,6 @@ function voltar(botao_voltar, id){
             botao_voltar.style.visibility = 'hidden'
         }
     }
-
-
 }
 
 function avancar(botao_avancar, id, max){
@@ -53,8 +51,6 @@ function avancar(botao_avancar, id, max){
             botao_avancar.style.visibility = 'hidden'
         }
             }
-
-
 }
 
 function exibir_carousel(id){
@@ -71,12 +67,9 @@ function ocultar_carousel(id){
 document.addEventListener('mouseup', function(e) {
     container_modal = document.querySelector('.container-modal')
     if (!container_modal.contains(e.target)) {
-        // alert('fora')
-        // container_modal.style.display = 'none';
         close_modal();
     }
     else{
       container_modal.style.display = 'flex';
     }
   });
-  
