@@ -350,6 +350,8 @@ for (let i = 0; i < grupos.length; i++) {
     index_inicial = index_final
 }
 
+selecionar_dot_nav(investimentos_teste.features)
+
 function filtrar() {
     let input = document.getElementById("filtro_municipio")
     let texto_filtro = input.value.toLowerCase()
