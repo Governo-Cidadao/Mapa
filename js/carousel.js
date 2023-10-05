@@ -37,10 +37,11 @@ function voltar(botao_voltar, id){
 }
 
 function avancar(botao_avancar, id, max){
-    let carousel =  document.getElementById(id+'_fotos')
+    let carousel = document.getElementById(id+'_fotos')
     let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
-        if(index < max-1){
+
+    if(index < max-1){
         index+=1;
         carousel.setAttribute('index', index)
         if(botao_voltar.style.visibility == 'hidden'){
@@ -50,7 +51,7 @@ function avancar(botao_avancar, id, max){
         if (index == max-1){
             botao_avancar.style.visibility = 'hidden'
         }
-            }
+    }
 }
 
 function exibir_carousel(id){
@@ -61,6 +62,29 @@ function exibir_carousel(id){
 function ocultar_carousel(id){
     const carousel = document.getElementById(id);
     carousel.style.display='none';
+}
+
+function selecionar_dot_nav(feature_list){
+
+    feature_list.forEach(feature => {
+        const id_smi = feature.properties['Id SMI da MI']
+        const nome = feature.properties[coluna_nome]
+        const id = `${nome}_${id_smi}`
+
+        const dots = document.querySelectorAll(`[id^="${id}_ponto"]`);
+        const carousel = document.getElementById(`${id}_fotos`);
+        const botao_avancar = document.getElementById(`botao_avancar_${id}`);
+        const botao_voltar = document.getElementById(`botao_voltar_${id}`);
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                carousel.setAttribute('index', index);
+                mudar_imagem(id);
+                botao_avancar.style.visibility = index < dots.length - 1 ? 'visible' : 'hidden';
+                botao_voltar.style.visibility = index > 0 ? 'visible' : 'hidden';
+            });
+        });
+    })
 }
 
 // Fechando modal de carrossel ao clicar fora do elmento

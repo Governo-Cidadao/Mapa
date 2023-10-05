@@ -228,8 +228,8 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
   let pontinhos_slider = ''
   for (var i = 0; i < qtd_fotos; i++) {
     if (i === 0) {
-      pontinhos_slider += `<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg"/>`
+      pontinhos_slider += `<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
     } else {
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg" style="display:none"/>`
       pontinhos_slider += `<div class="ponto" id="${nome}_${id_smi}_ponto"></div>`
@@ -279,5 +279,4 @@ function popup_investimentos(feature, layer) {
   layer.bindPopup(html);
 
   layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
-
 }
