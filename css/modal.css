@@ -37,6 +37,14 @@
     z-index: 1100;
   }
 
+  .close-icon-info {
+    position: absolute;
+    top: 42px;
+    right: 89px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
 @media only screen and (max-width: 480px) {
 .container-modal{
     width: 90%;
