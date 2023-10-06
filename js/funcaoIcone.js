@@ -193,11 +193,11 @@ function dado_html_subprojeto(feature, quantidade_fotos) {
 
 function mais_informacoes(feature, nome, id_smi) {
   let html = `<div class="informacao" id='${nome}_${id_smi}_informacao' style='display:none'>`
-  html += '<p><strong> Id SMI da MI </strong></p> <p>' + feature.properties['Id SMI da MI'] + '</p> <br>'
-  html += '<p><strong> UES </strong></p> <p>' +  feature.properties['UES'] + '</p> <br>'
-  html += '<p><strong> Município </strong></p> <p>' + feature.properties['Município'] + '</p> <br>'
-  html += '<p><strong> Território </strong></p> <p>' + feature.properties['Território'] + '</p> <br>'
-  html += '<p><strong> Tipologia </strong></p> <p>' + feature.properties['Tipologia'] + '</p>'
+  html += '<p><strong> Estabelecimento </strong></p> <p>' + capitalize(feature.properties['ESTABELECIMENTO']) + '</p> <br>'
+  html += '<p><strong> Orgão </strong></p> <p>' + feature.properties['ORGÃO'] + '</p> <br>'
+  html += '<p><strong> Município </strong></p> <p>' + capitalize(feature.properties['Município']) + '</p> <br>'
+  html += '<p><strong> Território </strong></p> <p>' + capitalize(feature.properties['Território']) + '</p> <br>'
+  html += '<p><strong> Tipologia </strong></p> <p>' + capitalize(feature.properties['Tipologia']) + '</p>'
   html += '</div>'
 
   return html
