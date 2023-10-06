@@ -118,12 +118,6 @@ layerControl.addOverlay(geoJsonAvicultura, 'Avicultura');
 var geoJsonBeneficiamento_de_produtos_alimenticios = new L.geoJson(Beneficiamento_de_produtos_alimenticios, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
 layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento de produtos alimentícios');
 
-var geoJsonCajucultura = new L.geoJson(Cajucultura, {
-    pointToLayer: createCustomIcon,
-    onEachFeature: function (feature, layer) { mostrar_imagem2(feature, layer, 'Cajucultura', 3) }
-}).addTo(map);
-layerControl.addOverlay(geoJsonCajucultura, 'Cajucultura');
-
 var geoJsonFruticultura = new L.geoJson(Fruticultura, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
 layerControl.addOverlay(geoJsonFruticultura, 'Fruticultura');
 
@@ -164,7 +158,6 @@ var subprojetoJson = [
     geoJsonArtesanato,
     geoJsonAvicultura,
     geoJsonBeneficiamento_de_produtos_alimenticios,
-    geoJsonCajucultura,
     geoJsonFruticultura,
     geoJsonFruticultura_irrigada,
     geoJsonLeites_e_derivados,
@@ -326,21 +319,21 @@ for (let i = 0; i < grupos.length; i++) {
 }
 
 adicionarGrupo("Atividades Produtivas", 1, true);
-relacionarSubGrupo('Atividades Produtivas', 1, 2, 19);
+relacionarSubGrupo('Atividades Produtivas', 1, 2, 18);
 
-adicionarGrupo("Estradas", 19);
-relacionarSubGrupo('Estradas', 19, 20, 30);
+adicionarGrupo("Estradas", 18);
+relacionarSubGrupo('Estradas', 18, 19, 29);
 
-adicionarGrupo("Estradas DER", 30);
-relacionarSubGrupo('Estradas DER', 30, 31, 38);
+adicionarGrupo("Estradas DER", 29);
+relacionarSubGrupo('Estradas DER', 29, 30, 37);
 
-adicionarGrupo("Semiárido", 38);
-relacionarSubGrupo('Semiárido', 38, 39, 42);
+adicionarGrupo("Semiárido", 37);
+relacionarSubGrupo('Semiárido', 37, 38, 41);
 
-adicionarGrupo("Distritos", 42);
-relacionarSubGrupo('Distritos', 42, 43, 45);
+adicionarGrupo("Distritos", 41);
+relacionarSubGrupo('Distritos', 41, 42, 44);
 
-let index_inicial = 45
+let index_inicial = 44
 for (let i = 0; i < grupos.length; i++) {
     let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
     let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
