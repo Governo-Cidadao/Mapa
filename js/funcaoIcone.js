@@ -198,6 +198,7 @@ function mais_informacoes(feature, nome, id_smi) {
   html += '<p><strong> Município </strong></p> <p>' + feature.properties['Município'] + '</p> <br>'
   html += '<p><strong> Território </strong></p> <p>' + feature.properties['Território'] + '</p> <br>'
   html += '<p><strong> Tipologia </strong></p> <p>' + feature.properties['Tipologia'] + '</p>'
+  html += '<div class="close-icon-info"><i onclick="close_modal(ver_informacoes = true)" class="fa-solid fa-x"></i></div>'
   html += '</div>'
 
   return html
