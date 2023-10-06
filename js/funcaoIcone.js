@@ -269,7 +269,7 @@ function popup_investimentos(feature, layer) {
   let html = dado_html_investimentos(feature)
   let nome = feature.properties[coluna_nome]
   html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
-  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao')"><a>Mais informações</a> </button></div>`
+  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true)"><a>Mais informações</a> </button></div>`
   let caminho = `${feature.properties['CAMINHO FOTO']}`
   let qtd_fotos = feature.properties['QUANTIDADE FOTO']
   let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi)

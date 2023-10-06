@@ -36,8 +36,16 @@ function mostrar_elementos(opcao){
 
 }
 
-function show_modal(id){
+function show_modal(id,ver_informacoes=false){
     let modal = document.querySelector('.container-modal')
+    info = document.querySelector('.close-icon')
+
+    if (ver_informacoes == true){
+        info.style.display = 'none'
+    }
+    else{
+        info.style.display = 'block'
+    }
 
     mostrar_elementos(false)
     
