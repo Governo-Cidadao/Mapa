@@ -103,84 +103,16 @@ layerControl.addOverlay(geoJsonTerritorios, 'Territórios');
 
 // subprojetos
 
-var geoJsonAlgasmarinhas = new L.geoJson(Algasmarinhas, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonAlgasmarinhas, 'Algasmarinhas');
-
-var geoJsonApicultura = new L.geoJson(Apicultura, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonApicultura, 'Apicultura');
-
-var geoJsonArtesanato = new L.geoJson(Artesanato, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonArtesanato, 'Artesanato');
-
-var geoJsonAvicultura = new L.geoJson(Avicultura, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonAvicultura, 'Avicultura');
-
-var geoJsonBeneficiamento_de_produtos_alimenticios = new L.geoJson(Beneficiamento_de_produtos_alimenticios, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonBeneficiamento_de_produtos_alimenticios, 'Beneficiamento de produtos alimentícios');
-
-var geoJsonFruticultura = new L.geoJson(Fruticultura, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonFruticultura, 'Fruticultura');
-
-var geoJsonFruticultura_irrigada = new L.geoJson(Fruticultura_irrigada, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonFruticultura_irrigada, 'Fruticultura irrigada');
-
-var geoJsonLeites_e_derivados = new L.geoJson(Leites_e_derivados, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonLeites_e_derivados, 'Leites e derivados');
-
-var geoJsonMadiocultura = new L.geoJson(Madiocultura, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonMadiocultura, 'Madiocultura');
-
-var geoJsonObras_hidroambienttais = new L.geoJson(Obras_hidroambienttais, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonObras_hidroambienttais, 'Obras hidroambientais');
-
-var geoJsonPesca = new L.geoJson(Pesca, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonPesca, 'Pesca');
-
-var geoJsonReciclagem = new L.geoJson(Reciclagem, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonReciclagem, 'Reciclagem');
-
-var geoJsonRecuperacao_areas_degradadas = new L.geoJson(Recuperacao_areas_degradadas, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonRecuperacao_areas_degradadas, 'Recuperação áreas degradadas');
-
-var geoJsonSistemas_de_abastecimento_e_tratamento_de_agua = new L.geoJson(Sistemas_de_abastecimento_e_tratamento_de_agua, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonSistemas_de_abastecimento_e_tratamento_de_agua, 'Sistemas de abastecimento e tratamento de água');
-
-var geoJsonTextil = new L.geoJson(Textil, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonTextil, 'Têxtil');
-
-var geoJsonUnidade_de_comercializacao = new L.geoJson(Unidade_de_comercializacao, { pointToLayer: createCustomIcon, onEachFeature: mostrar_imagem }).addTo(map);
-layerControl.addOverlay(geoJsonUnidade_de_comercializacao, 'Unidade de comercialização');
-
-
-var subprojetoJson = [
-    geoJsonAlgasmarinhas,
-    geoJsonApicultura,
-    geoJsonArtesanato,
-    geoJsonAvicultura,
-    geoJsonBeneficiamento_de_produtos_alimenticios,
-    geoJsonFruticultura,
-    geoJsonFruticultura_irrigada,
-    geoJsonLeites_e_derivados,
-    geoJsonMadiocultura,
-    geoJsonObras_hidroambienttais,
-    geoJsonPesca,
-    geoJsonReciclagem,
-    geoJsonRecuperacao_areas_degradadas,
-    geoJsonSistemas_de_abastecimento_e_tratamento_de_agua,
-    geoJsonTextil,
-    geoJsonUnidade_de_comercializacao,
-]
+var subprojetoJson = []
 
 var estrada_vermelha = {
     "color": "rgb( 244, 0, 0 )",
     "weight": 5,
-    // "opacity": 0.65
 };
 
 var estrada_azul = {
     "color": "rgb( 16, 145, 210 )",
     "weight": 5,
-    // "opacity": 0.65
 };
 
 
@@ -270,7 +202,6 @@ map.createPane('pane_semiarido_RN_municipios')
 map.createPane('pane_semiarido');
 map.createPane('pane_Territrios');
 
-
 var geoJsonsemiarido_territorio = new L.geoJson(semiarido_territorio, { pane: 'pane_Territrios', style: borda_branca, onEachFeature: dados_semiarido });
 layerControl.addOverlay(geoJsonsemiarido_territorio, 'Semiárido território');
 
@@ -318,22 +249,19 @@ for (let i = 0; i < grupos.length; i++) {
     }
 }
 
-adicionarGrupo("Atividades Produtivas", 1, true);
-relacionarSubGrupo('Atividades Produtivas', 1, 2, 18);
+adicionarGrupo("Estradas", 1);
+relacionarSubGrupo('Estradas', 1, 2, 12);
 
-adicionarGrupo("Estradas", 18);
-relacionarSubGrupo('Estradas', 18, 19, 29);
+adicionarGrupo("Estradas DER", 12);
+relacionarSubGrupo('Estradas DER', 12, 13, 20);
 
-adicionarGrupo("Estradas DER", 29);
-relacionarSubGrupo('Estradas DER', 29, 30, 37);
+adicionarGrupo("Semiárido", 20);
+relacionarSubGrupo('Semiárido', 20, 21, 24);
 
-adicionarGrupo("Semiárido", 37);
-relacionarSubGrupo('Semiárido', 37, 38, 41);
+adicionarGrupo("Distritos", 24);
+relacionarSubGrupo('Distritos', 24, 25, 27);
 
-adicionarGrupo("Distritos", 41);
-relacionarSubGrupo('Distritos', 41, 42, 44);
-
-let index_inicial = 44
+let index_inicial = 27
 for (let i = 0; i < grupos.length; i++) {
     let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
     let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')

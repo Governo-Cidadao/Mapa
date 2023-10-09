@@ -1,7 +1,6 @@
 // Investimentos
 document.write('<script src="geoJson/geoJsonJS/investimentos/teste_inv.js"></script>')
 
-document.write('<script src="geoJson/geoJsonJS/dissolvido.js"></script>')
 // estradas
 document.write('<script src="geoJson/geoJsonJS/estradas/eixo_guanduba.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/estradas/eixo_producao.js"></script>')
@@ -22,24 +21,6 @@ document.write('<script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DE
 document.write('<script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_I_B.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_V.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/estradas/estradas_DER/projetos_DER_VI.js"></script>')
-//subprojetos
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Algasmarinhas.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Apicultura.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Artesanato.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Avicultura.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Beneficiamento_de_produtos_alimenticios.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Cajucultura.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Fruticultura.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Fruticultura_irrigada.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Leites_e_derivados.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Madiocultura.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Obras_hidroambienttais.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Pesca.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Reciclagem.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Recuperacao_areas_degradadas.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Sistemas_de_abastecimento_e_tratamento_de_agua.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Textil.js"></script>')
-document.write('<script src="geoJson/geoJsonJS/subprojeto/Unidade_de_comercializacao.js"></script>')
 // outras importações
 document.write('<script src="geoJson/geoJsonJS/RN_Municipios_2021.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/Territorios.js"></script>')
@@ -49,5 +30,4 @@ document.write('<script src="geoJson/geoJsonJS/semiarido/semiarido_territorio.js
 document.write('<script src="geoJson/geoJsonJS/Distrito_cor.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/Distrito_limitacao.js"></script>')
 
-document.write('<script src="geoJson/geoJsonJS/base_investimentos.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/brasil/brasil.js"></script>')
