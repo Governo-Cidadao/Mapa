@@ -38,12 +38,15 @@ function mostrar_elementos(opcao){
 
 function show_modal(id,ver_informacoes=false){
     let modal = document.querySelector('.container-modal')
-    info = document.querySelector('.close-icon')
+    close_fotos = document.querySelector('.close-icon')
+    info = document.querySelector('.close-icon-info')
 
     if (ver_informacoes == true){
-        info.style.display = 'none'
+        close_fotos.style.display = 'none'
+        info.style.display = 'block'
     }
     else{
+        close_fotos.style.display = 'block'
         info.style.display = 'block'
     }
 
