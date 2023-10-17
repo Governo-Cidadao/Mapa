@@ -5,15 +5,19 @@ function mudar_imagem(id) {
     let container = document.getElementById(id + '_fotos');
     let pontos_navegacao = document.querySelectorAll('[id="' + id + '_ponto"]');
     let imgs = container.querySelectorAll('.img-carousel');
+    
 
     for (let i = 0; i < imgs.length; i++) {
         if (i === index) {
             imgs[i].style.display = "block";
+            imgs[i].classList.add('transicao')
             pontos_navegacao[i].classList.add('ativo');
         }
         else {
         imgs[i].style.display = "none";
         pontos_navegacao[i].classList.remove('ativo');
+        imgs[i].classList.remove('transicao')
+
       }
     }
   }
