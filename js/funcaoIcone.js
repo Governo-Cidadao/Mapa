@@ -66,6 +66,8 @@ function html_carousel(nome, qtd_fotos, id_smi) {
   let path = `images/${nome}/${id_smi}`
   let imgs = ''
   let pontinhos_slider = ''
+  let descricao = ''
+
   for (var i = 1; i <= qtd_fotos; i++) {
     if (i == 1) {
       pontinhos_slider += `<div class="ponto ativo" id="${nome}_${id_smi}_ponto"></div>`
@@ -81,11 +83,13 @@ function html_carousel(nome, qtd_fotos, id_smi) {
   if (qtd_fotos < 2) {
     html += imgs
     html += pontinhos_slider
+    html += descricao
   } else {
     html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
     html += imgs
     html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
     html += `<div class="container-index-img">${pontinhos_slider}</div>`
+    html += `<div class="container-text-img">${descricao}</div>`
   }
   html += `</div>`
 
@@ -108,10 +112,12 @@ function mais_informacoes(feature, nome, id_smi) {
 }
 
 
-function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
+function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi,texto_investimento) {
   let path = caminho
   let imgs = ''
   let pontinhos_slider = ''
+  let descricao = ''
+
   for (var i = 0; i < qtd_fotos; i++) {
     if (i === 0) {
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg"/>`
@@ -119,19 +125,29 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi) {
     } else {
       imgs += `<img class="img-carousel" src="${path}/foto_${i}.jpg" style="display:none"/>`
       pontinhos_slider += `<div class="ponto" id="${nome}_${id_smi}_ponto"></div>`
+
     }
   }
+  
+  
+  texto_investimento = capitalize(texto_investimento)
+  descricao += `<div class="decricao" id="${nome}_${id_smi}_descricao">${texto_investimento}</div>`
+
+
 
   let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
 
   if (qtd_fotos < 2) {
     html += imgs
     html += pontinhos_slider
+    html+= descricao
   } else {
     html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
     html += imgs
     html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
     html += `<div class="container-index-img">${pontinhos_slider}</div>`
+    console.log(descricao)
+    html += descricao
   }
   html += `</div>`
 
@@ -157,8 +173,9 @@ function popup_investimentos(feature, layer) {
   html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
   html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true)"><a>Mais informações</a> </button></div>`
   let caminho = `${feature.properties['CAMINHO FOTO']}`
+  let texto_investimento = feature.properties['TIPO DE INVESTIMENTO']
   let qtd_fotos = feature.properties['QUANTIDADE FOTO']
-  let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi)
+  let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi, texto_investimento)
   let modal = document.querySelector(".container-modal")
   modal.innerHTML += html_fotos
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
