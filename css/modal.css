@@ -1,6 +1,5 @@
 .container-modal{
-    background-color: rgb(138, 91, 91);
-    
+    /* background-color: rgb(138, 91, 91); */
     z-index: 500;
     width: 600px;
     height: 450px;
