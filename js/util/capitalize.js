@@ -1,3 +1,5 @@
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+function capitalize(text) {
+    if (text == null)
+        return "";
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }

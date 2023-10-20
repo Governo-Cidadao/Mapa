@@ -10,7 +10,7 @@ function adicionarGrupo(texto, pos, checked = false) {
     div.classList.add("container-list")
 
     span.textContent = texto;
-    let texto_sem_espaco = texto.replace(" ", "_")
+    let texto_sem_espaco = texto.replaceAll(" ", "_")
     inp.type = 'checkbox';
     inp.checked = checked;
 
@@ -48,17 +48,6 @@ function adicionarGrupo(texto, pos, checked = false) {
 
 }
 
-function teste_lista() {
-    let teste = document.getElementsByClassName("teste");
-    let display = 'none';
-    if (teste[0].style.display == 'none') {
-        display = 'block';
-    }
-    for (let i = 0; i < teste.length; i++) {
-        teste[i].style.display = display;
-    }
-}
-
 function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim) {
     let div_overlay = document.getElementsByClassName("leaflet-control-layers-overlays");
 
@@ -73,7 +62,7 @@ function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim) {
     let inputs = div.querySelectorAll('input');
     let qtd_input = inputs.length;
     let status_subgrupo = {};
-    let texto_sem_espaco = nome.replace(" ", "_")
+    let texto_sem_espaco = nome.replaceAll(" ", "_")
     adicionarEspacoSubGrupo(texto_sem_espaco, pos_ini, pos_fim);
 
     inputs[index_grupo].onclick = function () {

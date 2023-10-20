@@ -11,8 +11,10 @@ const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
 const ZOOM_LEVEL_DEFAULT = 8.8;
 
-const coluna_nome = 'Tipologia';
-const coluna_grupo = 'Categoria';
+const coluna_area = 'AREA_MAPEAMENTO';
+const coluna_tipologia = 'TIPOLOGIA_MAPEAMENTO';
+const coluna_categoria = 'CATEGORIA_MAPEAMENTO';
+const coluna_investimento = 'INVESTIMENTO'
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
@@ -74,7 +76,8 @@ var borda_fundo_branco = {
 
 var mapa_fundo = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
     maxZoom: 20,
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    attribution: '© contributors: Joabe Samuel, Igor Dias, Celi Consuelo, Matheus Rodrigues, Jonas Silva'
 });
 mapa_fundo.addTo(map);
 
@@ -231,13 +234,13 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
 
-let grupos = get_valores_unicos(investimentos_teste, coluna_grupo, 'json')
+let grupos = get_valores_unicos(investimentos_teste, coluna_categoria, 'json')
 
 for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
-    let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
+    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_categoria] == grupos[i])
+    let itens = get_valores_unicos(jsonGrupo, coluna_investimento, 'lista')
     for (let j in itens) {
-        let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_nome] == itens[j])
+        let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_investimento] == itens[j])
         var geoJsonAux = new L.geoJson(jsonItem, {
             pointToLayer: icone_investimentos,
             onEachFeature: function (feature, layer) {
@@ -263,8 +266,8 @@ relacionarSubGrupo('Distritos', 24, 25, 27);
 
 let index_inicial = 27
 for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
-    let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
+    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_categoria] == grupos[i])
+    let itens = get_valores_unicos(jsonGrupo, coluna_investimento, 'lista')
     let index_final = index_inicial + itens.length + 1
     adicionarGrupo(grupos[i], index_inicial, true);
     relacionarSubGrupo(grupos[i], index_inicial, index_inicial + 1, index_final);
@@ -289,8 +292,13 @@ function filtrar() {
 }
 
 function contem_municipio_tipologia_territorio_categoria(layer, texto_filtro){
-    return layer.feature.properties['Município'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Tipologia'].toLowerCase().includes(texto_filtro)
-    || layer.feature.properties['Território'].toLowerCase().includes(texto_filtro) || layer.feature.properties['Categoria'].toLowerCase().includes(texto_filtro);
+    municipio = layer.feature.properties['MUNICÍPIO'];
+    territorio = layer.feature.properties['TERRITÓRIO'];
+    tipologia = layer.feature.properties[coluna_tipologia];
+    categoria = layer.feature.properties[coluna_categoria];
+
+    return municipio.toLowerCase().includes(texto_filtro) || tipologia.toLowerCase().includes(texto_filtro)
+    || territorio.toLowerCase().includes(texto_filtro) || categoria.toLowerCase().includes(texto_filtro);
 }
 
 function get_valores_unicos(objeto, coluna, tipo) {
