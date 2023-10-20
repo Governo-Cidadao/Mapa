@@ -2,7 +2,7 @@ function icone_investimentos(feature, latlng) {
   var nameIcon;
   var iconimage = false;
   const BASE_CAMINHO_IMAGEM = 'images/icones_novos'
-  switch (String(feature.properties[coluna_nome])) {
+  switch (String(feature.properties[coluna_area])) {
     case 'pesca':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Algas.svg';
       break;
@@ -168,7 +168,7 @@ function dado_html_investimentos(feature) {
 function popup_investimentos(feature, layer) {
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_investimentos(feature)
-  let nome = feature.properties[coluna_nome]
+  let nome = feature.properties[coluna_area]
   html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
   html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true)"><a>Mais informações</a> </button></div>`
   let caminho = `${feature.properties['CAMINHO FOTO']}`

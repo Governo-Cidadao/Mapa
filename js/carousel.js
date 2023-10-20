@@ -5,7 +5,7 @@ function mudar_imagem(id) {
     let container = document.getElementById(id + '_fotos');
     let pontos_navegacao = document.querySelectorAll('[id="' + id + '_ponto"]');
     let imgs = container.querySelectorAll('.img-carousel');
-    
+
 
     for (let i = 0; i < imgs.length; i++) {
         if (i === index) {
@@ -72,7 +72,7 @@ function selecionar_dot_nav(feature_list){
 
     feature_list.forEach(feature => {
         const id_smi = feature.properties['Id SMI da MI']
-        const nome = feature.properties[coluna_nome]
+        const nome = feature.properties[coluna_area]
         const id = `${nome}_${id_smi}`
 
         const dots = document.querySelectorAll(`[id^="${id}_ponto"]`);

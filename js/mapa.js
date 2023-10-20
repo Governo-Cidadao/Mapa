@@ -11,8 +11,8 @@ const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
 const ZOOM_LEVEL_DEFAULT = 8.8;
 
-const coluna_nome = 'TIPOLOGIA_MAPEAMENTO';
-const coluna_grupo = 'AREA_MAPEAMENTO';
+const coluna_area = 'AREA_MAPEAMENTO';
+const coluna_tipologia = 'TIPOLOGIA_MAPEAMENTO';
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
@@ -231,13 +231,13 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
 
-let grupos = get_valores_unicos(investimentos_teste, coluna_grupo, 'json')
+let grupos = get_valores_unicos(investimentos_teste, coluna_area, 'json')
 
 for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
-    let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
+    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_area] == grupos[i])
+    let itens = get_valores_unicos(jsonGrupo, coluna_tipologia, 'lista')
     for (let j in itens) {
-        let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_nome] == itens[j])
+        let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_tipologia] == itens[j])
         var geoJsonAux = new L.geoJson(jsonItem, {
             pointToLayer: icone_investimentos,
             onEachFeature: function (feature, layer) {
@@ -263,8 +263,8 @@ relacionarSubGrupo('Distritos', 24, 25, 27);
 
 let index_inicial = 27
 for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_grupo] == grupos[i])
-    let itens = get_valores_unicos(jsonGrupo, coluna_nome, 'lista')
+    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_area] == grupos[i])
+    let itens = get_valores_unicos(jsonGrupo, coluna_tipologia, 'lista')
     let index_final = index_inicial + itens.length + 1
     adicionarGrupo(grupos[i], index_inicial, true);
     relacionarSubGrupo(grupos[i], index_inicial, index_inicial + 1, index_final);
