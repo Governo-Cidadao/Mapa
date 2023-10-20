@@ -101,18 +101,17 @@ function mais_informacoes(feature, nome, id_smi) {
   let html = `<div class="informacao" id='${nome}_${id_smi}_informacao' style='display:none'>`
   html += '<p><strong> Estabelecimento </strong></p> <p>' + capitalize(feature.properties['ESTABELECIMENTO']) + '</p> <br>'
   html += '<p><strong> Orgão </strong></p> <p>' + feature.properties['ORGÃO'] + '</p> <br>'
-  html += '<p><strong> Município </strong></p> <p>' + capitalize(feature.properties['Município']) + '</p> <br>'
-  html += '<p><strong> Território </strong></p> <p>' + capitalize(feature.properties['Território']) + '</p> <br>'
-  html += '<p><strong> Tipologia </strong></p> <p>' + capitalize(feature.properties['Tipologia']) + '</p>'
+  html += '<p><strong> Município </strong></p> <p>' + capitalize(feature.properties['MUNICÍPIO']) + '</p> <br>'
+  html += '<p><strong> Território </strong></p> <p>' + capitalize(feature.properties['TERRITÓRIO']) + '</p> <br>'
+  html += '<p><strong> Tipologia </strong></p> <p>' + capitalize(feature.properties[coluna_tipologia]) + '</p>'
   html += '<div class="close-icon-info"><i onclick="close_modal(ver_informacoes = true)" class="fa-solid fa-x"></i></div>'
-
   html += '</div>'
 
   return html
 }
 
 
-function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi,texto_investimento) {
+function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi, texto_investimento) {
   let path = caminho
   let imgs = ''
   let pontinhos_slider = ''
@@ -129,18 +128,15 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi,texto_inve
     }
   }
 
-
   texto_investimento = capitalize(texto_investimento)
   descricao += `<div class="decricao" id="${nome}_${id_smi}_descricao">${texto_investimento}</div>`
-
-
 
   let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
 
   if (qtd_fotos < 2) {
     html += imgs
     html += pontinhos_slider
-    html+= descricao
+    html += descricao
   } else {
     html += `<button id="botao_voltar_${nome}_${id_smi}" onclick="voltar(this, '${nome}_${id_smi}')" style='visibility:hidden'><i class="fa-solid fa-chevron-left"></i></button>`
     html += imgs
@@ -157,9 +153,11 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi,texto_inve
 function dado_html_investimentos(feature) {
   let html = ''
   let path = feature.properties['CAMINHO FOTO']
-  html += `<img src="${path}/foto_0.jpg" class="img-popup">`
-  html += '<p><strong> Município: ' + feature.properties['Município'] + '</strong></p>'
-  html += '<p><strong> Tipologia: ' + feature.properties['Tipologia'] + '</strong></p>'
+  const qtd_fotos = feature.properties['QUANTIDADE FOTO']
+  if (qtd_fotos > 0)
+    html += `<img src="${path}/foto_0.jpg" class="img-popup">`
+  html += '<p><strong> Município: ' + feature.properties['MUNICÍPIO'] + '</strong></p>'
+  html += '<p><strong> Tipologia: ' + feature.properties[coluna_tipologia] + '</strong></p>'
 
   return html
 }
@@ -169,14 +167,18 @@ function popup_investimentos(feature, layer) {
   let id_smi = feature.properties['Id SMI da MI']
   let html = dado_html_investimentos(feature)
   let nome = feature.properties[coluna_area]
-  html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
-  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true)"><a>Mais informações</a> </button></div>`
   let caminho = `${feature.properties['CAMINHO FOTO']}`
   let texto_investimento = feature.properties['TIPO DE INVESTIMENTO']
-  let qtd_fotos = feature.properties['QUANTIDADE FOTO']
-  let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi, texto_investimento)
   let modal = document.querySelector(".container-modal")
-  modal.innerHTML += html_fotos
+  let qtd_fotos = feature.properties['QUANTIDADE FOTO']
+
+  if (qtd_fotos > 0) {
+    html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
+    let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi, texto_investimento)
+    modal.innerHTML += html_fotos
+  }
+
+  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true)"><a>Mais informações</a> </button></div>`
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
 
