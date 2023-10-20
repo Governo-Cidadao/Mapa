@@ -128,8 +128,8 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi,texto_inve
 
     }
   }
-  
-  
+
+
   texto_investimento = capitalize(texto_investimento)
   descricao += `<div class="decricao" id="${nome}_${id_smi}_descricao">${texto_investimento}</div>`
 
@@ -146,7 +146,6 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi,texto_inve
     html += imgs
     html += `<button id="botao_avancar_${nome}_${id_smi}" onclick="avancar(this, '${nome}_${id_smi}',${qtd_fotos})"><i class="fa-solid fa-chevron-right"></i></button>`
     html += `<div class="container-index-img">${pontinhos_slider}</div>`
-    console.log(descricao)
     html += descricao
   }
   html += `</div>`

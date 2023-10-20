@@ -11,8 +11,8 @@ const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
 const ZOOM_LEVEL_DEFAULT = 8.8;
 
-const coluna_nome = 'Tipologia';
-const coluna_grupo = 'Categoria';
+const coluna_nome = 'TIPOLOGIA_MAPEAMENTO';
+const coluna_grupo = 'AREA_MAPEAMENTO';
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
