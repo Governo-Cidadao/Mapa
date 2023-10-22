@@ -164,7 +164,7 @@ function dado_html_investimentos(feature) {
 
 
 function popup_investimentos(feature, layer) {
-  let id_smi = feature.properties['Id SMI da MI']
+  let id_smi = feature.properties['CÓDIGO ESTABELECIMENTO']
   let html = dado_html_investimentos(feature)
   let nome = feature.properties[coluna_area]
   let caminho = `${feature.properties['CAMINHO FOTO']}`
