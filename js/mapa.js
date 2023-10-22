@@ -234,23 +234,32 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
 
-let grupos = get_valores_unicos(investimentos_teste, coluna_categoria, 'json')
+const grupo_tipologia = get_valores_unicos(investimentos_teste, coluna_tipologia, 'json');
 
-for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_categoria] == grupos[i])
-    let itens = get_valores_unicos(jsonGrupo, coluna_investimento, 'lista')
-    for (let j in itens) {
-        let jsonItem = jsonGrupo.filter(dados => dados.properties[coluna_investimento] == itens[j])
-        var geoJsonAux = new L.geoJson(jsonItem, {
-            pointToLayer: icone_investimentos,
-            onEachFeature: function (feature, layer) {
-                popup_investimentos(feature, layer)
-            }
-        }).addTo(map);
-        layerControl.addOverlay(geoJsonAux, itens[j]);
-        subprojetoJson.push(geoJsonAux);
-    }
-}
+// TIPOLOGIA SECTION
+grupo_tipologia.forEach((tipologia) => {
+    const jsonGrupoTipologia = investimentos_teste.features.filter(dados => dados.properties[coluna_tipologia] == tipologia);
+    const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
+
+    // CATEGORIA SECTION
+    itensCategoria.forEach((itemCategoria) => {
+        const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
+        const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
+        
+        // INVESTIMENTO SECTION
+        itensInvestimentos.forEach((itemInvestimento) => {
+            const jsonItem = jsonGrupoCategoria.filter(dados => dados.properties[coluna_investimento] == itemInvestimento);
+            const geoJsonAux = new L.geoJson(jsonItem, {
+                pointToLayer: icone_investimentos,
+                onEachFeature: popup_investimentos
+            }).addTo(map);
+
+            layerControl.addOverlay(geoJsonAux, itemInvestimento);
+            subprojetoJson.push(geoJsonAux);
+        });
+
+    });
+});
 
 adicionarGrupo("Estradas", 1);
 relacionarSubGrupo('Estradas', 1, 2, 12);
@@ -265,14 +274,24 @@ adicionarGrupo("Distritos", 24);
 relacionarSubGrupo('Distritos', 24, 25, 27);
 
 let index_inicial = 27
-for (let i = 0; i < grupos.length; i++) {
-    let jsonGrupo = investimentos_teste.features.filter(dados => dados.properties[coluna_categoria] == grupos[i])
-    let itens = get_valores_unicos(jsonGrupo, coluna_investimento, 'lista')
-    let index_final = index_inicial + itens.length + 1
-    adicionarGrupo(grupos[i], index_inicial, true);
-    relacionarSubGrupo(grupos[i], index_inicial, index_inicial + 1, index_final);
-    index_inicial = index_final
-}
+
+// TIPOLOGIA SECTION
+grupo_tipologia.forEach((tipologia) => {
+    const jsonGrupoTipologia = investimentos_teste.features.filter(dados => dados.properties[coluna_tipologia] == tipologia);
+    const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
+    let idxTipologiaFinal = index_inicial + itensCategoria.length + 1;
+
+    // CATEGORIA SECTION
+    itensCategoria.forEach((itemCategoria) => {
+        const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
+        const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
+        let idxCategoriaFinal = index_inicial + itensInvestimentos.length + 1;
+
+        adicionarGrupo(itemCategoria, index_inicial, true);
+        relacionarSubGrupo(itemCategoria, index_inicial, index_inicial + 1, idxCategoriaFinal);
+        index_inicial = idxCategoriaFinal;
+    });
+});
 
 selecionar_dot_nav(investimentos_teste.features)
 
@@ -291,14 +310,14 @@ function filtrar() {
     })
 }
 
-function contem_municipio_tipologia_territorio_categoria(layer, texto_filtro){
+function contem_municipio_tipologia_territorio_categoria(layer, texto_filtro) {
     municipio = layer.feature.properties['MUNICÍPIO'];
     territorio = layer.feature.properties['TERRITÓRIO'];
     tipologia = layer.feature.properties[coluna_tipologia];
     categoria = layer.feature.properties[coluna_categoria];
 
     return municipio.toLowerCase().includes(texto_filtro) || tipologia.toLowerCase().includes(texto_filtro)
-    || territorio.toLowerCase().includes(texto_filtro) || categoria.toLowerCase().includes(texto_filtro);
+        || territorio.toLowerCase().includes(texto_filtro) || categoria.toLowerCase().includes(texto_filtro);
 }
 
 function get_valores_unicos(objeto, coluna, tipo) {
