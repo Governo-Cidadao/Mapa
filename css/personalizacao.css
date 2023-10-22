@@ -183,6 +183,11 @@ select {
     align-items: center;
 }
 
+.leaflet-control-layers-overlays label div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media only screen and (max-width: 480px) {
     .leaflet-control-minimap {
