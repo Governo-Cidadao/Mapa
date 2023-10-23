@@ -20,7 +20,7 @@
     z-index: 2;
     position: absolute;
     top: 150px;
-    right: 100px;
+    left: 100px;
     background: white;
     border-radius: 5px;
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
