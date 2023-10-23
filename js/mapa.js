@@ -245,7 +245,7 @@ grupo_tipologia.forEach((tipologia) => {
     itensCategoria.forEach((itemCategoria) => {
         const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
         const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
-        
+
         // INVESTIMENTO SECTION
         itensInvestimentos.forEach((itemInvestimento) => {
             const jsonItem = jsonGrupoCategoria.filter(dados => dados.properties[coluna_investimento] == itemInvestimento);
@@ -279,10 +279,12 @@ let index_inicial = 27
 grupo_tipologia.forEach((tipologia) => {
     const jsonGrupoTipologia = investimentos_teste.features.filter(dados => dados.properties[coluna_tipologia] == tipologia);
     const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
-    let idxTipologiaFinal = index_inicial + itensCategoria.length + 1;
+    let idxInicialTipologia = index_inicial;
 
+    adicionarGrupo(tipologia, idxInicialTipologia, true);
+    index_inicial++;
     // CATEGORIA SECTION
-    itensCategoria.forEach((itemCategoria) => {
+    itensCategoria.forEach((itemCategoria, idx) => {
         const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
         const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
         let idxCategoriaFinal = index_inicial + itensInvestimentos.length + 1;
@@ -291,6 +293,8 @@ grupo_tipologia.forEach((tipologia) => {
         relacionarSubGrupo(itemCategoria, index_inicial, index_inicial + 1, idxCategoriaFinal);
         index_inicial = idxCategoriaFinal;
     });
+    relacionarSubGrupo(tipologia, idxInicialTipologia, idxInicialTipologia + 1, index_inicial);
+    idxInicialTipologia = index_inicial;
 });
 
 selecionar_dot_nav(investimentos_teste.features)
