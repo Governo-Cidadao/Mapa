@@ -21,16 +21,14 @@ function adicionarGrupo(texto, pos, checked = false) {
 
     button.onclick = function () {
 
-        if (button.textContent == '-') {
-
-            button.textContent = '+'
-        } else {
-            button.textContent = '-'
-        }
+        if (button.textContent == '-')
+            button.textContent = '+';
+        else
+            button.textContent = '-';
         let conteudo_grupo = document.getElementsByClassName(texto_sem_espaco);
         let display = 'none';
         if (conteudo_grupo[0].style.display == 'none') {
-            display = 'block';
+            display = 'flex';
         }
         for (let i = 0; i < conteudo_grupo.length; i++) {
             conteudo_grupo[i].style.display = display;
@@ -48,22 +46,35 @@ function adicionarGrupo(texto, pos, checked = false) {
 
 }
 
-function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim) {
+function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim, use_inner_margin = true) {
     let div_overlay = document.getElementsByClassName("leaflet-control-layers-overlays");
 
     for (let i = pos_ini; i < pos_fim; i++) {
-        div_overlay[0].children[i].children[0].setAttribute("id", "margem-esquerda");
-        div_overlay[0].children[i].children[0].classList.add(grupo);
+        let children = div_overlay[0].children[i].children[0];
+        let classList = children.classList;
+        let margemEsquerda = 15;
+
+        if (use_inner_margin)
+            margemEsquerda = 0;
+
+        children.classList.add(grupo)
+        for (let j = 0; j < classList.length; j++) {
+            if (!(classList[j].startsWith('container-list')) && use_inner_margin) {
+                margemEsquerda += 15;
+            }
+        }
+
+        children.style.marginLeft = margemEsquerda + 'px';
     }
 }
 
-function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim) {
+function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim, use_margin = true) {
     let div = document.querySelector('.leaflet-control-layers-overlays')
     let inputs = div.querySelectorAll('input');
     let qtd_input = inputs.length;
     let status_subgrupo = {};
     let texto_sem_espaco = nome.replaceAll(" ", "_")
-    adicionarEspacoSubGrupo(texto_sem_espaco, pos_ini, pos_fim);
+    adicionarEspacoSubGrupo(texto_sem_espaco, pos_ini, pos_fim, use_margin);
 
     inputs[index_grupo].onclick = function () {
 
