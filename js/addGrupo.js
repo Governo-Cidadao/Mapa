@@ -46,7 +46,7 @@ function adicionarGrupo(texto, pos, checked = false) {
 
 }
 
-function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim, use_margin = true) {
+function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim, use_inner_margin = true) {
     let div_overlay = document.getElementsByClassName("leaflet-control-layers-overlays");
 
     for (let i = pos_ini; i < pos_fim; i++) {
@@ -54,9 +54,12 @@ function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim, use_margin = true) {
         let classList = children.classList;
         let margemEsquerda = 15;
 
+        if (use_inner_margin)
+            margemEsquerda = 0;
+
         children.classList.add(grupo)
         for (let j = 0; j < classList.length; j++) {
-            if (!(classList[j].startsWith('container-list')) && use_margin) {
+            if (!(classList[j].startsWith('container-list')) && use_inner_margin) {
                 margemEsquerda += 15;
             }
         }
