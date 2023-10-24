@@ -262,16 +262,16 @@ grupo_tipologia.forEach((tipologia) => {
 });
 
 adicionarGrupo("Estradas", 1);
-relacionarSubGrupo('Estradas', 1, 2, 12);
+relacionarSubGrupo('Estradas', 1, 2, 12, false);
 
 adicionarGrupo("Estradas DER", 12);
-relacionarSubGrupo('Estradas DER', 12, 13, 20);
+relacionarSubGrupo('Estradas DER', 12, 13, 20, false);
 
 adicionarGrupo("Semiárido", 20);
-relacionarSubGrupo('Semiárido', 20, 21, 24);
+relacionarSubGrupo('Semiárido', 20, 21, 24, false);
 
 adicionarGrupo("Distritos", 24);
-relacionarSubGrupo('Distritos', 24, 25, 27);
+relacionarSubGrupo('Distritos', 24, 25, 27, false);
 
 let index_inicial = 27
 

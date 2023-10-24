@@ -26,15 +26,6 @@ header h1
     font-size: 20px;
 }
 
-#margem-esquerda
-{
-    margin-left: 15px;
-}
-
-#inner-margem-esquerda {
-    margin-left: 30px;
-}
-
 .btn_group {
     /* box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); */
     border: none;
