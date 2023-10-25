@@ -71,7 +71,7 @@ function ocultar_carousel(id){
 function selecionar_dot_nav(feature_list){
 
     feature_list.forEach(feature => {
-        const id_smi = feature.properties['Id SMI da MI']
+        const id_smi = feature.properties['CÓDIGO ESTABELECIMENTO']
         const nome = feature.properties[coluna_area]
         const id = `${nome}_${id_smi}`
 

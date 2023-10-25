@@ -1,4 +1,5 @@
 var map;
+const startTime = Date.now()
 const width = document.documentElement.clientWidth;
 
 const initialCoordinates = [-5.844865661075205, -36.56710587301696]
@@ -281,7 +282,7 @@ grupo_tipologia.forEach((tipologia) => {
     const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
     let idxInicialTipologia = index_inicial;
 
-    adicionarGrupo(tipologia, idxInicialTipologia, true);
+    adicionarGrupo(tipologia, idxInicialTipologia, true, true);
     index_inicial++;
     // CATEGORIA SECTION
     itensCategoria.forEach((itemCategoria, idx) => {
