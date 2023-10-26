@@ -40,6 +40,9 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
 
         } else {
             let parentName = this.parentNode.classList[1];
+            if(!(parentName instanceof String))
+                parentName = "";
+
             let divNameFormatted = texto_sem_espaco + " " + parentName;
             let conteudo_grupo = document.getElementsByClassName(divNameFormatted);
             let display = 'none';
