@@ -113,23 +113,14 @@ function buscarIndexSubconjuntos(conjunto) {
     return idxSubconjuntos;
 }
 
-function mostrarOuEsconderSubgrupo(inputs, index_grupo, pos_ini, pos_fim) {
-    let status_subgrupo = {};
 
-    inputs[index_grupo].onclick = function () {
+function mostrarOuEsconderSubgrupo(inputs, index_grupo, pos_ini, pos_fim) {
+    inputs[index_grupo].addEventListener('click', function () {
+        const isChecked = this.checked;
+
         for (let i = pos_ini; i < pos_fim; i++) {
-            if (inputs[index_grupo].checked == false) {
-                if (i != index_grupo)
-                    if (inputs[i].checked == true) {
-                        status_subgrupo[i] = true;
-                        inputs[i].click();
-                    } else
-                        status_subgrupo[i] = false;
-            } else {
-                if (i != index_grupo)
-                    if (inputs[i].checked != status_subgrupo[i])
-                        inputs[i].click();
-            }
+            inputs[i].checked = !isChecked;
+            inputs[i].click();
         }
-    };
+    });
 }
