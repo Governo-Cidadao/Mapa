@@ -39,7 +39,9 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
             })
 
         } else {
-            let conteudo_grupo = document.getElementsByClassName(texto_sem_espaco);
+            let parentName = this.parentNode.classList[1];
+            let divNameFormatted = texto_sem_espaco + " " + parentName;
+            let conteudo_grupo = document.getElementsByClassName(divNameFormatted);
             let display = 'none';
 
             if (conteudo_grupo[0].style.display == 'none')
@@ -81,7 +83,7 @@ function adicionarEspacoSubGrupo(grupo, pos_ini, pos_fim, use_inner_margin = tru
     }
 }
 
-function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim, use_margin = true, use_subconjuntos = false) {
+function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim, use_margin = true) {
     let div = document.querySelector('.leaflet-control-layers-overlays')
     let inputs = div.querySelectorAll('input');
     let texto_sem_espaco = nome.replaceAll(" ", "_")

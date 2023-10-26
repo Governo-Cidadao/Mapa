@@ -285,7 +285,7 @@ grupo_tipologia.forEach((tipologia) => {
     adicionarGrupo(tipologia, idxInicialTipologia, true, true);
     index_inicial++;
     // CATEGORIA SECTION
-    itensCategoria.forEach((itemCategoria, idx) => {
+    itensCategoria.forEach((itemCategoria) => {
         const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
         const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
         let idxCategoriaFinal = index_inicial + itensInvestimentos.length + 1;
