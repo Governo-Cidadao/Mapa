@@ -32,10 +32,15 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
             idxSubconjuntos.forEach(idx => {
                 let display = 'none';
                 let conteudo_grupo = div[idx].childNodes;
+                let btnConteudoGrupo = conteudo_grupo[0].children[1]
+
                 if (conteudo_grupo[0].style.display == 'none')
                     display = 'flex';
 
                 conteudo_grupo[0].style.display = display;
+
+                if (btnConteudoGrupo.textContent === '-')
+                    btnConteudoGrupo.click();
             })
 
         } else {
