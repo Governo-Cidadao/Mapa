@@ -40,7 +40,7 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
 
         } else {
             let parentName = this.parentNode.classList[1];
-            if(!(parentName instanceof String))
+            if(parentName === undefined)
                 parentName = "";
 
             let divNameFormatted = texto_sem_espaco + " " + parentName;
