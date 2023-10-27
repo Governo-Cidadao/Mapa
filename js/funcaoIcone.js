@@ -173,12 +173,13 @@ function popup_investimentos(feature, layer) {
   let qtd_fotos = feature.properties['QUANTIDADE FOTO']
 
   if (qtd_fotos > 0) {
-    html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos')"><a>Ver fotos</a> </button>`
+    html += `<div> <button class="botao_link" onclick="show_modal('${nome}_${id_smi}_fotos',false,${qtd_fotos});"><a>Ver fotos</a></button>`
+
     let html_fotos = html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi, texto_investimento)
     modal.innerHTML += html_fotos
   }
 
-  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true)"><a>Mais informações</a> </button></div>`
+  html += `<button class="botao_link" onclick="show_modal('${nome}_${id_smi}_informacao',true,${qtd_fotos})"><a>Mais informações</a> </button></div>`
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
 

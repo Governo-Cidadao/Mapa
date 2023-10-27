@@ -9,6 +9,7 @@ function close_modal(){
     informacoes.forEach(function(informacao){informacao.style.display='none'})
 
     mostrar_elementos(true)
+    pararCarrosselAutomatico()
 }
 
 function mostrar_elementos(opcao){    
@@ -36,10 +37,11 @@ function mostrar_elementos(opcao){
 
 }
 
-function show_modal(id,ver_informacoes=false){
+function show_modal(id,ver_informacoes=false,qtd_fotos=0){
     let modal = document.querySelector('.container-modal')
     close_fotos = document.querySelector('.close-icon')
     info = document.querySelector('.close-icon-info')
+    let id_foto = id.replace(/_fotos$/, '');
 
     if (ver_informacoes == true){
         close_fotos.style.display = 'none'
@@ -48,6 +50,7 @@ function show_modal(id,ver_informacoes=false){
     else{
         close_fotos.style.display = 'block'
         info.style.display = 'block'
+        iniciarCarrosselAutomatico(id_foto, qtd_fotos)
     }
 
     mostrar_elementos(false)

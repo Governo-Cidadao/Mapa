@@ -1,3 +1,12 @@
+function iniciarCarrosselAutomatico(id, max) {
+    intervalId = setInterval(function() {
+        avancar(document.getElementById(`botao_avancar_${id}`), id, max);
+    }, 5000);
+}
+
+function pararCarrosselAutomatico() {
+    clearInterval(intervalId);
+}
 
 function mudar_imagem(id) {
     let carousel = document.getElementById(id + '_fotos');
