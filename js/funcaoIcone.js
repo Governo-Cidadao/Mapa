@@ -42,7 +42,7 @@ function icone_investimentos(feature, latlng) {
 
 
 function dadosEstrada(feature, layer) {
-  let texto = "<p>" + feature.properties['description'] + "</p>"
+  let texto = "<p>" + feature.properties['descri____o'] + "</p>"
   layer.bindPopup(texto);
 }
 
