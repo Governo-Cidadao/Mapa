@@ -51,7 +51,7 @@
    justify-content: center;
    align-items: center;
    gap: 8px;
-   margin-top: 460px;
+   margin-top: 410px;
    position: absolute;
 }
 .decricao{
@@ -85,7 +85,7 @@
 
 @keyframes zoom {
     0% {
-        transform: scale(0.95); /* Tamanho original (sem zoom) */
+        transform: scale(0.98); /* Tamanho original (sem zoom) */
     }
     100% {
         transform: scale(1); /* Zoom 120% do tamanho original */

@@ -1,3 +1,12 @@
+function iniciarCarrosselAutomatico(id, max) {
+    intervalId = setInterval(function() {
+        avancar(document.getElementById(`botao_avancar_${id}`), id, max);
+    }, 5000);
+}
+
+function pararCarrosselAutomatico() {
+    clearInterval(intervalId);
+}
 
 function mudar_imagem(id) {
     let carousel = document.getElementById(id + '_fotos');
@@ -5,7 +14,10 @@ function mudar_imagem(id) {
     let container = document.getElementById(id + '_fotos');
     let pontos_navegacao = document.querySelectorAll('[id="' + id + '_ponto"]');
     let imgs = container.querySelectorAll('.img-carousel');
-
+    
+    if(index==imgs.length){
+        index=0;
+    }
 
     for (let i = 0; i < imgs.length; i++) {
         if (i === index) {
@@ -45,17 +57,17 @@ function avancar(botao_avancar, id, max){
     let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
 
-    if(index < max-1){
-        index+=1;
-        carousel.setAttribute('index', index)
-        if(botao_voltar.style.visibility == 'hidden'){
-            botao_voltar.style.visibility = 'visible'
-        }
-        mudar_imagem(id)
-        if (index == max-1){
-            botao_avancar.style.visibility = 'hidden'
-        }
+    index+=1;
+    carousel.setAttribute('index', index)
+    if(index == max){
+        index=0;
+        carousel.setAttribute('index', index) 
     }
+
+    if(botao_voltar.style.visibility == 'hidden'){
+        botao_voltar.style.visibility = 'visible'
+    }
+    mudar_imagem(id)
 }
 
 function exibir_carousel(id){
