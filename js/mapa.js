@@ -1,5 +1,4 @@
 var map;
-const startTime = Date.now()
 const width = document.documentElement.clientWidth;
 
 const initialCoordinates = [-5.844865661075205, -36.56710587301696]
@@ -111,12 +110,12 @@ var subprojetoJson = []
 
 var estrada_vermelha = {
     "color": "rgb( 244, 0, 0 )",
-    "weight": 5,
+    "weight": 3,
 };
 
 var estrada_azul = {
     "color": "rgb( 16, 145, 210 )",
-    "weight": 5,
+    "weight": 3,
 };
 
 
