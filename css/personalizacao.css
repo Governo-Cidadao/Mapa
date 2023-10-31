@@ -181,7 +181,7 @@ select {
 }
 
 .leaflet-control-layers-overlays label div {
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
 }
