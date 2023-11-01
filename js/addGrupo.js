@@ -53,7 +53,7 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
             let display = 'none';
 
             if (conteudo_grupo[0].style.display == 'none')
-                display = 'flex';
+                display = 'block';
 
             for (let i = 0; i < conteudo_grupo.length; i++)
                 conteudo_grupo[i].style.display = display;

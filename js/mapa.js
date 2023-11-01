@@ -1,5 +1,4 @@
 var map;
-const startTime = Date.now()
 const width = document.documentElement.clientWidth;
 
 const initialCoordinates = [-5.844865661075205, -36.56710587301696]
@@ -111,12 +110,12 @@ var subprojetoJson = []
 
 var estrada_vermelha = {
     "color": "rgb( 244, 0, 0 )",
-    "weight": 5,
+    "weight": 3,
 };
 
 var estrada_azul = {
     "color": "rgb( 16, 145, 210 )",
-    "weight": 5,
+    "weight": 3,
 };
 
 
@@ -255,7 +254,7 @@ grupo_tipologia.forEach((tipologia) => {
                 onEachFeature: popup_investimentos
             }).addTo(map);
 
-            layerControl.addOverlay(geoJsonAux, itemInvestimento);
+            layerControl.addOverlay(geoJsonAux, capitalize(itemInvestimento));
             subprojetoJson.push(geoJsonAux);
         });
 
@@ -282,7 +281,7 @@ grupo_tipologia.forEach((tipologia) => {
     const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
     let idxInicialTipologia = index_inicial;
 
-    adicionarGrupo(tipologia, idxInicialTipologia, true, true);
+    adicionarGrupo(capitalize(tipologia), idxInicialTipologia, true, true);
     index_inicial++;
     // CATEGORIA SECTION
     itensCategoria.forEach((itemCategoria) => {
@@ -290,11 +289,11 @@ grupo_tipologia.forEach((tipologia) => {
         const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
         let idxCategoriaFinal = index_inicial + itensInvestimentos.length + 1;
 
-        adicionarGrupo(itemCategoria, index_inicial, true);
-        relacionarSubGrupo(itemCategoria, index_inicial, index_inicial + 1, idxCategoriaFinal);
+        adicionarGrupo(capitalize(itemCategoria), index_inicial, true);
+        relacionarSubGrupo(capitalize(itemCategoria), index_inicial, index_inicial + 1, idxCategoriaFinal);
         index_inicial = idxCategoriaFinal;
     });
-    relacionarSubGrupo(tipologia, idxInicialTipologia, idxInicialTipologia + 1, index_inicial);
+    relacionarSubGrupo(capitalize(tipologia), idxInicialTipologia, idxInicialTipologia + 1, index_inicial);
     idxInicialTipologia = index_inicial;
 });
 
