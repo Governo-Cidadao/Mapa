@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
-
+  <div id="loader-container">
+    <div class="container-coponents">
+        <div id="map-icon">&#x1F5FA;</div>
+        <h1>Carregando o Mapa do Rio Grande do Norte...</h1>
+        <div class="loader">
+          <div class="spinner"></div>
+        </div>
+        <div id="loading-bar"></div>
+    </div>
+  </div>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -69,7 +78,7 @@
       </div>
 
     </div>
-
+      
   </div>
 
   <div class="container-controller">
@@ -141,6 +150,7 @@
 
         }
       })
+      document.querySelector('#loader-container').style.display = 'none';
     }
 
   </script>
