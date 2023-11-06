@@ -1,5 +1,4 @@
 // Investimentos
-// document.write('<script src="geoJson/geoJsonJS/investimentos/teste_inv.js"></script>')
 document.write('<script src="geoJson/geoJsonJS/investimentos/investimentos.js"></script>')
 
 // estradas

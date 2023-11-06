@@ -20,6 +20,10 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
     inner_div.classList.add("container-input-span")
 
     button.onclick = function () {
+        let parentName = this.parentNode.className;
+        if(parentName.startsWith('container-list'))
+            parentName = parentName.substring('container-list '.length);
+
         if (button.textContent == '-')
             button.textContent = '+';
         else
@@ -27,7 +31,7 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
 
         if (use_subconjuntos) {
             const div = document.querySelector('.leaflet-control-layers-overlays').children;
-            let idxSubconjuntos = buscarIndexSubconjuntos(texto_sem_espaco);
+            let idxSubconjuntos = buscarIndexSubconjuntos(texto_sem_espaco, parentName);
 
             idxSubconjuntos.forEach(idx => {
                 let display = 'none';
@@ -44,13 +48,13 @@ function adicionarGrupo(texto, pos, checked = false, use_subconjuntos = false) {
             })
 
         } else {
-            let parentName = this.parentNode.classList[1];
-            if(parentName === undefined)
-                parentName = "";
-
-            let divNameFormatted = texto_sem_espaco + " " + parentName;
+            let divNameFormatted = String(texto_sem_espaco + " " + parentName).trim();
             let conteudo_grupo = document.getElementsByClassName(divNameFormatted);
             let display = 'none';
+
+            conteudo_grupo = Array.from(conteudo_grupo).filter(function(elemento) {
+                return elemento.className === divNameFormatted;
+            })
 
             if (conteudo_grupo[0].style.display == 'none')
                 display = 'block';
@@ -106,7 +110,7 @@ function relacionarSubGrupo(nome, index_grupo, pos_ini, pos_fim, use_margin = tr
     }
 }
 
-function buscarIndexSubconjuntos(conjunto) {
+function buscarIndexSubconjuntos(conjunto, pai_conjunto) {
     const div = document.querySelector('.leaflet-control-layers-overlays').children;
     const formattedConjunto = conjunto.replaceAll(" ", "_");
     let idxSubconjuntos = [];
@@ -114,7 +118,10 @@ function buscarIndexSubconjuntos(conjunto) {
     for (let i = 0; i < div.length; i++) {
         let childrenClassName = div[i].children[0].className;
 
-        if (childrenClassName.startsWith('container-list') && childrenClassName.endsWith(formattedConjunto))
+        if (childrenClassName.startsWith('container-list') && childrenClassName.length != 'container-list'.length)
+            childrenClassName = childrenClassName.substring('container-list '.length);
+
+        if (childrenClassName.startsWith(formattedConjunto) && childrenClassName.endsWith(pai_conjunto))
             idxSubconjuntos.push(i);
     }
 
