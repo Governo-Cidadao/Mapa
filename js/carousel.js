@@ -5,7 +5,9 @@ function iniciarCarrosselAutomatico(id, max) {
 }
 
 function pararCarrosselAutomatico() {
-    clearInterval(intervalId);
+    if (typeof intervalId !== 'undefined') {
+        clearInterval(intervalId);
+    }
 }
 
 function mudar_imagem(id) {
@@ -53,7 +55,7 @@ function voltar(botao_voltar, id){
 }
 
 function avancar(botao_avancar, id, max){
-    let carousel = document.getElementById(id+'_fotos')
+        let carousel = document.getElementById(id+'_fotos')
     let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
 
@@ -98,6 +100,7 @@ function selecionar_dot_nav(feature_list){
                 mudar_imagem(id);
                 botao_avancar.style.visibility = index < dots.length - 1 ? 'visible' : 'hidden';
                 botao_voltar.style.visibility = index > 0 ? 'visible' : 'hidden';
+                pararCarrosselAutomatico()
             });
         });
     })
