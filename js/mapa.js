@@ -234,32 +234,38 @@ layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
 var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
 layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
 
-const grupo_tipologia = get_valores_unicos(investimentos_teste, coluna_tipologia, 'json');
+const grupo_area = get_valores_unicos(investimentos_teste, coluna_area, 'json');
 
-// TIPOLOGIA SECTION
-grupo_tipologia.forEach((tipologia) => {
-    const jsonGrupoTipologia = investimentos_teste.features.filter(dados => dados.properties[coluna_tipologia] == tipologia);
-    const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
+// AREA SECTION
+grupo_area.forEach(area => {
+    const jsonGrupoArea = investimentos_teste.features.filter(dados => dados.properties[coluna_area] === area);
+    const itensTipologia = get_valores_unicos(jsonGrupoArea, coluna_tipologia, 'lista');
 
-    // CATEGORIA SECTION
-    itensCategoria.forEach((itemCategoria) => {
-        const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
-        const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
+    // TIPOLOGIA SECTION
+    itensTipologia.forEach((tipologia) => {
+        const jsonGrupoTipologia = jsonGrupoArea.filter(dados => dados.properties[coluna_tipologia] === tipologia);
+        const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
 
-        // INVESTIMENTO SECTION
-        itensInvestimentos.forEach((itemInvestimento) => {
-            const jsonItem = jsonGrupoCategoria.filter(dados => dados.properties[coluna_investimento] == itemInvestimento);
-            const geoJsonAux = new L.geoJson(jsonItem, {
-                pointToLayer: icone_investimentos,
-                onEachFeature: popup_investimentos
-            }).addTo(map);
+        // CATEGORIA SECTION
+        itensCategoria.forEach((itemCategoria) => {
+            const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] === itemCategoria);
+            const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
 
-            layerControl.addOverlay(geoJsonAux, capitalize(itemInvestimento));
-            subprojetoJson.push(geoJsonAux);
+            // INVESTIMENTO SECTION
+            itensInvestimentos.forEach((itemInvestimento) => {
+                const jsonItem = jsonGrupoCategoria.filter(dados => dados.properties[coluna_investimento] === itemInvestimento);
+                const geoJsonAux = new L.geoJson(jsonItem, {
+                    pointToLayer: icone_investimentos,
+                    onEachFeature: popup_investimentos
+                }).addTo(map);
+
+                layerControl.addOverlay(geoJsonAux, capitalize(itemInvestimento));
+                subprojetoJson.push(geoJsonAux);
+            });
+
         });
-
     });
-});
+})
 
 adicionarGrupo("Estradas", 1);
 relacionarSubGrupo('Estradas', 1, 2, 12, false);
@@ -275,27 +281,38 @@ relacionarSubGrupo('Distritos', 24, 25, 27, false);
 
 let index_inicial = 27
 
-// TIPOLOGIA SECTION
-grupo_tipologia.forEach((tipologia) => {
-    const jsonGrupoTipologia = investimentos_teste.features.filter(dados => dados.properties[coluna_tipologia] == tipologia);
-    const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
-    let idxInicialTipologia = index_inicial;
+// AREA SECTION
+grupo_area.forEach(area => {
+    const jsonGrupoArea = investimentos_teste.features.filter(dados => dados.properties[coluna_area] === area);
+    const itensTipologia = get_valores_unicos(jsonGrupoArea, coluna_tipologia, 'lista');
+    let idxInicialArea = index_inicial;
 
-    adicionarGrupo(capitalize(tipologia), idxInicialTipologia, true, true);
-    index_inicial++;
-    // CATEGORIA SECTION
-    itensCategoria.forEach((itemCategoria) => {
-        const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
-        const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
-        let idxCategoriaFinal = index_inicial + itensInvestimentos.length + 1;
+    adicionarGrupo(capitalize(area), idxInicialArea, true, true);
+    index_inicial++
+    // TIPOLOGIA SECTION
+    itensTipologia.forEach((tipologia) => {
+        const jsonGrupoTipologia = jsonGrupoArea.filter(dados => dados.properties[coluna_tipologia] == tipologia);
+        const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
+        let idxInicialTipologia = index_inicial;
 
-        adicionarGrupo(capitalize(itemCategoria), index_inicial, true);
-        relacionarSubGrupo(capitalize(itemCategoria), index_inicial, index_inicial + 1, idxCategoriaFinal);
-        index_inicial = idxCategoriaFinal;
+        adicionarGrupo(capitalize(tipologia), idxInicialTipologia, true, true);
+        index_inicial++;
+        // CATEGORIA SECTION
+        itensCategoria.forEach((itemCategoria) => {
+            const jsonGrupoCategoria = jsonGrupoTipologia.filter(dados => dados.properties[coluna_categoria] == itemCategoria);
+            const itensInvestimentos = get_valores_unicos(jsonGrupoCategoria, coluna_investimento, 'lista');
+            let idxCategoriaFinal = index_inicial + itensInvestimentos.length + 1;
+
+            adicionarGrupo(capitalize(itemCategoria), index_inicial, true);
+            relacionarSubGrupo(capitalize(itemCategoria), index_inicial, index_inicial + 1, idxCategoriaFinal, true);
+            index_inicial = idxCategoriaFinal;
+        });
+        relacionarSubGrupo(capitalize(tipologia), idxInicialTipologia, idxInicialTipologia + 1, index_inicial, true);
+        idxInicialTipologia = index_inicial;
     });
-    relacionarSubGrupo(capitalize(tipologia), idxInicialTipologia, idxInicialTipologia + 1, index_inicial);
-    idxInicialTipologia = index_inicial;
-});
+    relacionarSubGrupo(capitalize(area), idxInicialArea, idxInicialArea + 1, index_inicial);
+    idxInicialArea = index_inicial;
+})
 
 selecionar_dot_nav(investimentos_teste.features)
 
