@@ -32,6 +32,7 @@ map = new L.map('map', {
     minZoom: 8,
     maxZoom: 10,
     zoomSnap: 0.10,
+    // closePopupOnClick: false,
 }).setView(initialCoordinates, initialZoomLevel);
 
 map.touchZoom.enable();
@@ -263,8 +264,8 @@ grupo_area.forEach(area => {
                 subprojetoJson.push(geoJsonAux);
             });
 
+            });
         });
-    });
 })
 
 adicionarGrupo("Estradas", 1);
