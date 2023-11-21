@@ -305,11 +305,12 @@ function filtrar() {
 
     subprojetoJson.forEach(function (layerGroup) {
         layerGroup.eachLayer(function (layer) {
-            if (contem_municipio_tipologia_territorio_categoria(layer, texto_filtro)) {
-                layer._icon.style.display = 'block';
-            } else {
-                layer._icon.style.display = 'None';
-            }
+            if (layer._icon != null)
+                if (contem_municipio_tipologia_territorio_categoria(layer, texto_filtro)) {
+                    layer._icon.style.display = 'block';
+                } else {
+                    layer._icon.style.display = 'None';
+                }
         })
     })
 }
