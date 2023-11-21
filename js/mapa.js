@@ -32,7 +32,7 @@ map = new L.map('map', {
     minZoom: 8,
     maxZoom: 10,
     zoomSnap: 0.10,
-    // closePopupOnClick: false,
+    closePopupOnClick: false,
 }).setView(initialCoordinates, initialZoomLevel);
 
 map.touchZoom.enable();
