@@ -145,59 +145,6 @@ grupo_area.forEach(area => {
     });
 });
 
-var geoJson_eixo_guanduba = new L.geoJson(eixo_guanduba, { style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJson_eixo_guanduba, "Eixo Guanduba");
-
-var geoJson_eixo_producao = new L.geoJson(eixo_producao, { style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJson_eixo_producao, "Eixo Produção");
-
-map.createPane('estradas')
-
-var geoJsonRN_011 = new L.geoJson(RN_011, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_011, 'RN 011');
-
-var geoJsonRN_016 = new L.geoJson(RN_016, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_016, 'RN 016');
-
-var geoJsonRN_063 = new L.geoJson(RN_063, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_063, 'RN 063');
-
-var geoJsonRN_087 = new L.geoJson(RN_087, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_087, 'RN 087');
-
-var geoJsonRN_118 = new L.geoJson(RN_118, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_118, 'RN 118');
-
-var geoJsonRN233 = new L.geoJson(rn_233, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN233, "RN 233");
-
-var geoJsonRN_160 = new L.geoJson(RN_160, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_160, 'RN 160');
-
-var geoJsonRN_307 = new L.geoJson(RN_307, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_307, 'RN 307');
-
-var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_II, 'Projetos DER II');
-
-var geoJsonprojetos_DER_III_A = new L.geoJson(projetos_DER_III_A, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_III_A, 'Projetos DER III A');
-
-var geoJsonprojetos_DER_III_B = new L.geoJson(projetos_DER_III_B, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_III_B, 'Projetos DER III B');
-
-var geoJsonprojetos_DER_I_A = new L.geoJson(projetos_DER_I_A, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_I_A, 'Projetos DER I A');
-
-var geoJsonprojetos_DER_I_B = new L.geoJson(projetos_DER_I_B, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_I_B, 'Projetos DER I B');
-
-var geoJsonprojetos_DER_V = new L.geoJson(projetos_DER_V, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_V, 'Projetos DER V');
-
-var geoJsonprojetos_DER_VI = new L.geoJson(projetos_DER_VI, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_VI, 'Projetos DER VI');
-
 let index_inicial = 1
 
 // AREA SECTION
@@ -221,16 +168,6 @@ grupo_area.forEach(area => {
     relacionarSubGrupo(capitalize(area), idxInicialArea, idxInicialArea + 1, index_inicial);
     idxInicialArea = index_inicial;
 })
-
-adicionarGrupo("Estradas ", index_inicial, true, true);
-
-adicionarGrupo("Obras", index_inicial + 1, true);
-relacionarSubGrupo('Obras', index_inicial + 1, index_inicial + 2, index_inicial + 12);
-
-adicionarGrupo("Projetos", index_inicial + 12, true);
-relacionarSubGrupo('Projetos', index_inicial + 12, index_inicial + 13, index_inicial + 20);
-
-relacionarSubGrupo("Estradas ", index_inicial, index_inicial + 1, index_inicial + 20);
 
 selecionar_dot_nav(investimentos_teste.features)
 
