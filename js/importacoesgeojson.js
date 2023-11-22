@@ -1,5 +1,5 @@
 // Investimentos
-document.write('<script src="geoJson/geoJsonJS/investimentos/investimentos.js"></script>')
+document.write('<script src="geoJson/geoJsonJS/investimentos/investimentos_final.js"></script>')
 
 // estradas
 document.write('<script src="geoJson/geoJsonJS/estradas/eixo_guanduba.js"></script>')
