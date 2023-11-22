@@ -1,25 +1,129 @@
 function icone_investimentos(feature, latlng) {
   var nameIcon;
-  var iconimage = false;
-  const BASE_CAMINHO_IMAGEM = 'images/icones_novos'
-  switch (String(feature.properties[coluna_area])) {
-    case 'pesca':
-      nameIcon = BASE_CAMINHO_IMAGEM + '/Algas.svg';
+  const BASE_CAMINHO_IMAGEM = 'images/icones_novos';
+  switch (String(feature.properties[coluna_categoria])) {
+    case 'ABASTECIMENTO DE ÁGUA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Abastecimento de água.svg';
       break;
-    case 'escola':
+    case 'APICULTURA':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Apicultura (1).svg';
       break;
-    case 'arte':
-      nameIcon = BASE_CAMINHO_IMAGEM + '/Artesanato (1).svg';
+    case 'AQUICULTURA E PESCA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/AQUICULTURA E PESCA.svg';
+      break;
+    case 'ARTESANATO E CONFECCÇÃO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/ARTESANATO.svg';
+      break;
+    case 'AVICULTURA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/avicultura 1.svg';
+      break;
+    case 'BANDAS FILARMÔNICAS':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/BANDA.svg';
+      break;
+    case 'BARRAGEM':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/BARRAGEM.svg';
+      break;
+    case 'CENTRO DE COMERCIALIZAÇÃO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Unidade de comercializacao.svg';
+      break;
+    case 'CENTRO DE FORMAÇÃO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Centro de formação.svg';
+      break;
+    case 'CENTRO DE MANEJO ':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Centros de manejo.svg';
+      break;
+    case 'COMERCIALIZAÇÃO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/comercializacao 1.svg';
+      break;
+    case 'DIBA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/RECUPERAÇÃO ESTRUTURAL DO DIBA.svg';
+      break;
+    case 'EQUIPAMENTO CULTURAL':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Cultura.svg';
+      break;
+    case 'ESGOTAMENTO SANITÁRIO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/esgotamento sanitário.svg';
+      break;
+    case 'IMPLANTAÇÃO DE RODOVIA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/INFRAESTRUTURA.svg';
+      break;
+    case 'RECUPERAÇÃO DE RODOVIA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/INFRAESTRUTURA.svg';
+      break;
+    case 'FRUTICULTURA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/FRUTICULTURA_1.svg';
+      break;
+    case 'GALPÃO PARA ARMAZENAMENTO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Galpão de armazenamento.svg';
+      break;
+    case 'LEGUMINOSA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Leguminosa.svg';
+      break;
+    case 'LEITE E DERIVADOS':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Leite e derivados.svg';
+      break;
+    case 'MANDIOCULTURA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/mandioca 1.svg';
+      break;
+    case 'OBRAS HIDROAMBIENTAIS':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/OBRAS HIDROAMBIENTAIS.svg';
+      break;
+    // case 'PARQUE TECNOLÓGICO':
+    //   nameIcon = BASE_CAMINHO_IMAGEM + '/Parque_Tecnologico.svg';
+    //   break;
+    case 'PRODUÇÃO DE ALIMENTOS':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/ALIMENTOS.svg';
+      break;
+    case 'QUEIJEIRA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Leite e derivados.svg';
+      break;
+    case 'RECICLAGEM':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/reciclagem 1.svg';
       break;
     case 'RECUPERAÇÃO DE ÁREAS DEGRADADAS':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Combate a desertificação.svg';
       break;
-    case 'SISTEMAS DE ABASTECIMENTO E TRATAMENTO DE ÁGUA':
+    case 'SISTEMAS SIMPLIFICADO DE ABASTECIMENTO DE ÁGUA':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Sistema de abastecimento de água.svg';
       break;
-    case 'ACESSO À ÁGUA':
-      nameIcon = BASE_CAMINHO_IMAGEM + '/Abastecimento de água.svg';
+    case 'IMPLANTAÇÃO DE ESCOLA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Escola.svg';
+      break;
+    case 'AMPLIAÇÃO/REFORMA DE ESCOLA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Escola.svg';
+      break;
+    case 'PROJETO DE INOVAÇÃO PEDAGÓGICA (PIP)':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Projeto de inovação pedagógica (pip).svg';
+      break;
+    case 'CENTRAL DO CIDADÃO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/central do cidadao.svg';
+      break;
+    case 'CENTRO ADMINISTRATIVO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Centro administrativo.svg';
+      break;
+    case 'POSTO INTEGRADO DE FISCALIZAÇÃO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/POSTO DE FISCALIZAÇÃO.svg';
+      break;
+    case 'SINE':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Sine.svg';
+      break;
+    case 'ENFRENTAMENTO DA COVID-19':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Enfrentamento da covid-19.svg';
+      break;
+    case 'HOSPITAL DA MULHER':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/hospital regional.svg';
+      break;
+    case 'HOSPITAL REGIONAL ':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/hospital regional.svg';
+      break;
+    // case 'LABORATÓRIO DE ANATOMOCITOPATOLOGIA':
+    //   nameIcon = BASE_CAMINHO_IMAGEM + '/Lab_Anatomocitopatologia.svg';
+    //   break;
+    case 'MATERNIDADES':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/hospital regional.svg';
+      break;
+    case 'REDE METROPOLITANA DE DADOS':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Rede metropolitana de dados.svg';
       break;
     default:
       nameIcon = BASE_CAMINHO_IMAGEM + '/Irrigacao.svg';
@@ -33,12 +137,11 @@ function icone_investimentos(feature, latlng) {
     iconAnchor: [12, 12],
     shadowAnchor: [12, 6],
     popupAnchor: [0, 0]
-  })
-  if (iconimage) {
-    return L.marker(latlng)
-  }
+  });
+
   return L.marker(latlng, { icon: myIcon });
 }
+
 
 
 function dadosEstrada(feature, layer) {
