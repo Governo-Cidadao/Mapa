@@ -286,5 +286,5 @@ function popup_investimentos(feature, layer) {
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
 
-  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
+  // layer.on('click', function (point) { map.setView([point.latlng.lat + 0.2, point.latlng.lng]) })
 }
