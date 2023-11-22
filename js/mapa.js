@@ -318,13 +318,11 @@ function filtrar() {
 function contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro) {
     municipio = layer.feature.properties['MUNICÍPIO'];
     territorio = layer.feature.properties['TERRITÓRIO'];
-    tipologia = layer.feature.properties[coluna_tipologia];
     categoria = layer.feature.properties[coluna_categoria];
     invest = layer.feature.properties[coluna_investimento];
 
-    return municipio.toLowerCase().includes(texto_filtro) || tipologia.toLowerCase().includes(texto_filtro)
-        || territorio.toLowerCase().includes(texto_filtro) || categoria.toLowerCase().includes(texto_filtro)
-        || invest.toLowerCase().includes(texto_filtro);
+    return municipio.toLowerCase().includes(texto_filtro) || territorio.toLowerCase().includes(texto_filtro)
+        || categoria.toLowerCase().includes(texto_filtro) || invest.toLowerCase().includes(texto_filtro);
 }
 
 function get_valores_unicos(objeto, coluna, tipo) {

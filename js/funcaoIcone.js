@@ -18,7 +18,7 @@ function icone_investimentos(feature, latlng) {
       nameIcon = BASE_CAMINHO_IMAGEM + '/avicultura 1.svg';
       break;
     case 'BANDAS FILARMÔNICAS':
-      nameIcon = BASE_CAMINHO_IMAGEM + '/BANDA.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Banda.svg';
       break;
     case 'BARRAGEM':
       nameIcon = BASE_CAMINHO_IMAGEM + '/BARRAGEM.svg';
@@ -66,7 +66,7 @@ function icone_investimentos(feature, latlng) {
       nameIcon = BASE_CAMINHO_IMAGEM + '/mandioca 1.svg';
       break;
     case 'OBRAS HIDROAMBIENTAIS':
-      nameIcon = BASE_CAMINHO_IMAGEM + '/OBRAS HIDROAMBIENTAIS.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Obras hidroambientais.svg';
       break;
     // case 'PARQUE TECNOLÓGICO':
     //   nameIcon = BASE_CAMINHO_IMAGEM + '/Parque_Tecnologico.svg';
