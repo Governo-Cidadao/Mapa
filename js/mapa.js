@@ -14,7 +14,7 @@ const ZOOM_LEVEL_DEFAULT = 8.8;
 const coluna_area = 'AREA_MAPEAMENTO';
 const coluna_tipologia = 'TIPOLOGIA_MAPEAMENTO';
 const coluna_categoria = 'CATEGORIA_MAPEAMENTO';
-const coluna_investimento = 'INVESTIMENTO_MAPEAMENTO'
+const coluna_investimento = 'INVESTIMENTO'
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
