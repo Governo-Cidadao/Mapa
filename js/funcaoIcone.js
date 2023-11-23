@@ -68,9 +68,9 @@ function icone_investimentos(feature, latlng) {
     case 'OBRAS HIDROAMBIENTAIS':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Obras hidroambientais.svg';
       break;
-    // case 'PARQUE TECNOLÓGICO':
-    //   nameIcon = BASE_CAMINHO_IMAGEM + '/Parque_Tecnologico.svg';
-    //   break;
+    case 'PARQUE TECNOLÓGICO':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Parque tecnológico.svg';
+      break;
     case 'PRODUÇÃO DE ALIMENTOS':
       nameIcon = BASE_CAMINHO_IMAGEM + '/ALIMENTOS.svg';
       break;
@@ -116,9 +116,9 @@ function icone_investimentos(feature, latlng) {
     case 'HOSPITAL REGIONAL ':
       nameIcon = BASE_CAMINHO_IMAGEM + '/hospital regional.svg';
       break;
-    // case 'LABORATÓRIO DE ANATOMOCITOPATOLOGIA':
-    //   nameIcon = BASE_CAMINHO_IMAGEM + '/Lab_Anatomocitopatologia.svg';
-    //   break;
+    case 'LABORATÓRIO DE ANATOMOCITOPATOLOGIA':
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Laboratório.svg';
+      break;
     case 'MATERNIDADES':
       nameIcon = BASE_CAMINHO_IMAGEM + '/hospital regional.svg';
       break;
