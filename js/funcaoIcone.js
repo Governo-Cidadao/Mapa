@@ -206,7 +206,8 @@ function mais_informacoes(feature, nome, id_smi) {
   html += '<p><strong> Orgão </strong></p> <p>' + feature.properties['ORGÃO'] + '</p> <br>'
   html += '<p><strong> Município </strong></p> <p>' + capitalize(feature.properties['MUNICÍPIO']) + '</p> <br>'
   html += '<p><strong> Território </strong></p> <p>' + capitalize(feature.properties['TERRITÓRIO']) + '</p> <br>'
-  html += '<p><strong> Tipologia </strong></p> <p>' + capitalize(feature.properties[coluna_tipologia]) + '</p>'
+  html += '<p><strong> Tipologia </strong></p> <p>' + capitalize(feature.properties[coluna_tipologia]) + '</p> <br>'
+  html += '<p><strong> Total Investimento </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["VALOR_TOTAL"]) + '</p>';
   html += '<div class="close-icon-info"><i onclick="close_modal(ver_informacoes = true)" class="fa-solid fa-x"></i></div>'
   html += '</div>'
 
@@ -286,5 +287,5 @@ function popup_investimentos(feature, layer) {
   modal.innerHTML += mais_informacoes(feature, nome, id_smi)
   layer.bindPopup(html);
 
-  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.6, point.latlng.lng]) })
+  layer.on('click', function (point) { map.setView([point.latlng.lat + 0.1, point.latlng.lng]) })
 }
