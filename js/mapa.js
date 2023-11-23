@@ -139,8 +139,8 @@ grupo_area.forEach(area => {
                 pointToLayer: icone_investimentos,
                 onEachFeature: popup_investimentos
             }).addTo(map);
-                layerControl.addOverlay(geoJsonAux, capitalize(itemCategoria));
-                subprojetoJson.push(geoJsonAux);
+            layerControl.addOverlay(geoJsonAux, capitalize(itemCategoria));
+            subprojetoJson.push(geoJsonAux);
         });
     });
 });
@@ -177,12 +177,18 @@ function filtrar() {
 
     subprojetoJson.forEach(function (layerGroup) {
         layerGroup.eachLayer(function (layer) {
-            if (layer._icon != null)
+            if (layer._icon != null) {
+                layer._icon.style.display = 'None';
                 if (contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro)) {
                     layer._icon.style.display = 'block';
-                } else {
-                    layer._icon.style.display = 'None';
                 }
+            }
+            else if (layer._path != null){
+                layer._path.style.display = 'None';
+                if (contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro)) {
+                    layer._path.style.display = 'block';
+                }
+            }
         })
     })
 }
