@@ -14,7 +14,7 @@ const ZOOM_LEVEL_DEFAULT = 8.8;
 const coluna_area = 'AREA_MAPEAMENTO';
 const coluna_tipologia = 'TIPOLOGIA_MAPEAMENTO';
 const coluna_categoria = 'CATEGORIA_MAPEAMENTO';
-const coluna_investimento = 'INVESTIMENTO'
+const coluna_investimento = 'INVESTIMENTO_MAPEAMENTO';
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
@@ -190,11 +190,14 @@ function filtrar() {
 function contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro) {
     municipio = layer.feature.properties['MUNICÍPIO'];
     territorio = layer.feature.properties['TERRITÓRIO'];
+    area = layer.feature.properties[coluna_area];
+    tipologia = layer.feature.properties[coluna_tipologia];
     categoria = layer.feature.properties[coluna_categoria];
     invest = layer.feature.properties[coluna_investimento];
 
     return municipio.toLowerCase().includes(texto_filtro) || territorio.toLowerCase().includes(texto_filtro)
-        || categoria.toLowerCase().includes(texto_filtro) || invest.toLowerCase().includes(texto_filtro);
+        || categoria.toLowerCase().includes(texto_filtro) || invest.toLowerCase().includes(texto_filtro)
+        || area.toLowerCase().includes(texto_filtro) || tipologia.toLowerCase().includes(texto_filtro);
 }
 
 function get_valores_unicos(objeto, coluna, tipo) {
