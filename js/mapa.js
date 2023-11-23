@@ -14,7 +14,7 @@ const ZOOM_LEVEL_DEFAULT = 8.8;
 const coluna_area = 'AREA_MAPEAMENTO';
 const coluna_tipologia = 'TIPOLOGIA_MAPEAMENTO';
 const coluna_categoria = 'CATEGORIA_MAPEAMENTO';
-const coluna_investimento = 'INVESTIMENTO_MAPEAMENTO'
+const coluna_investimento = 'INVESTIMENTO_MAPEAMENTO';
 
 if (width < SMALL_SCREEN_WIDTH) {
     initialZoomLevel = ZOOM_LEVEL_SMALL;
@@ -120,121 +120,6 @@ var estrada_azul = {
 };
 
 
-var geoJson_eixo_guanduba = new L.geoJson(eixo_guanduba, { style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJson_eixo_guanduba, "Eixo Guanduba");
-
-var geoJson_eixo_producao = new L.geoJson(eixo_producao, { style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJson_eixo_producao, "Eixo Produção");
-
-map.createPane('estradas')
-
-var geoJsonRN_011 = new L.geoJson(RN_011, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_011, 'RN 011');
-
-var geoJsonRN_016 = new L.geoJson(RN_016, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_016, 'RN 016');
-
-var geoJsonRN_063 = new L.geoJson(RN_063, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_063, 'RN 063');
-
-var geoJsonRN_087 = new L.geoJson(RN_087, { pane: 'estradas', style: estrada_azul, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_087, 'RN 087');
-
-var geoJsonRN_118 = new L.geoJson(RN_118, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_118, 'RN 118');
-
-var geoJsonRN233 = new L.geoJson(rn_233, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN233, "RN 233");
-
-var geoJsonRN_160 = new L.geoJson(RN_160, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_160, 'RN 160');
-
-var geoJsonRN_307 = new L.geoJson(RN_307, { pane: 'estradas', style: estrada_vermelha, onEachFeature: dadosEstrada2 });
-layerControl.addOverlay(geoJsonRN_307, 'RN 307');
-
-var geoJsonprojetos_DER_II = new L.geoJson(projetos_DER_II, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_II, 'Projetos DER II');
-
-var geoJsonprojetos_DER_III_A = new L.geoJson(projetos_DER_III_A, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_III_A, 'Projetos DER III A');
-
-var geoJsonprojetos_DER_III_B = new L.geoJson(projetos_DER_III_B, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_III_B, 'Projetos DER III B');
-
-var geoJsonprojetos_DER_I_A = new L.geoJson(projetos_DER_I_A, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_I_A, 'Projetos DER I A');
-
-var geoJsonprojetos_DER_I_B = new L.geoJson(projetos_DER_I_B, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_I_B, 'Projetos DER I B');
-
-var geoJsonprojetos_DER_V = new L.geoJson(projetos_DER_V, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_V, 'Projetos DER V');
-
-var geoJsonprojetos_DER_VI = new L.geoJson(projetos_DER_VI, { onEachFeature: dadosEstrada });
-layerControl.addOverlay(geoJsonprojetos_DER_VI, 'Projetos DER VI');
-
-var fundo_azul = {
-    "color": 'rgba(35,35,35,1.0)',
-    "fillOpacity": 1,
-    "fill": true,
-    "fillColor": 'rgba(109,212,224,1.0)',
-    "weight": 1.0,
-
-};
-
-var fundo_cinza =
-{
-    "opacity": 1,
-    "color": 'rgba(0,0,0,1.0)',
-    'weight': 1.0,
-    'fill': true,
-    'fillOpacity': 1,
-    'fillColor': 'rgba(182,186,190,1.0)',
-}
-
-var fundo_cinza_claro =
-{
-    "opacity": 1,
-    "color": 'rgba(35,35,35,1.0)',
-    'weight': 1.0,
-    'fill': true,
-    'fillOpacity': 1,
-    'fillColor': 'rgba(225,225,225,1.0)',
-}
-// de alguma forma isso faz com que a borda branca fique sempre visivel enquanto a camada estiver ativada
-map.createPane('pane_semiarido_RN_municipios')
-map.createPane('pane_semiarido');
-map.createPane('pane_Territrios');
-
-var geoJsonsemiarido_territorio = new L.geoJson(semiarido_territorio, { pane: 'pane_Territrios', style: borda_branca, onEachFeature: dados_semiarido });
-layerControl.addOverlay(geoJsonsemiarido_territorio, 'Semiárido território');
-
-var geoJsonsemiarido = new L.geoJson(semiarido, { pane: "pane_semiarido", style: fundo_azul });
-layerControl.addOverlay(geoJsonsemiarido, 'Semiárido');
-
-var geoJsonsemiarido_RN_municipios = new L.geoJson(semiarido_RN_municipios, { pane: 'pane_semiarido_RN_municipios', style: fundo_cinza });
-layerControl.addOverlay(geoJsonsemiarido_RN_municipios, 'Semiárido RN municípios');
-
-var fundo_verde_distritos =
-{
-    'opacity': 1,
-    'color': 'rgba(252,252,252,1.0)',
-    'dashArray': '',
-    'lineCap': 'butt',
-    'lineJoin': 'miter',
-    'weight': 1.0,
-    'fill': true,
-    'fillOpacity': 1,
-    'fillColor': 'rgb(159,209,59)',
-    'interactive': true,
-}
-
-var geoJsonDistrito_cor = new L.geoJson(Distrito_cor, { style: fundo_verde_distritos });
-layerControl.addOverlay(geoJsonDistrito_cor, 'Distrito cor');
-
-var geoJsonDistrito_limitacao = new L.geoJson(Distrito_limitacao, { style: { 'fillOpacity': 0, color: 'white' } });
-layerControl.addOverlay(geoJsonDistrito_limitacao, 'Distrito limitação');
-
 const grupo_area = get_valores_unicos(investimentos_teste, coluna_area, 'json');
 
 // AREA SECTION
@@ -256,24 +141,11 @@ grupo_area.forEach(area => {
             }).addTo(map);
                 layerControl.addOverlay(geoJsonAux, capitalize(itemCategoria));
                 subprojetoJson.push(geoJsonAux);
-            });
-
-            });
         });
+    });
+});
 
-adicionarGrupo("Estradas", 1);
-relacionarSubGrupo('Estradas', 1, 2, 12, false);
-
-adicionarGrupo("Estradas DER", 12);
-relacionarSubGrupo('Estradas DER', 12, 13, 20, false);
-
-adicionarGrupo("Semiárido", 20);
-relacionarSubGrupo('Semiárido', 20, 21, 24, false);
-
-adicionarGrupo("Distritos", 24);
-relacionarSubGrupo('Distritos', 24, 25, 27, false);
-
-let index_inicial = 27
+let index_inicial = 1
 
 // AREA SECTION
 grupo_area.forEach(area => {
@@ -318,11 +190,14 @@ function filtrar() {
 function contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro) {
     municipio = layer.feature.properties['MUNICÍPIO'];
     territorio = layer.feature.properties['TERRITÓRIO'];
+    area = layer.feature.properties[coluna_area];
+    tipologia = layer.feature.properties[coluna_tipologia];
     categoria = layer.feature.properties[coluna_categoria];
     invest = layer.feature.properties[coluna_investimento];
 
     return municipio.toLowerCase().includes(texto_filtro) || territorio.toLowerCase().includes(texto_filtro)
-        || categoria.toLowerCase().includes(texto_filtro) || invest.toLowerCase().includes(texto_filtro);
+        || categoria.toLowerCase().includes(texto_filtro) || invest.toLowerCase().includes(texto_filtro)
+        || area.toLowerCase().includes(texto_filtro) || tipologia.toLowerCase().includes(texto_filtro);
 }
 
 function get_valores_unicos(objeto, coluna, tipo) {
