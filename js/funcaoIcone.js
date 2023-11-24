@@ -21,7 +21,7 @@ function icone_investimentos(feature, latlng) {
       nameIcon = BASE_CAMINHO_IMAGEM + '/Banda.svg';
       break;
     case 'BARRAGEM':
-      nameIcon = BASE_CAMINHO_IMAGEM + '/BARRAGEM.svg';
+      nameIcon = BASE_CAMINHO_IMAGEM + '/Barragem.svg';
       break;
     case 'CENTRO DE COMERCIALIZAÇÃO':
       nameIcon = BASE_CAMINHO_IMAGEM + '/Unidade de comercializacao.svg';
