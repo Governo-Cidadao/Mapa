@@ -237,7 +237,7 @@ function html_carousel_investimentos(caminho, nome, qtd_fotos, id_smi, texto_inv
 
   let html = `<div class="carousel-container fotos" id='${nome}_${id_smi}_fotos' style='display:none' index=0>`
 
-  if (qtd_fotos < 2) {
+  if (qtd_fotos < 1) {
     html += imgs
     html += pontinhos_slider
     html += descricao
