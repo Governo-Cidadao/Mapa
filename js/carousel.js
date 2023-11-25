@@ -1,6 +1,6 @@
 function iniciarCarrosselAutomatico(id, max) {
     intervalId = setInterval(function() {
-        avancar(document.getElementById(`botao_avancar_${id}`), id, max);
+        avancar(document.getElementById(`botao_avancar_${id}`), id, max,click=false);
     }, 5000);
 }
 
@@ -52,10 +52,11 @@ function voltar(botao_voltar, id){
             botao_voltar.style.visibility = 'hidden'
         }
     }
+    pararCarrosselAutomatico()
 }
 
-function avancar(botao_avancar, id, max){
-        let carousel = document.getElementById(id+'_fotos')
+function avancar(botao_avancar, id, max, click=true){
+    let carousel = document.getElementById(id+'_fotos')
     let index = parseInt(carousel.getAttribute('index'))
     let botao_voltar = document.getElementById(`botao_voltar_${id}`)
 
@@ -70,6 +71,11 @@ function avancar(botao_avancar, id, max){
         botao_voltar.style.visibility = 'visible'
     }
     mudar_imagem(id)
+
+    if (click){
+        pararCarrosselAutomatico()
+    }
+
 }
 
 function exibir_carousel(id){
