@@ -208,11 +208,11 @@ function mais_informacoes(feature, nome, id_smi) {
   html += '<p><strong> Território </strong></p> <p>' + feature.properties['TERRITÓRIO'] + '</p> <br>'
   html += '<p><strong> Área </strong></p> <p>' + feature.properties[coluna_area] + '</p> <br>'
   if (feature.properties["SOMATORIO_BENS"] != 0)
-    html += '<p><strong> Total Investimento por bens </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_BENS"]) + '</p> <br>';
+    html += '<p><strong> Total Investimento bens </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_BENS"]) + '</p> <br>';
   if (feature.properties["SOMATORIO_OBRAS"] != 0)
-    html += '<p><strong> Total Investimento por obras </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_OBRAS"]) + '</p> <br>';
+    html += '<p><strong> Total Investimento obras </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_OBRAS"]) + '</p> <br>';
   if (feature.properties["SOMATORIO_SUBPROJETOS"] != 0)
-    html += '<p><strong> Total Investimento por subprojetos </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_SUBPROJETOS"]) + '</p>';
+    html += '<p><strong> Total Investimento subprojetos </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_SUBPROJETOS"]) + '</p>';
   html += '<div class="close-icon-info"><i onclick="close_modal(ver_informacoes = true)" class="fa-solid fa-x"></i></div>'
   html += '</div>'
 
