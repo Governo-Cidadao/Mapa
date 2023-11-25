@@ -202,12 +202,17 @@ function html_carousel(nome, qtd_fotos, id_smi) {
 
 function mais_informacoes(feature, nome, id_smi) {
   let html = `<div class="informacao" id='${nome}_${id_smi}_informacao' style='display:none'>`
-  html += '<p><strong> Estabelecimento </strong></p> <p>' + capitalize(feature.properties['ESTABELECIMENTO']) + '</p> <br>'
+  html += '<p><strong> Estabelecimento </strong></p> <p>' + feature.properties['ESTABELECIMENTO'] + '</p> <br>'
   html += '<p><strong> Orgão </strong></p> <p>' + feature.properties['ORGÃO'] + '</p> <br>'
-  html += '<p><strong> Município </strong></p> <p>' + capitalize(feature.properties['MUNICÍPIO']) + '</p> <br>'
-  html += '<p><strong> Território </strong></p> <p>' + capitalize(feature.properties['TERRITÓRIO']) + '</p> <br>'
-  html += '<p><strong> Tipologia </strong></p> <p>' + capitalize(feature.properties[coluna_tipologia]) + '</p> <br>'
-  html += '<p><strong> Total Investimento </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["VALOR_TOTAL"]) + '</p>';
+  html += '<p><strong> Município </strong></p> <p>' + feature.properties['MUNICÍPIO'] + '</p> <br>'
+  html += '<p><strong> Território </strong></p> <p>' + feature.properties['TERRITÓRIO'] + '</p> <br>'
+  html += '<p><strong> Área </strong></p> <p>' + feature.properties[coluna_area] + '</p> <br>'
+  if (feature.properties["SOMATORIO_BENS"] != 0)
+    html += '<p><strong> Total Investimento por bens </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_BENS"]) + '</p> <br>';
+  if (feature.properties["SOMATORIO_OBRAS"] != 0)
+    html += '<p><strong> Total Investimento por obras </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_OBRAS"]) + '</p> <br>';
+  if (feature.properties["SOMATORIO_SUBPROJETOS"] != 0)
+    html += '<p><strong> Total Investimento por subprojetos </strong></p> <p>R$ ' + formatarNumeroInteiro(feature.properties["SOMATORIO_SUBPROJETOS"]) + '</p>';
   html += '<div class="close-icon-info"><i onclick="close_modal(ver_informacoes = true)" class="fa-solid fa-x"></i></div>'
   html += '</div>'
 
