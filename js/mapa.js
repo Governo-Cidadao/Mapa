@@ -138,7 +138,7 @@ grupo_area.forEach(area => {
             const geoJsonAux = new L.geoJson(jsonItem, {
                 pointToLayer: icone_investimentos,
                 onEachFeature: popup_investimentos
-            }).addTo(map);
+            })
             layerControl.addOverlay(geoJsonAux, capitalize(itemCategoria));
             subprojetoJson.push(geoJsonAux);
         });
@@ -153,7 +153,7 @@ grupo_area.forEach(area => {
     const itensTipologia = get_valores_unicos(jsonGrupoArea, coluna_tipologia, 'lista');
     let idxInicialArea = index_inicial;
 
-    adicionarGrupo(capitalize(area), idxInicialArea, true, true);
+    adicionarGrupo(capitalize(area), idxInicialArea, false, true);
     index_inicial++
     // TIPOLOGIA SECTION
     itensTipologia.forEach((tipologia) => {
@@ -161,7 +161,7 @@ grupo_area.forEach(area => {
         const itensCategoria = get_valores_unicos(jsonGrupoTipologia, coluna_categoria, 'lista');
         let idxInicialTipologia = index_inicial;
         let idxTipologiaFinal = index_inicial + itensCategoria.length + 1;
-        adicionarGrupo(capitalize(tipologia), idxInicialTipologia, true, true);
+        adicionarGrupo(capitalize(tipologia), idxInicialTipologia, false, true);
         relacionarSubGrupo(capitalize(tipologia), index_inicial, index_inicial + 1, idxTipologiaFinal, true);
         index_inicial = idxTipologiaFinal;
     });

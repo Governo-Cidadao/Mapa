@@ -265,9 +265,9 @@ function dado_html_investimentos(feature) {
   const qtd_fotos = feature.properties['QUANTIDADE FOTO']
   if (qtd_fotos > 0)
     html += `<img src="${path}/foto_0.jpg" class="img-popup">`
+  html += '<p><strong> Estabelecimento: ' + feature.properties["ESTABELECIMENTO"] + '</strong></p>'
   html += '<p><strong> Município: ' + feature.properties['MUNICÍPIO'] + '</strong></p>'
-  html += '<p><strong> Tipologia: ' + feature.properties[coluna_tipologia] + '</strong></p>'
-
+  
   return html
 }
 
