@@ -9,7 +9,7 @@ const LARGE_SCREEN_WIDTH = 2160;
 
 const ZOOM_LEVEL_SMALL = 6.5;
 const ZOOM_LEVEL_LARGE = 10.2;
-const ZOOM_LEVEL_DEFAULT = 8.8;
+const ZOOM_LEVEL_DEFAULT = 7.8;
 
 const coluna_area = 'AREA_MAPEAMENTO';
 const coluna_tipologia = 'TIPOLOGIA_MAPEAMENTO';
