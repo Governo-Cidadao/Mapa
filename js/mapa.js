@@ -49,19 +49,6 @@ document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
 });
 
-
-var borda_branca = {
-
-    "opacity": 1,
-    "color": 'rgba(250,250,250,1.0)',
-    "dashArray": '',
-    "lineCap": 'square',
-    "lineJoin": 'bevel',
-    "weight": 4.0,
-    "fillOpacity": 0,
-    "interactive": true,
-};
-
 var borda_fundo_branco = {
 
     "opacity": 1,
@@ -108,18 +95,6 @@ layerControl.addOverlay(geoJsonTerritorios, 'Territórios');
 // subprojetos
 
 var subprojetoJson = []
-
-var estrada_vermelha = {
-    "color": "rgb( 244, 0, 0 )",
-    "weight": 3,
-};
-
-var estrada_azul = {
-    "color": "rgb( 16, 145, 210 )",
-    "weight": 3,
-};
-
-
 const grupo_area = get_valores_unicos(investimentos_teste, coluna_area, 'json');
 
 // AREA SECTION
@@ -170,43 +145,6 @@ grupo_area.forEach(area => {
 })
 
 selecionar_dot_nav(investimentos_teste.features)
-
-function filtrar() {
-    let input = document.getElementById("filtro_municipio")
-    let texto_filtro = input.value.toLowerCase()
-
-    subprojetoJson.forEach(function (layerGroup) {
-        layerGroup.eachLayer(function (layer) {
-            if (layer._icon != null) {
-                layer._icon.style.display = 'None';
-                if (contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro)) {
-                    layer._icon.style.display = 'block';
-                }
-            }
-            else if (layer._path != null){
-                layer._path.style.display = 'None';
-                if (contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro)) {
-                    layer._path.style.display = 'block';
-                }
-            }
-        })
-    })
-}
-
-function contem_municipio_tipologia_territorio_categoria_invest(layer, texto_filtro) {
-    municipio = layer.feature.properties['MUNICÍPIO'];
-    territorio = layer.feature.properties['TERRITÓRIO'];
-    estabelecimento = layer.feature.properties['ESTABELECIMENTO'];
-    area = layer.feature.properties[coluna_area];
-    tipologia = layer.feature.properties[coluna_tipologia];
-    categoria = layer.feature.properties[coluna_categoria];
-    invest = layer.feature.properties[coluna_investimento];
-
-    return municipio.toLowerCase().includes(texto_filtro) || territorio.toLowerCase().includes(texto_filtro)
-        || categoria.toLowerCase().includes(texto_filtro) || invest.toLowerCase().includes(texto_filtro)
-        || area.toLowerCase().includes(texto_filtro) || tipologia.toLowerCase().includes(texto_filtro)
-        || estabelecimento.toLowerCase().includes(texto_filtro);
-}
 
 function get_valores_unicos(objeto, coluna, tipo) {
     let qtd_elementos;
