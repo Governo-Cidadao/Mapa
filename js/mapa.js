@@ -49,19 +49,6 @@ document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
 });
 
-
-var borda_branca = {
-
-    "opacity": 1,
-    "color": 'rgba(250,250,250,1.0)',
-    "dashArray": '',
-    "lineCap": 'square',
-    "lineJoin": 'bevel',
-    "weight": 4.0,
-    "fillOpacity": 0,
-    "interactive": true,
-};
-
 var borda_fundo_branco = {
 
     "opacity": 1,
@@ -108,18 +95,6 @@ layerControl.addOverlay(geoJsonTerritorios, 'Territórios');
 // subprojetos
 
 var subprojetoJson = []
-
-var estrada_vermelha = {
-    "color": "rgb( 244, 0, 0 )",
-    "weight": 3,
-};
-
-var estrada_azul = {
-    "color": "rgb( 16, 145, 210 )",
-    "weight": 3,
-};
-
-
 const grupo_area = get_valores_unicos(investimentos_teste, coluna_area, 'json');
 
 // AREA SECTION
