@@ -6,7 +6,7 @@
 ![Github repo size](https://img.shields.io/github/repo-size/Governo-Cidadao/Mapa)
 ![Github stars](https://img.shields.io/github/stars/Governo-Cidadao/Mapa)
 
-![Capa do Projeto](images\docs\mapa_final.jpg)
+![Capa do Projeto](https://raw.githubusercontent.com/Governo-Cidadao/Mapa/main/images/docs/mapa_final.jpg)
 
 > A iniciativa condensa todos os investimentos viabilizados pelo acordo de empréstimo com o Banco Mundial em diversas áreas de atuação. A ferramenta fortalece a transparência com a qual o Projeto Governo Cidadão opera, apresentando, de maneira clara e acessível, como o Rio Grande do Norte foi beneficiado em toda a sua extensão por meio dessas iniciativas.
 
