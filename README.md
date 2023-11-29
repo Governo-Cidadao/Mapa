@@ -6,15 +6,9 @@
 ![Github repo size](https://img.shields.io/github/repo-size/Governo-Cidadao/Mapa)
 ![Github stars](https://img.shields.io/github/stars/Governo-Cidadao/Mapa)
 
-![Capa do Projeto](https://source.unsplash.com/featured/1280x720)
+![Capa do Projeto](images\docs\mapa_final.jpg)
 
-> Descrição breve do projeto
-
-## Pré-requisitos
-
-Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas:
-
-- Antes de começar, verifique se você possui o `Tecnologia X` instalado em sua máquina. Se não tiver, você pode baixar o `Tecnologia X` [aqui](https://exemplo_de_link.com).
+> A iniciativa condensa todos os investimentos viabilizados pelo acordo de empréstimo com o Banco Mundial em diversas áreas de atuação. A ferramenta fortalece a transparência com a qual o Projeto Governo Cidadão opera, apresentando, de maneira clara e acessível, como o Rio Grande do Norte foi beneficiado em toda a sua extensão por meio dessas iniciativas.
 
 ## Como executar o projeto
 
@@ -42,24 +36,35 @@ A estrutura de pastas do projeto é organizada da seguinte maneira:
 
 ```text
 /
-|-- pasta1/
-|   |-- arquivo1
-|   |-- arquivo2
-|-- pasta2/
-|   |-- arquivo3
-|   |-- arquivo4
-|-- ...
+|-- css/
+|-- geoJson/
+|   |-- geoJsonJS/
+|   |   |-- brasil/
+|   |   |-- estradas/
+|   |   |-- investimentos/
+|   |   |-- semiarido/
+|-- images/
+|   |-- controller/
+|   |-- header/
+|   |-- icones_novos/
+|   |-- investimentos/
+|-- js/
+|   |-- Leaflet/
+|   |-- minimap/
+|   |-- opacity/
+|   |-- util/
+|   |   |-- capitalize.js
+|   |-- addGrupo.js
+|   |-- carousel.js
+|   |-- controller.js
+|   |-- funcaoIcone.js
+|   |-- Keyboard.js
+|   |-- mapa.js
+|   |-- modal.js
+|   |-- trocar_mapa.js
+|   |-- ...
+|-- index.html
 ```
-
-<!-- Outra forma de descrever é em texto corrido -->
-
-### Disposição e estilos
-
-* `pasta1`: Dados estruturados para serem reusados de maneira X. Por exemplo Y
-
-* `pasta2`: Componentes que podem ser reusados entre as páginas. Por exemplo Z
-
-* `...`: Outras informações
 
 ## Como contribuir
 
